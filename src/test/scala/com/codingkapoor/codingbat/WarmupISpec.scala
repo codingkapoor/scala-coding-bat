@@ -36,4 +36,13 @@ class WarmupISpec extends FlatSpec with Matchers {
   "monkeyTrouble" should "return false if aSmile is true and bSmile is false" in {
     WarmupI.monkeyTrouble(true, false) should equal(false)
   }
+
+  "sumDouble" should "return double of sum of a & b if both are equal" in {
+    WarmupI.sumDouble(2, 2) should equal(8)
+  }
+
+  "sumDouble" should "return sum of a & b if both are different" in {
+    WarmupI.sumDouble(3, 2) should equal(5)
+  }
+
 }

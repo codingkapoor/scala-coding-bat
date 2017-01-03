@@ -10,4 +10,7 @@ object WarmupI {
     (aSmile && bSmile) || (!aSmile && !bSmile)
   }
 
+  def sumDouble(a: Int, b: Int): Int = {
+    if (a == b) 4 * a else a + b
+  }
 }
