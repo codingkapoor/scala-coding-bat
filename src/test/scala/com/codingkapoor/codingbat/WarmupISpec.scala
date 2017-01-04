@@ -133,6 +133,14 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.frontBack("code") should equal("eodc")
   }
 
+  "front3" should "return a new string which is 3 copies of the front where front is the first 3 chars of the string" in {
+    WarmupI.front3("code") should equal("codcodcod")
+  }
+
+  "front3" should "return a new string which is 3 copies of the front where front is the first few characters of the string of length '<' 3" in {
+    WarmupI.front3("sr") should equal("srsrsr")
+  }
+
   "" should "" in {
 
   }

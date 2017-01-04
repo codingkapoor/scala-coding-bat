@@ -47,4 +47,8 @@ object WarmupI {
   def frontBack(str: String): String = {
     str.last + str.init.drop(1) + str.take(1)
   }
+  
+  def front3(str: String): String = {
+    str.take(3) * 3
+  }
 }
