@@ -84,4 +84,7 @@ object WarmupI {
     List(a, b).filter(x => x >= 13 && x <= 19).size == 1
   }
 
+  def delDel(str: String): String = {
+    if (str.drop(1).startsWith("del")) str.replaceFirst("del", "") else str
+  }
 }

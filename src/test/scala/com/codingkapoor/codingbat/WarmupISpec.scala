@@ -192,4 +192,9 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.loneTeen(13, 13) should equal(false)
   }
 
+  "delDel" should "return a string where first occurance of 'del' has been deleted where it is present at index 1. Otherwise, return the string unchanged" in {
+    WarmupI.delDel("adelbc") should equal("abc")
+    WarmupI.delDel("adelHello") should equal("aHello")
+    WarmupI.delDel("adedbc") should equal("adedbc")
+  }
 }
