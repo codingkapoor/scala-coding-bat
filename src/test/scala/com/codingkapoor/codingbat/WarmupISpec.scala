@@ -124,4 +124,8 @@ class WarmupISpec extends FlatSpec with Matchers {
   "notString" should "return the input string as it is, if it already starts with 'not'" in {
     WarmupI.notString("not bad") should equal("not bad")
   }
+
+  "missingChar" should "return a new string where the char at index n has been removed" in {
+    WarmupI.missingChar("kitten", 4) should equal("kittn")
+  }
 }

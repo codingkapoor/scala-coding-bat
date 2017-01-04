@@ -39,4 +39,9 @@ object WarmupI {
   def notString(str: String): String = {
     if (str.startsWith("not")) str else "not " + str
   }
+
+  def missingChar(str: String, n: Int) = {
+    str.take(n) + str.drop(n + 1)
+  }
+
 }
