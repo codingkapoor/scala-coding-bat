@@ -55,4 +55,9 @@ object WarmupI {
   def backAround(str: String): String = {
     str.last + str + str.last
   }
+
+  def or35(n: Int): Boolean = {
+    (n % 3 == 0) || (n % 5 == 0)
+  }
+
 }

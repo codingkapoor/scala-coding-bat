@@ -144,4 +144,16 @@ class WarmupISpec extends FlatSpec with Matchers {
   "backAround" should "return a new string with the last char added at the front and back" in {
     WarmupI.backAround("cat") should equal("tcatt")
   }
+
+  "or35" should "return true if n is a multiple of 3" in {
+    WarmupI.or35(729) should equal(true)
+  }
+
+  "or35" should "return true if n is a multiple of 5" in {
+    WarmupI.or35(10) should equal(true)
+  }
+
+  "or35" should "return false if n is not a multiple of 3 or 5" in {
+    WarmupI.or35(11) should equal(false)
+  }
 }
