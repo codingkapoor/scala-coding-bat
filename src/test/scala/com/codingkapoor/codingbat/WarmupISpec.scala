@@ -5,123 +5,60 @@ import org.scalatest.Matchers
 
 class WarmupISpec extends FlatSpec with Matchers {
 
-  "sleepIn" should "return true if both weekday and vacation are true" in {
+  "sleepIn" should "return true if it's weekend or we're on vacation else false" in {
     WarmupI.sleepIn(true, true) should equal(true)
-  }
-
-  "sleepIn" should "return true if both weekday and vacation are false" in {
     WarmupI.sleepIn(false, false) should equal(true)
-  }
-
-  "sleepIn" should "return true if weekday is false and vacation is true" in {
     WarmupI.sleepIn(false, true) should equal(true)
-  }
-
-  "sleepIn" should "return false if weekday is true and vacation is false" in {
     WarmupI.sleepIn(true, false) should equal(false)
   }
 
-  "monkeyTrouble" should "return true if both aSmile and bSmile are true" in {
+  "monkeyTrouble" should "return true if both the monkeys are smiling or if neither of them is smiling else false" in {
     WarmupI.monkeyTrouble(true, true) should equal(true)
-  }
-
-  "monkeyTrouble" should "return true if both aSmile and bSmile are false" in {
     WarmupI.monkeyTrouble(false, false) should equal(true)
-  }
-
-  "monkeyTrouble" should "return false if aSmile is false and bSmile is true" in {
     WarmupI.monkeyTrouble(false, true) should equal(false)
-  }
-
-  "monkeyTrouble" should "return false if aSmile is true and bSmile is false" in {
     WarmupI.monkeyTrouble(true, false) should equal(false)
   }
 
-  "sumDouble" should "return double of sum of a & b if both are equal" in {
+  "sumDouble" should "return double of sum of a & b if both are equal else simply sum of a & b" in {
     WarmupI.sumDouble(2, 2) should equal(8)
-  }
-
-  "sumDouble" should "return sum of a & b if both are different" in {
     WarmupI.sumDouble(3, 2) should equal(5)
   }
 
-  "diff21" should "return 2 if n is 19" in {
+  "diff21" should "return the absolute difference between n and 21, except return double the absolute difference if n is over 21" in {
     WarmupI.diff21(19) should equal(2)
-  }
-
-  "diff21" should "return 0 if n is 21" in {
     WarmupI.diff21(21) should equal(0)
-  }
-
-  "diff21" should "return 4 if n is 23 which is over 21" in {
     WarmupI.diff21(23) should equal(4)
   }
 
-  "parrotTrouble" should "return true if hour is '<' 7 or '>' 20 and parrot is talking" in {
+  "parrotTrouble" should "return true if the parrot is talking and the hour is before 7 or after 20 else false" in {
     WarmupI.parrotTrouble(true, 6) should equal(true)
-  }
-
-  "parrotTrouble" should "return false if hour is '>' 7 or '<' 20 and parrot is talking" in {
     WarmupI.parrotTrouble(true, 8) should equal(false)
-  }
-
-  "parrotTrouble" should "return false if hour is '<' 7 or '>' 20 and parrot is not talking" in {
     WarmupI.parrotTrouble(false, 21) should equal(false)
-  }
-
-  "parrotTrouble" should "return false if hour is '>' 7 or '<' 20 and parrot is not talking" in {
     WarmupI.parrotTrouble(false, 9) should equal(false)
   }
 
-  "makes10" should "return true only if a is 10 and neither b is 10 nor their sum is 10 " in {
+  "makes10" should "return true if one of the given numbers is 10 or if their sum is 10 else false" in {
     WarmupI.makes10(10, 9) should equal(true)
-  }
-
-  "makes10" should "return true only if b is 10 and neither a is 10 nor their sum is 10 " in {
     WarmupI.makes10(9, 10) should equal(true)
-  }
-
-  "makes10" should "return true if a + b is 10 and neither a is 10 nor b is 10 " in {
     WarmupI.makes10(5, 5) should equal(true)
-  }
-
-  "makes10" should "return false if neither a is 10 nor b is 10 or their sum is 10 " in {
     WarmupI.makes10(11, 9) should equal(false)
   }
 
-  "nearHundred" should "return true if n is within 10 of 100" in {
+  "nearHundred" should "return true if the given number is within 10 of 100 or 200 else false" in {
     WarmupI.nearHundred(91) should equal(true)
-  }
-
-  "nearHundred" should "return true if n is within 10 of 200" in {
     WarmupI.nearHundred(199) should equal(true)
-  }
-
-  "nearHundred" should "return false if n is not within 10 of 100 or 10 of 200" in {
     WarmupI.nearHundred(89) should equal(false)
   }
 
-  "posNeg" should "return true if negative is true and both a and b are negative numbers" in {
+  "posNeg" should "return true if one of the given numbers is negative and other one is positive. Except if the parameter 'negative' is true, then return true only if both are negative else false" in {
     WarmupI.posNeg(-1, -3, true) should equal(true)
-  }
-
-  "posNeg" should "return false if negative is true and either a and b or both are positive numbers" in {
     WarmupI.posNeg(-1, 3, true) should equal(false)
-  }
-
-  "posNeg" should "return true if negative is false and either a and b or both are negative numbers" in {
     WarmupI.posNeg(-1, 3, false) should equal(true)
-  }
-
-  "posNeg" should "return false if negative is false and both a and b are positive numbers" in {
     WarmupI.posNeg(1, 3, false) should equal(false)
   }
 
-  "notString" should "return the input string with 'not' prefixed" in {
+  "notString" should "return a new string where 'not ' has been added to the front of a given string. However, if the string already begins with 'not', return the string unchanged" in {
     WarmupI.notString("candy") should equal("not candy")
-  }
-
-  "notString" should "return the input string as it is, if it already starts with 'not'" in {
     WarmupI.notString("not bad") should equal("not bad")
   }
 
@@ -135,9 +72,6 @@ class WarmupISpec extends FlatSpec with Matchers {
 
   "front3" should "return a new string which is 3 copies of the front where front is the first 3 chars of the string" in {
     WarmupI.front3("code") should equal("codcodcod")
-  }
-
-  "front3" should "return a new string which is 3 copies of the front where front is the first few characters of the string of length '<' 3" in {
     WarmupI.front3("sr") should equal("srsrsr")
   }
 
@@ -145,12 +79,9 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.backAround("cat") should equal("tcatt")
   }
 
-  "or35" should "return true if n is a multiple of 3 or 5" in {
+  "or35" should "return true if the given non-negative number is a multiple of 3 or a multiple of 5 else false" in {
     WarmupI.or35(729) should equal(true)
     WarmupI.or35(10) should equal(true)
-  }
-
-  "or35" should "return false if n is not a multiple of 3 or 5" in {
     WarmupI.or35(11) should equal(false)
   }
 
@@ -250,5 +181,11 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.endUp("Hello") should equal("HeLLO")
     WarmupI.endUp("hi there") should equal("hi thERE")
     WarmupI.endUp("hi") should equal("HI")
+  }
+
+  "everyNth" should "return the string made starting with char 0, and then every Nth char of the given string" in {
+    WarmupI.everyNth("Miracle", 2) should equal("Mrce")
+    WarmupI.everyNth("abcdefg", 2) should equal("aceg")
+    WarmupI.everyNth("abcdefg", 3) should equal("adg")
   }
 }

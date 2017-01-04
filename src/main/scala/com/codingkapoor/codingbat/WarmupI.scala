@@ -130,5 +130,8 @@ object WarmupI {
   def endUp(str: String): String = {
     str.take(str.length() - 3) + str.drop(str.length() - 3).toUpperCase()
   }
-  
+
+  def everyNth(str: String, n: Int): String = {
+    str.toList.zipWithIndex.filter(_._2 % n == 0).map(_._1).mkString
+  }
 }
