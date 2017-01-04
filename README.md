@@ -1,4 +1,5 @@
-# Solutions to CodingBat problems in Scala
+# Scala CodingBat
+Solutions to CodingBat problems in Scala
 
 ## Warmup-I
 ### [sleepIn]()
