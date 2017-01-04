@@ -101,4 +101,19 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.nearHundred(89) should equal(false)
   }
 
+  "posNeg" should "return true if negative is true and both a and b are negative numbers" in {
+    WarmupI.posNeg(-1, -3, true) should equal(true)
+  }
+
+  "posNeg" should "return false if negative is true and either a and b or both are positive numbers" in {
+    WarmupI.posNeg(-1, 3, true) should equal(false)
+  }
+
+  "posNeg" should "return true if negative is false and either a and b or both are negative numbers" in {
+    WarmupI.posNeg(-1, 3, false) should equal(true)
+  }
+
+  "posNeg" should "return false if negative is false and both a and b are positive numbers" in {
+    WarmupI.posNeg(1, 3, false) should equal(false)
+  }
 }

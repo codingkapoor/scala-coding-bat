@@ -20,15 +20,20 @@ object WarmupI {
   }
 
   def parrotTrouble(talking: Boolean, hour: Int): Boolean = {
-    if (talking && (hour < 7 || hour > 20)) true else false
+    talking && (hour < 7 || hour > 20)
   }
 
   def makes10(a: Int, b: Int): Boolean = {
-    if (a == 10 || b == 10 || a + b == 10) true else false
+    a == 10 || b == 10 || a + b == 10
   }
 
   def nearHundred(n: Int): Boolean = {
-    if (Math.abs(100 - n) <= 10 || Math.abs(200 - n) <= 10) true else false
+    Math.abs(100 - n) <= 10 || Math.abs(200 - n) <= 10
+  }
+
+  def posNeg(a: Int, b: Int, negative: Boolean): Boolean = {
+    if (negative) a < 0 && b < 0
+    else a < 0 || b < 0
   }
 
 }
