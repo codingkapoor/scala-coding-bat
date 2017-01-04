@@ -26,5 +26,9 @@ object WarmupI {
   def makes10(a: Int, b: Int): Boolean = {
     if (a == 10 || b == 10 || a + b == 10) true else false
   }
-  
+
+  def nearHundred(n: Int): Boolean = {
+    if (Math.abs(100 - n) <= 10 || Math.abs(200 - n) <= 10) true else false
+  }
+
 }

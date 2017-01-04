@@ -88,4 +88,17 @@ class WarmupISpec extends FlatSpec with Matchers {
   "makes10" should "return false if neither a is 10 nor b is 10 or their sum is 10 " in {
     WarmupI.makes10(11, 9) should equal(false)
   }
+
+  "nearHundred" should "return true if n is within 10 of 100" in {
+    WarmupI.nearHundred(91) should equal(true)
+  }
+
+  "nearHundred" should "return true if n is within 10 of 200" in {
+    WarmupI.nearHundred(199) should equal(true)
+  }
+
+  "nearHundred" should "return false if n is not within 10 of 100 or 10 of 200" in {
+    WarmupI.nearHundred(89) should equal(false)
+  }
+
 }
