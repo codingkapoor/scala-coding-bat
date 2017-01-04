@@ -128,4 +128,12 @@ class WarmupISpec extends FlatSpec with Matchers {
   "missingChar" should "return a new string where the char at index n has been removed" in {
     WarmupI.missingChar("kitten", 4) should equal("kittn")
   }
+
+  "frontBack" should "return a new string where the first and last chars have been exchanged" in {
+    WarmupI.frontBack("code") should equal("eodc")
+  }
+
+  "" should "" in {
+
+  }
 }
