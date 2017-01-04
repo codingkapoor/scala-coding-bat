@@ -13,4 +13,11 @@ object WarmupI {
   def sumDouble(a: Int, b: Int): Int = {
     if (a == b) 4 * a else a + b
   }
+
+  def diff21(n: Int): Int = {
+    val absDiff = Math.abs(n - 21);
+    if (n > 21) 2 * absDiff else absDiff
+  }
+  
+  
 }

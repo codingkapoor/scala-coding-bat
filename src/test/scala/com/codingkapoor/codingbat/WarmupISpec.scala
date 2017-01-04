@@ -45,4 +45,13 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.sumDouble(3, 2) should equal(5)
   }
 
+  "diff21" should "return 2 if n is 19" in {
+    WarmupI.diff21(19) should equal(2)
+  }
+  "diff21" should "return 0 if n is 21" in {
+    WarmupI.diff21(21) should equal(0)
+  }
+  "diff21" should "return 4 if n is 23 which is over 21" in {
+    WarmupI.diff21(23) should equal(4)
+  }
 }
