@@ -36,4 +36,7 @@ object WarmupI {
     else a < 0 || b < 0
   }
 
+  def notString(str: String): String = {
+    if (str.startsWith("not")) str else "not " + str
+  }
 }

@@ -116,4 +116,12 @@ class WarmupISpec extends FlatSpec with Matchers {
   "posNeg" should "return false if negative is false and both a and b are positive numbers" in {
     WarmupI.posNeg(1, 3, false) should equal(false)
   }
+
+  "notString" should "return the input string with 'not' prefixed" in {
+    WarmupI.notString("candy") should equal("not candy")
+  }
+
+  "notString" should "return the input string as it is, if it already starts with 'not'" in {
+    WarmupI.notString("not bad") should equal("not bad")
+  }
 }
