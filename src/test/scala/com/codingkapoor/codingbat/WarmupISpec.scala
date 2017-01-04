@@ -72,4 +72,20 @@ class WarmupISpec extends FlatSpec with Matchers {
   "parrotTrouble" should "return false if hour is '>' 7 or '<' 20 and parrot is not talking" in {
     WarmupI.parrotTrouble(false, 9) should equal(false)
   }
+
+  "makes10" should "return true only if a is 10 and neither b is 10 nor their sum is 10 " in {
+    WarmupI.makes10(10, 9) should equal(true)
+  }
+
+  "makes10" should "return true only if b is 10 and neither a is 10 nor their sum is 10 " in {
+    WarmupI.makes10(9, 10) should equal(true)
+  }
+
+  "makes10" should "return true if a + b is 10 and neither a is 10 nor b is 10 " in {
+    WarmupI.makes10(5, 5) should equal(true)
+  }
+
+  "makes10" should "return false if neither a is 10 nor b is 10 or their sum is 10 " in {
+    WarmupI.makes10(11, 9) should equal(false)
+  }
 }

@@ -22,4 +22,9 @@ object WarmupI {
   def parrotTrouble(talking: Boolean, hour: Int): Boolean = {
     if (talking && (hour < 7 || hour > 20)) true else false
   }
+
+  def makes10(a: Int, b: Int): Boolean = {
+    if (a == 10 || b == 10 || a + b == 10) true else false
+  }
+  
 }
