@@ -204,4 +204,11 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.mixStart("9ix snacks") should equal(true)
     WarmupI.mixStart("piz snacks") should equal(false)
   }
+
+  "startOz" should "return a string made of the first 2 chars (if present), however include first char only if it is 'o' and include the second only if it is 'z'" in {
+    WarmupI.startOz("ozymandias") should equal("oz")
+    WarmupI.startOz("bzoo") should equal("z")
+    WarmupI.startOz("oxx") should equal("o")
+  }
+
 }
