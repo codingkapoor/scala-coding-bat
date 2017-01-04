@@ -141,7 +141,7 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.front3("sr") should equal("srsrsr")
   }
 
-  "" should "" in {
-
+  "backAround" should "return a new string with the last char added at the front and back" in {
+    WarmupI.backAround("cat") should equal("tcatt")
   }
 }
