@@ -77,7 +77,11 @@ object WarmupI {
   }
 
   def hasTeen(a: Int, b: Int, c: Int): Boolean = {
-    List(a, b, c).exists { x => x >= 13 && x <= 19 }
+    List(a, b, c) exists { x => x >= 13 && x <= 19 }
+  }
+
+  def loneTeen(a: Int, b: Int): Boolean = {
+    List(a, b).filter(x => x >= 13 && x <= 19).size == 1
   }
 
 }

@@ -186,4 +186,10 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.hasTeen(20, 10, 89) should equal(false)
   }
 
+  "loneTeen" should "return true if one or the other of the two given numbers is teen, but not both" in {
+    WarmupI.loneTeen(13, 99) should equal(true)
+    WarmupI.loneTeen(21, 19) should equal(true)
+    WarmupI.loneTeen(13, 13) should equal(false)
+  }
+
 }
