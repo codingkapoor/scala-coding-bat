@@ -197,4 +197,11 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.delDel("adelHello") should equal("aHello")
     WarmupI.delDel("adedbc") should equal("adedbc")
   }
+
+  "mixStart" should "return true if the given string begins with 'mix', except the 'm' can be anything, so 'pix', '9ix', etc. all count" in {
+    WarmupI.mixStart("mix snacks") should equal(true)
+    WarmupI.mixStart("pix snacks") should equal(true)
+    WarmupI.mixStart("9ix snacks") should equal(true)
+    WarmupI.mixStart("piz snacks") should equal(false)
+  }
 }

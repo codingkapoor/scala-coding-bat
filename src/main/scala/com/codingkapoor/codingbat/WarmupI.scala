@@ -87,4 +87,13 @@ object WarmupI {
   def delDel(str: String): String = {
     if (str.drop(1).startsWith("del")) str.replaceFirst("del", "") else str
   }
+
+  def mixStart(str: String): Boolean = {
+    val pattern = ".ix".r
+    pattern.findPrefixMatchOf(str) match {
+      case Some(_) => true
+      case None    => false
+    }
+  }
+
 }
