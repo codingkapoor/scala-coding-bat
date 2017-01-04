@@ -18,6 +18,8 @@ object WarmupI {
     val absDiff = Math.abs(n - 21);
     if (n > 21) 2 * absDiff else absDiff
   }
-  
-  
+
+  def parrotTrouble(talking: Boolean, hour: Int): Boolean = {
+    if (talking && (hour < 7 || hour > 20)) true else false
+  }
 }

@@ -48,10 +48,28 @@ class WarmupISpec extends FlatSpec with Matchers {
   "diff21" should "return 2 if n is 19" in {
     WarmupI.diff21(19) should equal(2)
   }
+
   "diff21" should "return 0 if n is 21" in {
     WarmupI.diff21(21) should equal(0)
   }
+
   "diff21" should "return 4 if n is 23 which is over 21" in {
     WarmupI.diff21(23) should equal(4)
+  }
+
+  "parrotTrouble" should "return true if hour is '<' 7 or '>' 20 and parrot is talking" in {
+    WarmupI.parrotTrouble(true, 6) should equal(true)
+  }
+
+  "parrotTrouble" should "return false if hour is '>' 7 or '<' 20 and parrot is talking" in {
+    WarmupI.parrotTrouble(true, 8) should equal(false)
+  }
+
+  "parrotTrouble" should "return false if hour is '<' 7 or '>' 20 and parrot is not talking" in {
+    WarmupI.parrotTrouble(false, 21) should equal(false)
+  }
+
+  "parrotTrouble" should "return false if hour is '>' 7 or '<' 20 and parrot is not talking" in {
+    WarmupI.parrotTrouble(false, 9) should equal(false)
   }
 }
