@@ -145,15 +145,45 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.backAround("cat") should equal("tcatt")
   }
 
-  "or35" should "return true if n is a multiple of 3" in {
+  "or35" should "return true if n is a multiple of 3 or 5" in {
     WarmupI.or35(729) should equal(true)
-  }
-
-  "or35" should "return true if n is a multiple of 5" in {
     WarmupI.or35(10) should equal(true)
   }
 
   "or35" should "return false if n is not a multiple of 3 or 5" in {
     WarmupI.or35(11) should equal(false)
   }
+
+  "front22" should "return the string with the fitst 2 chars added at both the front and back" in {
+    WarmupI.front22("kitten") should equal("kikittenki")
+    WarmupI.front22("ki") should equal("kikiki")
+    WarmupI.front22("k") should equal("kkk")
+  }
+
+  "startHi" should "return true if the input string starts with word 'hi'" in {
+    WarmupI.startHi("hi there") should equal(true)
+    WarmupI.startHi("hi") should equal(true)
+    WarmupI.startHi("there hi") should equal(false)
+    WarmupI.startHi("hihello") should equal(true)
+  }
+
+  "icyHot" should "return true if out of two given temperatures one is less than 0 and the other is greater than 100" in {
+    WarmupI.icyHot(120, -1) should equal(true)
+    WarmupI.icyHot(-1, 120) should equal(true)
+    WarmupI.icyHot(2, 120) should equal(false)
+  }
+
+  "in1020" should "return true if either of the given numbers are in the range 10..20 inclusive" in {
+    WarmupI.in1020(12, 99) should equal(true)
+    WarmupI.in1020(21, 12) should equal(true)
+    WarmupI.in1020(8, 99) should equal(false)
+  }
+
+  "hasTeen" should "return true if 1 or more of the given numbers are in the range 13..19 inclusive" in {
+    WarmupI.hasTeen(13, 20, 10) should equal(true)
+    WarmupI.hasTeen(20, 19, 10) should equal(true)
+    WarmupI.hasTeen(20, 10, 13) should equal(true)
+    WarmupI.hasTeen(20, 10, 89) should equal(false)
+  }
+
 }

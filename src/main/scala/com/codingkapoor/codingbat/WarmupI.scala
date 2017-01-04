@@ -60,4 +60,24 @@ object WarmupI {
     (n % 3 == 0) || (n % 5 == 0)
   }
 
+  def front22(str: String): String = {
+    str.take(2) + str + str.take(2)
+  }
+
+  def startHi(str: String): Boolean = {
+    str.toLowerCase().startsWith("hi")
+  }
+
+  def icyHot(temp1: Int, temp2: Int): Boolean = {
+    (temp1 < 0 && temp2 > 100) || (temp2 < 0 && temp1 > 100)
+  }
+
+  def in1020(a: Int, b: Int): Boolean = {
+    (a >= 10 && a <= 20) || (b >= 10 && b <= 20)
+  }
+
+  def hasTeen(a: Int, b: Int, c: Int): Boolean = {
+    List(a, b, c).exists { x => x >= 13 && x <= 19 }
+  }
+
 }
