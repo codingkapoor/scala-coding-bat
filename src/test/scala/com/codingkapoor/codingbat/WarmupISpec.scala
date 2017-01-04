@@ -211,4 +211,7 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.startOz("oxx") should equal("o")
   }
 
+  "intMax" should "return max of given three numbers" in {
+    WarmupI.intMax(12, 120, 1) should equal(120)
+  }
 }

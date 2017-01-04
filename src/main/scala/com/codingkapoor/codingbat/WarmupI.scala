@@ -99,4 +99,8 @@ object WarmupI {
   def startOz(str: String): String = {
     str.take(1).filter(_ == 'o') + str.drop(1).take(1).filter(_ == 'z')
   }
+
+  def intMax(a: Int, b: Int, c: Int): Int = {
+    List(a, b, c).max
+  }
 }
