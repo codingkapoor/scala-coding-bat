@@ -103,4 +103,9 @@ object WarmupI {
   def intMax(a: Int, b: Int, c: Int): Int = {
     List(a, b, c).max
   }
+
+  def close10(a: Int, b: Int): Int = {
+    val ls = List((a, Math.abs(10 - a)), (b, Math.abs(10 - b)))
+    if (ls.minBy(_._2)._2 == ls.maxBy(_._2)._2) 0 else ls.minBy(_._2)._1
+  }
 }

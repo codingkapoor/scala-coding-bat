@@ -214,4 +214,10 @@ class WarmupISpec extends FlatSpec with Matchers {
   "intMax" should "return max of given three numbers" in {
     WarmupI.intMax(12, 120, 1) should equal(120)
   }
+
+  "close10" should "return whichever value is nearest to the value 10, or return 0 in the event of a tie, given 2 int values" in {
+    WarmupI.close10(8, 13) should equal(8)
+    WarmupI.close10(13, 8) should equal(8)
+    WarmupI.close10(13, 7) should equal(0)
+  }
 }
