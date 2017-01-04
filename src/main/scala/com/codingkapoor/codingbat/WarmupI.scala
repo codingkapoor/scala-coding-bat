@@ -112,4 +112,9 @@ object WarmupI {
   def in3050(a: Int, b: Int): Boolean = {
     List(a, b).forall { x => x >= 30 && x <= 40 } || List(a, b).forall { x => x >= 40 && x <= 50 }
   }
+
+  def max1020(a: Int, b: Int): Int = {
+    val max = List(a, b).max
+    if (max >= 10 && max <= 20) max else 0
+  }
 }

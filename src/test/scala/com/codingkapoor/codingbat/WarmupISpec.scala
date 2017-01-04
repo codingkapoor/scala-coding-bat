@@ -226,4 +226,11 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.in3050(30, 41) should equal(false)
     WarmupI.in3050(40, 50) should equal(true)
   }
+
+  "max1020" should "return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range of given 2 int values" in {
+    WarmupI.max1020(11, 19) should equal(19)
+    WarmupI.max1020(19, 11) should equal(19)
+    WarmupI.max1020(11, 9) should equal(11)
+    WarmupI.max1020(8, 9) should equal(0)
+  }
 }
