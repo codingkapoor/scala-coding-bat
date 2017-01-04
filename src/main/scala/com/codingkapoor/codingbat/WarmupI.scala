@@ -108,4 +108,8 @@ object WarmupI {
     val ls = List((a, Math.abs(10 - a)), (b, Math.abs(10 - b)))
     if (ls.minBy(_._2)._2 == ls.maxBy(_._2)._2) 0 else ls.minBy(_._2)._1
   }
+
+  def in3050(a: Int, b: Int): Boolean = {
+    List(a, b).forall { x => x >= 30 && x <= 40 } || List(a, b).forall { x => x >= 40 && x <= 50 }
+  }
 }

@@ -215,9 +215,15 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.intMax(12, 120, 1) should equal(120)
   }
 
-  "close10" should "return whichever value is nearest to the value 10, or return 0 in the event of a tie, given 2 int values" in {
+  "close10" should "return whichever value is nearest to the value 10, or return 0 in the event of a tie of the given 2 int values" in {
     WarmupI.close10(8, 13) should equal(8)
     WarmupI.close10(13, 8) should equal(8)
     WarmupI.close10(13, 7) should equal(0)
+  }
+
+  "in3050" should "return true if they are both in the range 30..40 inclusive, or they are both in the range 40..50 inclusive of the given 2 int values" in {
+    WarmupI.in3050(30, 31) should equal(true)
+    WarmupI.in3050(30, 41) should equal(false)
+    WarmupI.in3050(40, 50) should equal(true)
   }
 }
