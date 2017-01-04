@@ -117,4 +117,18 @@ object WarmupI {
     val max = List(a, b).max
     if (max >= 10 && max <= 20) max else 0
   }
+
+  def stringE(str: String): Boolean = {
+    val count = str.count { x => x == 'e' }
+    count >= 1 && count <= 3
+  }
+
+  def lastDigit(a: Int, b: Int): Boolean = {
+    a % 10 == b % 10
+  }
+
+  def endUp(str: String): String = {
+    str.take(str.length() - 3) + str.drop(str.length() - 3).toUpperCase()
+  }
+  
 }

@@ -233,4 +233,22 @@ class WarmupISpec extends FlatSpec with Matchers {
     WarmupI.max1020(11, 9) should equal(11)
     WarmupI.max1020(8, 9) should equal(0)
   }
+
+  "stringE" should "return true if the given string contains between 1 and 3 'e' chars" in {
+    WarmupI.stringE("Hello") should equal(true)
+    WarmupI.stringE("Heelle") should equal(true)
+    WarmupI.stringE("Heelele") should equal(false)
+  }
+
+  "lastDigit" should "return true if the two given numbers have the same last digit" in {
+    WarmupI.lastDigit(7, 17) should equal(true)
+    WarmupI.lastDigit(6, 17) should equal(false)
+    WarmupI.lastDigit(3, 113) should equal(true)
+  }
+
+  "endUp" should "return a new string where the last 3 chars are now in upper case, given a string" in {
+    WarmupI.endUp("Hello") should equal("HeLLO")
+    WarmupI.endUp("hi there") should equal("hi thERE")
+    WarmupI.endUp("hi") should equal("HI")
+  }
 }
