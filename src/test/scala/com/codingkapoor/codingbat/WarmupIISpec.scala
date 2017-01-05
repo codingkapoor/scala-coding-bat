@@ -22,4 +22,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.countXX("xxx") should equal(2)
     WarmupII.countXX("xxxx") should equal(3)
   }
+
+  "doubleX" should "return true if the first instance of 'x' in a given string is immediately followed by another 'x'" in {
+    WarmupII.doubleX("axxbb") should equal(true)
+    WarmupII.doubleX("axaxax") should equal(false)
+    WarmupII.doubleX("xxxxx") should equal(true)
+  }
 }

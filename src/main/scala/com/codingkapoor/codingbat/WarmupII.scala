@@ -14,4 +14,10 @@ object WarmupII {
     val pattern = "(?=xx)".r
     pattern.findAllIn(str).size
   }
+
+  def doubleX(str: String) = {
+    val ls = str.toList.zipWithIndex.filter(_._1 == 'x').view take (2)
+    ls(1)._2 == ls(0)._2 + 1
+  }
+  
 }
