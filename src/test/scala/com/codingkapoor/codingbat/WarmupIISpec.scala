@@ -34,6 +34,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.stringBits("Hi") should equal("H")
     WarmupII.stringBits("Heeololeo") should equal("Hello")
   }
-  
-  
+
+  "stringSplosion" should "given a non-empty string like 'Code' return a string like 'CCoCodCode'" in {
+    WarmupII.stringSplosion("Code") should equal("CCoCodCode")
+    WarmupII.stringSplosion("abc") should equal("aababc")
+    WarmupII.stringSplosion("ab") should equal("aab")
+  }
 }

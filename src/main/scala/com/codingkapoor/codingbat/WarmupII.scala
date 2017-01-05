@@ -20,8 +20,16 @@ object WarmupII {
     ls(1)._2 == ls(0)._2 + 1
   }
 
-  def stringBits(str: String) = {
+  def stringBits(str: String): String = {
     str.toList.zipWithIndex.filter(_._2 % 2 == 0).map(_._1).mkString
   }
 
+  def stringSplosion(str: String) = {
+    def recursive(n: Int, str: String): String = {
+      if (n == 0) str
+      else recursive(n - 1, str.take(n - 1)) + str
+    }
+
+    recursive(str.length(), str)
+  }
 }
