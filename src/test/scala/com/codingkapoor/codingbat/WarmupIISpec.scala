@@ -28,4 +28,12 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.doubleX("axaxax") should equal(false)
     WarmupII.doubleX("xxxxx") should equal(true)
   }
+
+  "stringBits" should "return a new string made of every other char in a given string starting with the first, so 'Hello' yields 'Hlo'" in {
+    WarmupII.stringBits("Hello") should equal("Hlo")
+    WarmupII.stringBits("Hi") should equal("H")
+    WarmupII.stringBits("Heeololeo") should equal("Hello")
+  }
+  
+  
 }
