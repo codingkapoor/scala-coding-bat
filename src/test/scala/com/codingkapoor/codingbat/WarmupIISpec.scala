@@ -10,4 +10,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.stringTimes("Hi", 3) should equal("HiHiHi")
     WarmupII.stringTimes("Hi", 1) should equal("Hi")
   }
+
+  "frontTimes" should "return n copies of the first three characters of a given string" in {
+    WarmupII.frontTimes("Chocolate", 2) should equal("ChoCho")
+    WarmupII.frontTimes("Chocolate", 3) should equal("ChoChoCho")
+    WarmupII.frontTimes("Abc", 3) should equal("AbcAbcAbc")
+  }
 }
