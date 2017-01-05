@@ -16,4 +16,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.frontTimes("Chocolate", 3) should equal("ChoChoCho")
     WarmupII.frontTimes("Abc", 3) should equal("AbcAbcAbc")
   }
+
+  "countXX" should "return the Count of the number of 'xx' in a given string where overlapping of the pattern is allowed" in {
+    WarmupII.countXX("abcxx") should equal(1)
+    WarmupII.countXX("xxx") should equal(2)
+    WarmupII.countXX("xxxx") should equal(3)
+  }
 }
