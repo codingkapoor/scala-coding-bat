@@ -40,4 +40,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.stringSplosion("abc") should equal("aababc")
     WarmupII.stringSplosion("ab") should equal("aab")
   }
+
+  "last2, given a string" should "return the count of the number of times that a substring made of last 2 characters appears in the substring made of the rest of the string but the last to characters" in {
+    WarmupII.last2("hixxhi") should equal(1)
+    WarmupII.last2("xaxxaxaxx") should equal(1)
+    WarmupII.last2("axxxaaxx") should equal(2)
+  }
 }

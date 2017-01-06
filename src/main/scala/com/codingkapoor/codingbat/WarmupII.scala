@@ -32,4 +32,9 @@ object WarmupII {
 
     recursive(str.length(), str)
   }
+
+  def last2(str: String): Int = {
+    val pattern = s"(?=${str.drop(str.length() - 2)})".r
+    pattern.findAllIn(str.take(str.length() - 2)).size
+  }
 }
