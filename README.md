@@ -280,3 +280,57 @@ everyNth("Miracle", 2) → "Mrce"
 everyNth("abcdefg", 2) → "aceg"
 everyNth("abcdefg", 3) → "adg"
 ```
+## Warmup-II
+### [stringTimes](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupII.scala)
+Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+
+```
+stringTimes("Hi", 2) → "HiHi"
+stringTimes("Hi", 3) → "HiHiHi"
+stringTimes("Hi", 1) → "Hi"
+```
+
+### [frontTimes](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupII.scala)
+Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars, or whatever is there if the string is less than length 3. Return n copies of the front;
+
+```
+frontTimes("Chocolate", 2) → "ChoCho"
+frontTimes("Chocolate", 3) → "ChoChoCho"
+frontTimes("Abc", 3) → "AbcAbcAbc"
+```
+
+### [countXX](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupII.scala)
+Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+
+```
+countXX("abcxx") → 1
+countXX("xxx") → 2
+countXX("xxxx") → 3
+```
+
+### [doubleX](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupII.scala)
+Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
+
+```
+doubleX("axxbb") → true
+doubleX("axaxax") → false
+doubleX("xxxxx") → true
+```
+
+### [stringBits](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupII.scala)
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+```
+stringBits("Hello") → "Hlo"
+stringBits("Hi") → "H"
+stringBits("Heeololeo") → "Hello"
+```
+
+### [stringSplosion](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupII.scala)
+Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+```
+stringSplosion("Code") → "CCoCodCode"
+stringSplosion("abc") → "aababc"
+stringSplosion("ab") → "aab"
+```
