@@ -60,10 +60,10 @@ object WarmupII {
    * scala> val b = "xxbaaz"
    * b: String = xxbaaz
    * 
-   * scala> val ls1 = a.take(a.length() - 1) zip a.drop(1)
+   * scala> val ls1 = a zip a.tail
    * ls1: scala.collection.immutable.IndexedSeq[(Char, Char)] = Vector((x,x), (x,c), (c,a), (a,a), (a,z), (z,z))
    * 
-   * scala> val ls2 = b.take(b.length() - 1) zip b.drop(1)
+   * scala> val ls2 = b zip b.tail
    * ls2: scala.collection.immutable.IndexedSeq[(Char, Char)] = Vector((x,x), (x,b), (b,a), (a,a), (a,z))
    * 
    * scala> val ls = ls1 zip ls2
@@ -74,11 +74,7 @@ object WarmupII {
 	*/
   
   def stringMatch(a: String, b: String) = {
-    val ls1 = a.take(a.length() - 1) zip a.drop(1)
-    val ls2 = b.take(b.length() - 1) zip b.drop(1)
-
-    val ls = ls1 zip ls2
-
+    val ls = (a zip a.tail) zip (b zip b.tail)
     ls.filter(x => x._1 == x._2).size
   }
   
