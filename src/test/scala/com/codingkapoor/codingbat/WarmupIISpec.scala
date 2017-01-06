@@ -52,4 +52,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.arrayCount9(List(1, 9, 9)) should equal(2)
     WarmupII.arrayCount9(List(1, 9, 9, 3, 9)) should equal(3)
   }
+
+  "arrayFront9, given an array of ints" should "return true if one of the first 4 elements in the array is a 9. The array length may be less than 4" in {
+    WarmupII.arrayFront9(List(1, 2, 9, 3, 4)) should equal(true)
+    WarmupII.arrayFront9(List(1, 2, 3, 4, 9)) should equal(false)
+    WarmupII.arrayFront9(List(1, 2, 3, 4, 5)) should equal(false)
+  }
 }

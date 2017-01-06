@@ -41,4 +41,8 @@ object WarmupII {
   def arrayCount9(ints: List[Int]): Int = {
     ints.filter(_ == 9).size
   }
+
+  def arrayFront9(ints: List[Int]): Boolean = {
+    ints.take(4).filter(_ == 9).size > 0
+  }
 }
