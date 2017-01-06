@@ -64,4 +64,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.array123(List(1, 1, 2, 4, 1)) should equal(false)
     WarmupII.array123(List(1, 1, 2, 1, 2, 3)) should equal(true)
   }
+
+  "stringMatch, given 2 strings, a and b" should """return the number of the positions where they contain the same length 2 substring. So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings""" in {
+    WarmupII.stringMatch("xxcaazz", "xxbaaz") should equal(3)
+    WarmupII.stringMatch("abc", "abc") should equal(2)
+    WarmupII.stringMatch("abc", "axc") should equal(0)
+  }
 }

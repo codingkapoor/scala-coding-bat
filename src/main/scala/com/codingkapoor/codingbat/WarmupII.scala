@@ -50,4 +50,36 @@ object WarmupII {
     val pattern = "123".r
     pattern.findAllIn(ints.mkString).size > 0
   }
+
+  /*
+   * stringMatch(a: String, b: String) 
+   * 
+   * scala> val a = "xxcaazz"
+   * a: String = xxcaazz
+   * 
+   * scala> val b = "xxbaaz"
+   * b: String = xxbaaz
+   * 
+   * scala> val ls1 = a.take(a.length() - 1) zip a.drop(1)
+   * ls1: scala.collection.immutable.IndexedSeq[(Char, Char)] = Vector((x,x), (x,c), (c,a), (a,a), (a,z), (z,z))
+   * 
+   * scala> val ls2 = b.take(b.length() - 1) zip b.drop(1)
+   * ls2: scala.collection.immutable.IndexedSeq[(Char, Char)] = Vector((x,x), (x,b), (b,a), (a,a), (a,z))
+   * 
+   * scala> val ls = ls1 zip ls2
+   * ls: scala.collection.immutable.IndexedSeq[((Char, Char), (Char, Char))] = Vector(((x,x),(x,x)), ((x,c),(x,b)), ((c,a),(b,a)), ((a,a),(a,a)), ((a,z),(a,z)))
+   * 
+   * scala> ls.filter(x => x._1 == x._2)
+   * res107: scala.collection.immutable.IndexedSeq[((Char, Char), (Char, Char))] = Vector(((x,x),(x,x)), ((a,a),(a,a)), ((a,z),(a,z)))
+	*/
+  
+  def stringMatch(a: String, b: String) = {
+    val ls1 = a.take(a.length() - 1) zip a.drop(1)
+    val ls2 = b.take(b.length() - 1) zip b.drop(1)
+
+    val ls = ls1 zip ls2
+
+    ls.filter(x => x._1 == x._2).size
+  }
+  
 }
