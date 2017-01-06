@@ -37,4 +37,8 @@ object WarmupII {
     val pattern = s"(?=${str.drop(str.length() - 2)})".r
     pattern.findAllIn(str.take(str.length() - 2)).size
   }
+
+  def arrayCount9(ints: List[Int]): Int = {
+    ints.filter(_ == 9).size
+  }
 }

@@ -46,4 +46,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.last2("xaxxaxaxx") should equal(1)
     WarmupII.last2("axxxaaxx") should equal(2)
   }
+
+  "arrayCount2, given an array of ints" should "return the number of 9's in the array" in {
+    WarmupII.arrayCount9(List(1, 2, 9)) should equal(1)
+    WarmupII.arrayCount9(List(1, 9, 9)) should equal(2)
+    WarmupII.arrayCount9(List(1, 9, 9, 3, 9)) should equal(3)
+  }
 }
