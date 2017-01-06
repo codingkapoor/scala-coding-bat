@@ -58,4 +58,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.arrayFront9(List(1, 2, 3, 4, 9)) should equal(false)
     WarmupII.arrayFront9(List(1, 2, 3, 4, 5)) should equal(false)
   }
+
+  "array123, given an array of ints" should "return true if the sequence of numbers 1, 2, 3 appears in the array somewhere" in {
+    WarmupII.array123(List(1, 1, 2, 3, 1)) should equal(true)
+    WarmupII.array123(List(1, 1, 2, 4, 1)) should equal(false)
+    WarmupII.array123(List(1, 1, 2, 1, 2, 3)) should equal(true)
+  }
 }

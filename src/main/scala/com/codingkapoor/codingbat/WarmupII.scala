@@ -45,4 +45,9 @@ object WarmupII {
   def arrayFront9(ints: List[Int]): Boolean = {
     ints.take(4).filter(_ == 9).size > 0
   }
+
+  def array123(ints: List[Int]): Boolean = {
+    val pattern = "123".r
+    pattern.findAllIn(ints.mkString).size > 0
+  }
 }
