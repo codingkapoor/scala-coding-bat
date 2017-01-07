@@ -21,4 +21,10 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.makeTags("i", "Hello") should equal("<i>Hello</i>")
     StringI.makeTags("cite", "Yay") should equal("<cite>Yay</cite>")
   }
+
+  """Given an "out" string length 4, such as "<<>>", and a word, method "makeOutWord"""" should """return a new string where the word is in the middle of the out string, e.g. "<<word>>".""" in {
+    StringI.makeOutWord("<<>>", "Yay") should equal("<<Yay>>")
+    StringI.makeOutWord("<<>>", "WooHoo") should equal("<<WooHoo>>")
+    StringI.makeOutWord("[[]]", "word") should equal("[[word]]")
+  }
 }

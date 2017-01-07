@@ -13,4 +13,8 @@ object StringI {
   def makeTags(tag: String, word: String) = {
     s"<$tag>$word</$tag>"
   }
+
+  def makeOutWord(out: String, word: String) = {
+    out.take(2) + word + out.drop(2)
+  }
 }
