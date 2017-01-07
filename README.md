@@ -2,8 +2,9 @@
 Solutions to CodingBat problems in Scala
 
 ## Index
-- [Warmup-I](https://github.com/codingkapoor/scala-coding-bat#warmup-i)
-- [Warmup-II](https://github.com/codingkapoor/scala-coding-bat#warmup-ii)
+
+1. [Warmup-I](https://github.com/codingkapoor/scala-coding-bat#warmup-i)
+2. [Warmup-II](https://github.com/codingkapoor/scala-coding-bat#warmup-ii)
 
 ## Warmup-I
 ### [sleepIn](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupI.scala)
