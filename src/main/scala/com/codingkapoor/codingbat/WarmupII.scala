@@ -2,7 +2,7 @@ package com.codingkapoor.codingbat
 
 object WarmupII {
 
-  def stringTimes(str: String, n: Int) = {
+  def stringTimes(str: String, n: Int): String = {
     str * n
   }
 
@@ -24,7 +24,7 @@ object WarmupII {
     str.toList.zipWithIndex.filter(_._2 % 2 == 0).map(_._1).mkString
   }
 
-  def stringSplosion(str: String) = {
+  def stringSplosion(str: String): String = {
     def recursive(n: Int, str: String): String = {
       if (n == 0) str
       else recursive(n - 1, str.take(n - 1)) + str
@@ -72,10 +72,17 @@ object WarmupII {
    * scala> ls.filter(x => x._1 == x._2)
    * res107: scala.collection.immutable.IndexedSeq[((Char, Char), (Char, Char))] = Vector(((x,x),(x,x)), ((a,a),(a,a)), ((a,z),(a,z)))
 	*/
-  
-  def stringMatch(a: String, b: String) = {
+
+  def stringMatch(a: String, b: String): Int = {
     val ls = (a zip a.tail) zip (b zip b.tail)
     ls.filter(x => x._1 == x._2).size
   }
-  
+
+  def stringX(str: String): String = {
+    str.head + str.init.tail.filter { _ != 'x' } + str.last
+  }
+
+  def altPairs(str: String) = {
+    str.zipWithIndex.filter(x => x._2 % 4 == 0 || x._2 % 4 == 1).map(_._1).mkString
+  }
 }

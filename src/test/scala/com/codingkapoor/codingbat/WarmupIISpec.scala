@@ -70,4 +70,16 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.stringMatch("abc", "abc") should equal(2)
     WarmupII.stringMatch("abc", "axc") should equal(0)
   }
+
+  "stringX, given a string" should """return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed""" in {
+    WarmupII.stringX("xxHxix") should equal("xHix")
+    WarmupII.stringX("abxxxcd") should equal("abcd")
+    WarmupII.stringX("xabxxxcdx") should equal("xabcdx")
+  }
+
+  "altPairs, given a string" should """return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien"""" in {
+    WarmupII.altPairs("kitten") should equal("kien")
+    WarmupII.altPairs("Chocolate") should equal("Chole")
+    WarmupII.altPairs("CodingHorror") should equal("Congrr")
+  }
 }
