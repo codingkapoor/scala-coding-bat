@@ -27,4 +27,40 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.makeOutWord("<<>>", "WooHoo") should equal("<<WooHoo>>")
     StringI.makeOutWord("[[]]", "word") should equal("[[word]]")
   }
+
+  """Given a string, method "extraEnd"""" should """return a new string made of 3 copies of the last 2 chars of the original string. The string length will be at least 2.""" in {
+    StringI.extraEnd("Hello") should equal("lololo")
+    StringI.extraEnd("ab") should equal("ababab")
+    StringI.extraEnd("Hi") should equal("HiHiHi")
+  }
+
+  """Given a string, method "firstTwo"""" should """return the string made of its first two chars, so the String "Hello" yields "He". If the string is shorter than length 2, return whatever there is, so "X" yields "X", and the empty string "" yields the empty string "".""" in {
+    StringI.firstTwo("Hello") should equal("He")
+    StringI.firstTwo("abcdefg") should equal("ab")
+    StringI.firstTwo("ab") should equal("ab")
+  }
+
+  """Given a string of even length, method "firstHalf"""" should """return the first half. So the string "WooHoo" yields "Woo".""" in {
+    StringI.firstHalf("WooHoo") should equal("Woo")
+    StringI.firstHalf("HelloThere") should equal("Hello")
+    StringI.firstHalf("abcdef") should equal("abc")
+  }
+
+  """Given a string, method "withoutEnd"""" should """return a version without the first and last char, so "Hello" yields "ell". The string length will be at least 2.""" in {
+    StringI.withoutEnd("Hello") should equal("ell")
+    StringI.withoutEnd("java") should equal("av")
+    StringI.withoutEnd("coding") should equal("odin")
+  }
+
+  """Given 2 strings, a and b, method "comboString"""" should """return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty (length 0).""" in {
+    StringI.comboString("Hello", "hi") should equal("hiHellohi")
+    StringI.comboString("hi", "Hello") should equal("hiHellohi")
+    StringI.comboString("aaa", "b") should equal("baaab")
+  }
+
+  """Given 2 strings, method "nonStart"""" should """return their concatenation, except omit the first char of each. The strings will be at least length 1.""" in {
+    StringI.nonStart("Hello", "There") should equal("ellohere")
+    StringI.nonStart("java", "code") should equal("avaode")
+    StringI.nonStart("shotl", "java") should equal("hotlava")
+  }
 }
