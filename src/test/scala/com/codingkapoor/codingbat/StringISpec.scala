@@ -69,4 +69,34 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.left2("java") should equal("vaja")
     StringI.left2("Hi") should equal("Hi")
   }
+
+  """Given a string, method "right2"""" should """return a "rotated right 2" version where the last 2 chars are moved to the start. The string length will be at least 2.""" in {
+    StringI.right2("Hello") should equal("loHel")
+    StringI.right2("java") should equal("vaja")
+    StringI.right2("Hi") should equal("Hi")
+  }
+
+  """Given a string, method "theEnd"""" should """return a string of length 1 from its front, unless front is false, in which case return a string length 1 from its back. The string will be non-empty.""" in {
+    StringI.theEnd("Hello", true) should equal("H")
+    StringI.theEnd("Hello", false) should equal("o")
+    StringI.theEnd("oh", true) should equal("o")
+  }
+
+  """Given a string, method "withouEnd2"""" should """return a version without both the first and last char of the string. The string may be any length, including 0.""" in {
+    StringI.withouEnd2("Hello") should equal("ell")
+    StringI.withouEnd2("abc") should equal("b")
+    StringI.withouEnd2("ab") should equal("")
+  }
+
+  """Given a string of even length, method "middleTwo"""" should """return a string made of the middle two chars, so the string "string" yields "ri". The string length will be at least 2.""" in {
+    StringI.middleTwo("string") should equal("ri")
+    StringI.middleTwo("code") should equal("od")
+    StringI.middleTwo("Practice") should equal("ct")
+  }
+
+  """Given a string, method "endsLy"""" should """return true if it ends in "ly".""" in {
+    StringI.endsLy("oddly") should equal(true)
+    StringI.endsLy("y") should equal(false)
+    StringI.endsLy("oddy") should equal(false)
+  }
 }

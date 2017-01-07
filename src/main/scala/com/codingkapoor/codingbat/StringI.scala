@@ -46,4 +46,27 @@ object StringI {
   def left2(str: String): String = {
     str.drop(2) + str.take(2)
   }
+
+  def right2(str: String): String = {
+    str.drop(str.length() - 2) + str.init.init
+  }
+
+  def theEnd(str: String, front: Boolean): String = {
+    if (front) str.take(1) else str.drop(str.length() - 1)
+  }
+
+  def withouEnd2(str: String): String = {
+    str.tail.init
+  }
+
+  def middleTwo(str: String): String = {
+    val center = str.length() / 2
+    str.substring(center - 1, center + 1)
+  }
+
+  def endsLy(str: String): Boolean = {
+    val res = str.init.last.toString() + str.last.toString()
+    res.equals("ly")
+  }
+  
 }
