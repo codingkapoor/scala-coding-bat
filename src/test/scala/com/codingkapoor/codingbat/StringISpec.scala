@@ -63,4 +63,10 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.nonStart("java", "code") should equal("avaode")
     StringI.nonStart("shotl", "java") should equal("hotlava")
   }
+
+  """Given a string, method "left2"""" should """return a "rotated left 2" version where the first 2 chars are moved to the end. The string length will be at least 2.""" in {
+    StringI.left2("Hello") should equal("lloHe")
+    StringI.left2("java") should equal("vaja")
+    StringI.left2("Hi") should equal("Hi")
+  }
 }

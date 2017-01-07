@@ -42,4 +42,8 @@ object StringI {
   def nonStart(a: String, b: String): String = {
     a.tail + b.tail
   }
+
+  def left2(str: String): String = {
+    str.drop(2) + str.take(2)
+  }
 }
