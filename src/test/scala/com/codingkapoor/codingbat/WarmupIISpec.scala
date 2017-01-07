@@ -82,4 +82,23 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.altPairs("Chocolate") should equal("Chole")
     WarmupII.altPairs("CodingHorror") should equal("Congrr")
   }
+
+  "stringYak, given a string" should """return a version where all the "yak" are removed, but the "a" can be any char. The "yak" strings will not overlap.""" in {
+    WarmupII.stringYak("yakpak") should equal("pak")
+    WarmupII.stringYak("pakyak") should equal("pak")
+    WarmupII.stringYak("yak123ya") should equal("123ya")
+  }
+
+  "array667, given an array of ints" should """return the number of times that two 6's are next to each other in the array. Also count instances where the second "6" is actually a 7.""" in {
+    WarmupII.array667(List(6, 6, 2)) should equal(1)
+    WarmupII.array667(List(6, 6, 2, 6)) should equal(1)
+    WarmupII.array667(List(6, 7, 2, 6)) should equal(1)
+    WarmupII.array667(List(6, 6, 2, 6, 7)) should equal(2)
+  }
+
+  "Given an array of ints, we'll say that a triple is a value appearing 3 times in a row in the array & noTriples" should "return true if the array does not contain any triples." in {
+    WarmupII.noTriples(List(1, 1, 2, 2, 1)) should equal(true)
+    WarmupII.noTriples(List(1, 1, 2, 2, 2, 1)) should equal(false)
+    WarmupII.noTriples(List(1, 1, 1, 2, 2, 2, 1)) should equal(false)
+  }
 }

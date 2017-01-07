@@ -82,7 +82,21 @@ object WarmupII {
     str.head + str.init.tail.filter { _ != 'x' } + str.last
   }
 
-  def altPairs(str: String) = {
+  def altPairs(str: String): String = {
     str.zipWithIndex.filter(x => x._2 % 4 == 0 || x._2 % 4 == 1).map(_._1).mkString
+  }
+
+  def stringYak(str: String): String = {
+    str.replaceAll("y.k", "")
+  }
+
+  def array667(nums: List[Int]): Int = {
+    val pairs = nums zip nums.tail
+    pairs.filter(x => x._2 == 6 || x._2 == 7).filter(_._1 == 6).size
+  }
+
+  def noTriples(nums: List[Int]): Boolean = {
+    val ls = (nums, nums.tail, nums.tail.tail).zipped.toList
+    ls.filter(x => x._1 == x._2 && x._1 == x._3).size == 0
   }
 }
