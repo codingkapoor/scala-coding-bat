@@ -101,4 +101,10 @@ class WarmupIISpec extends FlatSpec with Matchers {
     WarmupII.noTriples(List(1, 1, 2, 2, 2, 1)) should equal(false)
     WarmupII.noTriples(List(1, 1, 1, 2, 2, 2, 1)) should equal(false)
   }
+
+  "Given an array of ints, has271" should """return true if it contains a 2, 7, 1 pattern -- a value, followed by the value plus 5, followed by the value minus 1. Additionally the 271 counts even if the "1" differs by 2 or less from the correct value.""" in {
+    WarmupII.has271(List(1, 2, 7, 1)) should equal(true)
+    WarmupII.has271(List(1, 2, 8, 1)) should equal(false)
+    WarmupII.has271(List(2, 7, 1)) should equal(true)
+  }
 }

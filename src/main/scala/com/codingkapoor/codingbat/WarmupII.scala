@@ -99,4 +99,9 @@ object WarmupII {
     val ls = (nums, nums.tail, nums.tail.tail).zipped.toList
     ls.filter(x => x._1 == x._2 && x._1 == x._3).size == 0
   }
+
+  def has271(nums: List[Int]) = {
+    val ls = (nums, nums.tail, nums.tail.tail).zipped.toList
+    ls.filter(x => x._2 == x._1 + 5 && x._3 <= x._1 - 1).size > 0
+  }
 }
