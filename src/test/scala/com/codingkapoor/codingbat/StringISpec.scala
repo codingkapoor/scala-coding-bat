@@ -153,4 +153,10 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.seeColor("xxred") should equal("")
     StringI.seeColor("blueTimes") should equal("blue")
   }
+
+  """Given a string, method "frontAgain"""" should """return true if the first 2 chars in the string also appear at the end of the string, such as with "edited".""" in {
+    StringI.frontAgain("edited") should equal(true)
+    StringI.frontAgain("edit") should equal(false)
+    StringI.frontAgain("ed") should equal(true)
+  }
 }

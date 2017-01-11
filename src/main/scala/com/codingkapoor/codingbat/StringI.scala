@@ -118,6 +118,10 @@ object StringI {
   }
 
   def seeColor(str: String): String = {
-    if (str.startsWith("red")) "red" else if(str.startsWith("blue")) "blue" else ""
+    if (str.startsWith("red")) "red" else if (str.startsWith("blue")) "blue" else ""
+  }
+
+  def frontAgain(str: String) = {
+    str.take(2).toList.forall { x => str.drop(str.length - 2).toList.contains(x) }
   }
 }
