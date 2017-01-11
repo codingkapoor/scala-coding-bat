@@ -7,7 +7,7 @@ object StringI {
   }
 
   def makeAbba(a: String, b: String): String = {
-    a + b + b + a
+    a + b * 2 + a
   }
 
   def makeTags(tag: String, word: String): String = {
@@ -125,8 +125,20 @@ object StringI {
     str.take(2).toList.forall { x => str.drop(str.length - 2).toList.contains(x) }
   }
 
-  def minCat(a: String, b: String) = {
+  def minCat(a: String, b: String): String = {
     val min = if (a.length < b.length) a.length else b.length
     a.drop(a.length - min) + b.drop(b.length - min)
+  }
+
+  def extraFront(str: String): String = {
+    str.take(2) * 3
+  }
+
+  def without2(str: String): String = {
+    if (str.take(2) == str.drop(str.length - 2)) str.drop(2) else str
+  }
+
+  def deFront(str: String): String = {
+    s"${if (str.take(1) == "a") "a" else ""}${if (str.tail.take(1) == "b") "b" else ""}" + str.drop(2)
   }
 }

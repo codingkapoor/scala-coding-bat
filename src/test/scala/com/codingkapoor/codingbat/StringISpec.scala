@@ -165,4 +165,23 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.minCat("Hello", "java") should equal("ellojava")
     StringI.minCat("java", "Hello") should equal("javaello")
   }
+
+  """Given a string, method "extraFront"""" should """return a new string made of 3 copies of the first 2 chars of the original string. The string may be any length. If there are fewer than 2 chars, use whatever is there.""" in {
+    StringI.extraFront("Hello") should equal("HeHeHe")
+    StringI.extraFront("ab") should equal("ababab")
+    StringI.extraFront("H") should equal("HHH")
+  }
+
+  """Given a string, if a length 2 substring appears at both its beginning and end, method "without2"""" should """return a string without the substring at the beginning, so "HelloHe" yields "lloHe". The substring may overlap with itself, so "Hi" yields "". Otherwise, return the original string unchanged.""" in {
+    StringI.without2("HelloHe") should equal("lloHe")
+    StringI.without2("HelloHi") should equal("HelloHi")
+    StringI.without2("Hi") should equal("")
+  }
+
+  """Given a string, method "deFront"""" should """return a version without the first 2 chars. Except keep the first char if it is 'a' and keep the second char if it is 'b'. The string may be any length. Harder than it looks.""" in {
+    StringI.deFront("Hello") should equal("llo")
+    StringI.deFront("java") should equal("va")
+    StringI.deFront("away") should equal("aay")
+    StringI.deFront("abay") should equal("abay")
+  }
 }
