@@ -95,4 +95,9 @@ object StringI {
       str.substring(mid - 1, mid + 2)
     }
   }
+
+  def hasBad(str: String): Boolean = {
+    str.take(3) == "bad" || str.drop(1).take(3) == "bad"
+  }
+  
 }
