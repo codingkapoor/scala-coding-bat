@@ -124,4 +124,9 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.hasBad("xxbadxx") should equal(false)
   }
 
+  """Given a string""" should """return a string length 2 made of its first 2 chars. If the string length is less than 2, use '@' for the missing chars.""" in {
+    StringI.atFirst("hello") should equal("he")
+    StringI.atFirst("hi") should equal("hi")
+    StringI.atFirst("h") should equal("h@")
+  }
 }

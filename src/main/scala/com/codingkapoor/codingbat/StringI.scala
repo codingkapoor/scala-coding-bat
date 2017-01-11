@@ -99,5 +99,8 @@ object StringI {
   def hasBad(str: String): Boolean = {
     str.take(3) == "bad" || str.drop(1).take(3) == "bad"
   }
-  
+
+  def atFirst(str: String) = {
+    if (str.length() < 2) str + "@" else str.take(2)
+  }
 }
