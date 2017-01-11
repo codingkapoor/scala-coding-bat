@@ -147,4 +147,10 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.lastTwo("cat") should equal("cta")
     StringI.lastTwo("ab") should equal("ba")
   }
+
+  """Given a string, method "seeColor"""" should """if the string begins with "red" or "blue" return that color string, otherwise return the empty string.""" in {
+    StringI.seeColor("redxx") should equal("red")
+    StringI.seeColor("xxred") should equal("")
+    StringI.seeColor("blueTimes") should equal("blue")
+  }
 }

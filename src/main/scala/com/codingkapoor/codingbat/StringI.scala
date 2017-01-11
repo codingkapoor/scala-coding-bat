@@ -113,7 +113,11 @@ object StringI {
     if (a.last.toString == b.take(1)) a + b.drop(1) else a + b
   }
 
-  def lastTwo(str: String) = {
+  def lastTwo(str: String): String = {
     str.take(str.length() - 2) + str.drop(str.length() - 2).reverse
+  }
+
+  def seeColor(str: String): String = {
+    if (str.startsWith("red")) "red" else if(str.startsWith("blue")) "blue" else ""
   }
 }
