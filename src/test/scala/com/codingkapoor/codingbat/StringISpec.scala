@@ -136,4 +136,9 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.lastChars("hi", "") should equal("h@")
   }
 
+  """Given two strings, method "conCat"""" should """append them together (known as "concatenation") and return the result. However, if the concatenation creates a double-char, then omit one of the chars, so "abc" and "cat" yields "abcat".""" in {
+    StringI.conCat("abc", "cat") should equal("abcat")
+    StringI.conCat("dog", "cat") should equal("dogcat")
+    StringI.conCat("abc", "") should equal("abc")
+  }
 }

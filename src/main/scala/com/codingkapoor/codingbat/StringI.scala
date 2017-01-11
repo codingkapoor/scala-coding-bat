@@ -104,9 +104,12 @@ object StringI {
     if (str.length() < 2) str + "@" else str.take(2)
   }
 
-  def lastChars(a: String, b: String) = {
+  def lastChars(a: String, b: String): String = {
     // (if (a.length() < 1) "@" else a.take(1)) + (if (b.length() < 1) "@" else b.last) 
     s"${if (a.length() < 1) "@" else a.take(1)}${if (b.length() < 1) "@" else b.last}"
   }
 
+  def conCat(a: String, b: String): String = {
+    if (a.last.toString == b.take(1)) a + b.drop(1) else a + b
+  }
 }
