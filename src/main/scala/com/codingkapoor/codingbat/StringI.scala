@@ -141,4 +141,27 @@ object StringI {
   def deFront(str: String): String = {
     s"${if (str.take(1) == "a") "a" else ""}${if (str.tail.take(1) == "b") "b" else ""}" + str.drop(2)
   }
+
+  def startWord(str: String, word: String): String = {
+    val pattern = s"[a-z|A-Z]?${word.drop(1)}".r
+    val res = pattern.findPrefixMatchOf(str) match {
+      case Some(x) => x.toString
+      case None    => ""
+    }
+
+    res
+  }
+
+  def withoutX(str: String): String = {
+    { if (str.head == 'x') "" else str.head } + str.tail.init + { if (str.last == 'x') "" else str.last }
+  }
+
+  def withoutX2(str: String) = {
+    def replace(s: String) = s.replaceAll("x", "")
+
+    val first = s"${replace(str.take(2))}" + str.drop(2)
+    val last = s"${replace(first.drop(first.length - 2))}"
+
+    last
+  }
 }

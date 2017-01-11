@@ -4,6 +4,7 @@ import org.scalatest.FlatSpec
 import org.scalatest.Matchers
 
 class StringISpec extends FlatSpec with Matchers {
+  
   """Given a string name, e.g. "Bob", method "helloName"""" should """return a greeting of the form "Hello Bob!".""" in {
     StringI.helloName("Bob") should equal("Hello Bob!")
     StringI.helloName("Alice") should equal("Hello Alice!")
@@ -183,5 +184,23 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.deFront("java") should equal("va")
     StringI.deFront("away") should equal("aay")
     StringI.deFront("abay") should equal("abay")
+  }
+
+  """Given a string and a second "word" string, method "startWord"""" should """return the front of the string if the word appears at the front of the string, except its first char does not need to match exactly otherwise return the empty string""" in {
+    StringI.startWord("hippo", "hi") should equal("hi")
+    StringI.startWord("hippo", "xip") should equal("hip")
+    StringI.startWord("hippo", "i") should equal("h")
+  }
+
+  """Given a string, if the first or last chars are 'x', method "withoutX"""" should """return the string without those 'x' chars, and otherwise return the string unchanged.""" in {
+    StringI.withoutX("xHix") should equal("Hi")
+    StringI.withoutX("xHi") should equal("Hi")
+    StringI.withoutX("Hxix") should equal("Hxi")
+  }
+
+  """Given a string, if one or both of the first 2 chars is 'x', method "withoutX2"""" should """return the string without those 'x' chars, and otherwise return the string unchanged.""" in {
+    StringI.withoutX2("xHi") should equal("Hi")
+    StringI.withoutX2("Hxi") should equal("Hi")
+    StringI.withoutX2("Hi") should equal("Hi")
   }
 }
