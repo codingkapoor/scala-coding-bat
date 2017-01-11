@@ -141,4 +141,10 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.conCat("dog", "cat") should equal("dogcat")
     StringI.conCat("abc", "") should equal("abc")
   }
+
+  """Given a string of any length, method "lastTwo"""" should """return a new string where the last 2 chars, if present, are swapped, so "coding" yields "codign".""" in {
+    StringI.lastTwo("coding") should equal("codign")
+    StringI.lastTwo("cat") should equal("cta")
+    StringI.lastTwo("ab") should equal("ba")
+  }
 }

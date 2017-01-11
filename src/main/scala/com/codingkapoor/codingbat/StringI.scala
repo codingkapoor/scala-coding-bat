@@ -112,4 +112,8 @@ object StringI {
   def conCat(a: String, b: String): String = {
     if (a.last.toString == b.take(1)) a + b.drop(1) else a + b
   }
+
+  def lastTwo(str: String) = {
+    str.take(str.length() - 2) + str.drop(str.length() - 2).reverse
+  }
 }
