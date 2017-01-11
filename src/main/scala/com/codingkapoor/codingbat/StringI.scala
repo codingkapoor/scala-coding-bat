@@ -121,7 +121,12 @@ object StringI {
     if (str.startsWith("red")) "red" else if (str.startsWith("blue")) "blue" else ""
   }
 
-  def frontAgain(str: String) = {
+  def frontAgain(str: String): Boolean = {
     str.take(2).toList.forall { x => str.drop(str.length - 2).toList.contains(x) }
+  }
+
+  def minCat(a: String, b: String) = {
+    val min = if (a.length < b.length) a.length else b.length
+    a.drop(a.length - min) + b.drop(b.length - min)
   }
 }

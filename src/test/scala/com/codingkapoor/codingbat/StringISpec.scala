@@ -159,4 +159,10 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.frontAgain("edit") should equal(false)
     StringI.frontAgain("ed") should equal(true)
   }
+
+  """Given two strings, method "minCat"""" should """append them together (known as "concatenation") and return the result. However, if the strings are different lengths, omit chars from the longer string so it is the same length as the shorter string. So "Hello" and "Hi" yield "loHi". The strings may be any length.""" in {
+    StringI.minCat("Hello", "Hi") should equal("loHi")
+    StringI.minCat("Hello", "java") should equal("ellojava")
+    StringI.minCat("java", "Hello") should equal("javaello")
+  }
 }
