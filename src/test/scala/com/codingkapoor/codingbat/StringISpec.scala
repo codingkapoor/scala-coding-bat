@@ -100,33 +100,40 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.endsLy("oddy") should equal(false)
   }
 
-  """Given a string and an int n""" should """return a string made of the first and last n chars from the string. The string length will be at least n.""" in {
+  """Given a string and an int n, method "nTwice"""" should """return a string made of the first and last n chars from the string. The string length will be at least n.""" in {
     StringI.nTwice("Hello", 2) should equal("Helo")
     StringI.nTwice("Chocolate", 3) should equal("Choate")
     StringI.nTwice("Chocolate", 1) should equal("Ce")
   }
 
-  """Given a string and an index""" should """return a string length 2 starting at the given index. If the index is too big or too small to define a string length 2, use the first 2 chars. The string length will be at least 2.""" in {
+  """Given a string and an index, method "twoChar"""" should """return a string length 2 starting at the given index. If the index is too big or too small to define a string length 2, use the first 2 chars. The string length will be at least 2.""" in {
     StringI.twoChar("java", 0) should equal("ja")
     StringI.twoChar("java", 2) should equal("va")
     StringI.twoChar("java", 3) should equal("ja")
   }
 
-  """Given a string of odd length""" should """return the string length 3 from its middle, so "Candy" yields "and". The string length will be at least 3.""" in {
+  """Given a string of odd length, method "middleThree"""" should """return the string length 3 from its middle, so "Candy" yields "and". The string length will be at least 3.""" in {
     StringI.middleThree("Candy") should equal("and")
     StringI.middleThree("and") should equal("and")
     StringI.middleThree("solving") should equal("lvi")
   }
 
-  """Given a string""" should """return true if "bad" appears starting at index 0 or 1 in the string, such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0. Note: use .equals() to compare 2 strings.""" in {
+  """Given a string, method "hasBad"""" should """return true if "bad" appears starting at index 0 or 1 in the string, such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0. Note: use .equals() to compare 2 strings.""" in {
     StringI.hasBad("badxx") should equal(true)
     StringI.hasBad("xbadxx") should equal(true)
     StringI.hasBad("xxbadxx") should equal(false)
   }
 
-  """Given a string""" should """return a string length 2 made of its first 2 chars. If the string length is less than 2, use '@' for the missing chars.""" in {
+  """Given a string, method "atFirst"""" should """return a string length 2 made of its first 2 chars. If the string length is less than 2, use '@' for the missing chars.""" in {
     StringI.atFirst("hello") should equal("he")
     StringI.atFirst("hi") should equal("hi")
     StringI.atFirst("h") should equal("h@")
   }
+
+  """Given 2 strings, a and b, method "lastChars"""" should """return a new string made of the first char of a and the last char of b, so "yo" and "java" yields "ya". If either string is length 0, use '@' for its missing char.""" in {
+    StringI.lastChars("last", "chars") should equal("ls")
+    StringI.lastChars("yo", "java") should equal("ya")
+    StringI.lastChars("hi", "") should equal("h@")
+  }
+
 }

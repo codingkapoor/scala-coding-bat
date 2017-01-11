@@ -100,7 +100,13 @@ object StringI {
     str.take(3) == "bad" || str.drop(1).take(3) == "bad"
   }
 
-  def atFirst(str: String) = {
+  def atFirst(str: String): String = {
     if (str.length() < 2) str + "@" else str.take(2)
   }
+
+  def lastChars(a: String, b: String) = {
+    // (if (a.length() < 1) "@" else a.take(1)) + (if (b.length() < 1) "@" else b.last) 
+    s"${if (a.length() < 1) "@" else a.take(1)}${if (b.length() < 1) "@" else b.last}"
+  }
+
 }
