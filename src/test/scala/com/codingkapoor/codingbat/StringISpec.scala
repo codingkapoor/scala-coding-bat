@@ -99,4 +99,10 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.endsLy("y") should equal(false)
     StringI.endsLy("oddy") should equal(false)
   }
+
+  """Given a string and an int n""" should """return a string made of the first and last n chars from the string. The string length will be at least n.""" in {
+    StringI.nTwice("Hello", 2) should equal("Helo")
+    StringI.nTwice("Chocolate", 3) should equal("Choate")
+    StringI.nTwice("Chocolate", 1) should equal("Ce")
+  }
 }

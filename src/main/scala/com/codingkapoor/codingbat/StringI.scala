@@ -62,11 +62,14 @@ object StringI {
   def middleTwo(str: String): String = {
     val center = str.length() / 2
     str.substring(center - 1, center + 1)
-  }
+}
 
   def endsLy(str: String): Boolean = {
-    val res = str.init.last.toString() + str.last.toString()
+    val res = str.drop(str.length()-2)
     res.equals("ly")
   }
-  
+
+  def nTwice(str: String, n: Int): String = {
+    str.take(n) + str.drop(str.length() - n)
+  }
 }
