@@ -124,9 +124,4 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.hasBad("xxbadxx") should equal(false)
   }
 
-  """Given a string""" should """return true if "bad" appears starting at index 0 or 1 in the string, such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0. Note: use .equals() to compare 2 strings.""" in {
-    StringI.hasBad("badxx") should equal(true)
-    StringI.hasBad("xbadxx") should equal(true)
-    StringI.hasBad("xxbadxx") should equal(false)
-  }
 }
