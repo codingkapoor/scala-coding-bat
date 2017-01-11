@@ -62,14 +62,37 @@ object StringI {
   def middleTwo(str: String): String = {
     val center = str.length() / 2
     str.substring(center - 1, center + 1)
-}
+  }
 
   def endsLy(str: String): Boolean = {
-    val res = str.drop(str.length()-2)
-    res.equals("ly")
+    if (str.length() > 1) s"${str.init.last}${str.last}".equals("ly") else false
   }
 
   def nTwice(str: String, n: Int): String = {
     str.take(n) + str.drop(str.length() - n)
+  }
+
+  /* 
+   * This implementation also takes care of mapping given 'index' parameter 
+   * circularly to the indexes of the string provided.  
+   *
+   * s : 0 : 5 : 10 : 15
+   * c : 1 : 6 : 11 : 16
+   * a : 2 : 7 : 12 : 17
+   * l : 3 : 8 : 13 : 18
+   * a : 4 : 9 : 14 : 19
+  */
+  def twoChar(str: String, index: Int): String = {
+    val res = index % str.length()
+    val start = if (str.length() - res < 2) 0 else res
+
+    str.substring(start).take(2)
+  }
+
+  def middleThree(str: String): String = {
+    if (str.length() < 3 || str.length() == 3) str else {
+      val mid = Math.abs(str.length / 2)
+      str.substring(mid - 1, mid + 2)
+    }
   }
 }

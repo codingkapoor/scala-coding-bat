@@ -105,4 +105,16 @@ class StringISpec extends FlatSpec with Matchers {
     StringI.nTwice("Chocolate", 3) should equal("Choate")
     StringI.nTwice("Chocolate", 1) should equal("Ce")
   }
+
+  """Given a string and an index""" should """return a string length 2 starting at the given index. If the index is too big or too small to define a string length 2, use the first 2 chars. The string length will be at least 2.""" in {
+    StringI.twoChar("java", 0) should equal("ja")
+    StringI.twoChar("java", 2) should equal("va")
+    StringI.twoChar("java", 3) should equal("ja")
+  }
+
+  """Given a string of odd length""" should """return the string length 3 from its middle, so "Candy" yields "and". The string length will be at least 3.""" in {
+    StringI.middleThree("Candy") should equal("and")
+    StringI.middleThree("and") should equal("and")
+    StringI.middleThree("solving") should equal("lvi")
+  }
 }
