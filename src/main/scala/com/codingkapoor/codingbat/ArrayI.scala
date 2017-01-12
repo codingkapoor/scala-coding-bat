@@ -43,7 +43,43 @@ object ArrayI {
     Array(a(1), b(1))
   }
 
-  def makeEnds(arr: Array[Int]) = {
+  def makeEnds(arr: Array[Int]): Array[Int] = {
     if (arr.length <= 1) arr else Array(arr.head, arr.last)
   }
+
+  def has23(arr: Array[Int]): Boolean = {
+    arr.exists(x => x == 2 || x == 3)
+  }
+
+  def no23(arr: Array[Int]): Boolean = {
+    !arr.contains(2) && !arr.contains(3)
+  }
+
+  def makeLast(arr: Array[Int]): Array[Int] = {
+    val res = Array.fill(arr.length * 2)(0)
+    res(res.length - 1) = arr.last
+
+    res
+  }
+
+  def double23(arr: Array[Int]): Boolean = {
+    arr.filter(_ == 2).size == 2 || arr.filter(_ == 3).size == 2
+  }
+
+  def fix23(arr: Array[Int]): Array[Int] = {
+    arr.mkString.replaceAll("23", "20").toArray.map(_.toString).map(_.toInt)
+  }
+
+  def start1(a: Array[Int], b: Array[Int]): Int = {
+    Array(a.take(1), b.take(1)).flatten.filter(_ == 1).size
+  }
+
+  def biggerTwo(a: Array[Int], b: Array[Int]): Array[Int] = {
+
+    val sumA = a.foldLeft(0)(_ + _)
+    val sumB = b.foldLeft(0)(_ + _)
+
+    if (sumA > sumB) a else if (sumA < sumB) b else a
+  }
+
 }

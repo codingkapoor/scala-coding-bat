@@ -70,4 +70,46 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.makeEnds(Array(1, 2, 3, 4)) should equal(Array(1, 4))
     ArrayI.makeEnds(Array(7, 4, 6, 2)) should equal(Array(7, 2))
   }
+
+  """Given an int array length 2, method "has23"""" should """return true if it contains a 2 or a 3.""" in {
+    ArrayI.has23(Array(2, 5)) should equal(true)
+    ArrayI.has23(Array(4, 3)) should equal(true)
+    ArrayI.has23(Array(4, 5)) should equal(false)
+  }
+
+  """Given an int array length 2, method "no23"""" should """return true if it does not contain a 2 or 3.""" in {
+    ArrayI.no23(Array(4, 5)) should equal(true)
+    ArrayI.no23(Array(4, 2)) should equal(false)
+    ArrayI.no23(Array(3, 5)) should equal(false)
+  }
+
+  """Given an int array, method "makeLast"""" should """return a new array with double the length where its last element is the same as the original array, and all the other elements are 0. The original array will be length 1 or more. Note: by default, a new int array contains all 0's.""" in {
+    ArrayI.makeLast(Array(4, 5, 6)) should equal(Array(0, 0, 0, 0, 0, 6))
+    ArrayI.makeLast(Array(1, 2)) should equal(Array(0, 0, 0, 2))
+    ArrayI.makeLast(Array(3)) should equal(Array(0, 3))
+  }
+
+  """Given an int array, method "double23"""" should """return true if the array contains 2 twice, or 3 twice. The array will be length 0, 1, or 2.""" in {
+    ArrayI.double23(Array(2, 2)) should equal(true)
+    ArrayI.double23(Array(3, 3)) should equal(true)
+    ArrayI.double23(Array(2, 3)) should equal(false)
+  }
+
+  """Given an int array length 3, if there is a 2 in the array immediately followed by a 3, set the 3 element to 0. Method "fix23"""" should "return the changed array." in {
+    ArrayI.fix23(Array(1, 2, 3)) should equal(Array(1, 2, 0))
+    ArrayI.fix23(Array(2, 3, 5)) should equal(Array(2, 0, 5))
+    ArrayI.fix23(Array(1, 2, 1)) should equal(Array(1, 2, 1))
+  }
+
+  """Start with 2 int arrays, a and b, of any length. Method "start1"""" should """return how many of the arrays have 1 as their first element.""" in {
+    ArrayI.start1(Array(1, 2, 3), Array(1, 3)) should equal(2)
+    ArrayI.start1(Array(7, 2, 3), Array(1)) should equal(1)
+    ArrayI.start1(Array(1, 2), Array()) should equal(1)
+  }
+
+  """Start with 2 int arrays, a and b, each length 2. Consider the sum of the values in each array. Method "biggerTwo"""" should """return the array which has the largest sum. In event of a tie, return a.""" in {
+    ArrayI.biggerTwo(Array(1, 2), Array(3, 4)) should equal(Array(3, 4))
+    ArrayI.biggerTwo(Array(3, 4), Array(1, 2)) should equal(Array(3, 4))
+    ArrayI.biggerTwo(Array(1, 1), Array(1, 2)) should equal(Array(1, 2))
+  }
 }
