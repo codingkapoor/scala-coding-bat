@@ -38,4 +38,12 @@ object ArrayI {
   def sum2(arr: Array[Int]): Int = {
     if (arr.length < 1) 0 else arr.take(2).reduceLeft(_ + _)
   }
+
+  def middleWay(a: Array[Int], b: Array[Int]): Array[Int] = {
+    Array(a(1), b(1))
+  }
+
+  def makeEnds(arr: Array[Int]) = {
+    if (arr.length <= 1) arr else Array(arr.head, arr.last)
+  }
 }

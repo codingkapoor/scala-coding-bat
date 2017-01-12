@@ -58,4 +58,16 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.sum2(Array()) should equal(0)
     ArrayI.sum2(Array(1)) should equal(1)
   }
+
+  """Given 2 int arrays, a and b, each length 3, method "middleWay"""" should """return a new array length 2 containing their middle elements.""" in {
+    ArrayI.middleWay(Array(1, 2, 3), Array(4, 5, 6)) should equal(Array(2, 5))
+    ArrayI.middleWay(Array(7, 7, 7), Array(3, 8, 0)) should equal(Array(7, 8))
+    ArrayI.middleWay(Array(5, 2, 9), Array(1, 4, 5)) should equal(Array(2, 4))
+  }
+
+  """Given an array of ints, method "makeEnds"""" should """return a new array length 2 containing the first and last elements from the original array. The original array will be length 1 or more.""" in {
+    ArrayI.makeEnds(Array(1, 2, 3)) should equal(Array(1, 3))
+    ArrayI.makeEnds(Array(1, 2, 3, 4)) should equal(Array(1, 4))
+    ArrayI.makeEnds(Array(7, 4, 6, 2)) should equal(Array(7, 2))
+  }
 }
