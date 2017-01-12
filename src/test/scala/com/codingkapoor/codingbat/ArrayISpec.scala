@@ -26,4 +26,10 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.commonEnd(Array(1, 2, 3), Array(7, 3, 2)) should equal(false)
     ArrayI.commonEnd(Array(1, 2, 3), Array(1, 3)) should equal(true)
   }
+
+  """Given an array of ints length 3, method "sum3"""" should """return the sum of all the elements.""" in {
+    ArrayI.sum3(Array(1, 2, 3)) should equal(6)
+    ArrayI.sum3(Array(5, 11, 2)) should equal(18)
+    ArrayI.sum3(Array(7, 0, 0)) should equal(7)
+  }
 }
