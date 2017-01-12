@@ -13,4 +13,8 @@ object ArrayI {
   def makePi(): Array[Int] = {
     Math.PI.toString.take(4).replace(".", "").toArray.map(_.toString).map(_.toInt)
   }
+
+  def commonEnd(a: Array[Int], b: Array[Int]) = {
+    if (a.length < 1 || b.length < 1) false else a.head == b.head || a.last == b.last
+  }
 }

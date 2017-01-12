@@ -20,4 +20,10 @@ class ArrayISpec extends FlatSpec with Matchers {
   """Method "makePi"""" should """return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.""" in {
     ArrayI.makePi() should equal(Array(3, 1, 4))
   }
+
+  """Given 2 arrays of ints, a and b, method "commonEnd"""" should """return true if they have the same first element or they have the same last element. Both arrays will be length 1 or more.""" in {
+    ArrayI.commonEnd(Array(1, 2, 3), Array(7, 3)) should equal(true)
+    ArrayI.commonEnd(Array(1, 2, 3), Array(7, 3, 2)) should equal(false)
+    ArrayI.commonEnd(Array(1, 2, 3), Array(1, 3)) should equal(true)
+  }
 }
