@@ -10,4 +10,10 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.firstLast6(Array(6, 1, 2, 3)) should equal(true)
     ArrayI.firstLast6(Array(13, 6, 1, 2, 3)) should equal(false)
   }
+
+  """Given an array of ints, method """"" should """return true if the array is length 1 or more, and the first element and the last element are equal.""" in {
+    ArrayI.sameFirstLast(Array(1, 2, 3)) should equal(false)
+    ArrayI.sameFirstLast(Array(1, 2, 3, 1)) should equal(true)
+    ArrayI.sameFirstLast(Array(1, 2, 1)) should equal(true)
+  }
 }
