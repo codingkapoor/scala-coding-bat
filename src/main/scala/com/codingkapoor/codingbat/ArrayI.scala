@@ -22,7 +22,11 @@ object ArrayI {
     arr.reduceLeft(_ + _)
   }
 
-  def rotateLeft3(arr: Array[Int]) = {
+  def rotateLeft3(arr: Array[Int]): Array[Int] = {
     arr.tail :+ arr.head
+  }
+  
+  def reverse3(arr: Array[Int]) = {
+    arr.reverse
   }
 }
