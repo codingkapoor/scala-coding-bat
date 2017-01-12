@@ -10,4 +10,7 @@ object ArrayI {
     if (arr.length < 1) false else arr.head == arr.last
   }
 
+  def makePi(): Array[Int] = {
+    Math.PI.toString.take(4).replace(".", "").toArray.map(_.toString).map(_.toInt)
+  }
 }

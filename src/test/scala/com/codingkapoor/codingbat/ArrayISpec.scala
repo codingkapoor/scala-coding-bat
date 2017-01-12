@@ -16,4 +16,8 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.sameFirstLast(Array(1, 2, 3, 1)) should equal(true)
     ArrayI.sameFirstLast(Array(1, 2, 1)) should equal(true)
   }
+
+  """Method "makePi"""" should """return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.""" in {
+    ArrayI.makePi() should equal(Array(3, 1, 4))
+  }
 }
