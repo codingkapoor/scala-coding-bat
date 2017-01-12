@@ -32,4 +32,10 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.sum3(Array(5, 11, 2)) should equal(18)
     ArrayI.sum3(Array(7, 0, 0)) should equal(7)
   }
+
+  """Given an array of ints length 3, method "rotateLeft3"""" should """return an array with the elements "rotated left" so {1, 2, 3} yields {2, 3, 1}.""" in {
+    ArrayI.rotateLeft3(Array(1, 2, 3)) should equal(Array(2, 3, 1))
+    ArrayI.rotateLeft3(Array(5, 11, 9)) should equal(Array(11, 9, 5))
+    ArrayI.rotateLeft3(Array(7, 0, 0)) should equal(Array(0, 0, 7))
+  }
 }

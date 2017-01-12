@@ -18,7 +18,11 @@ object ArrayI {
     if (a.length < 1 || b.length < 1) false else a.head == b.head || a.last == b.last
   }
 
-  def sum3(arr: Array[Int]) = {
+  def sum3(arr: Array[Int]): Int = {
     arr.reduceLeft(_ + _)
+  }
+
+  def rotateLeft3(arr: Array[Int]) = {
+    arr.tail :+ arr.head
   }
 }
