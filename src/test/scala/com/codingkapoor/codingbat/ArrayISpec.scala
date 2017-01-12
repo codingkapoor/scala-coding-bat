@@ -50,4 +50,12 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.maxEnd3(Array(11, 5, 9)) should equal(Array(11, 11, 11))
     ArrayI.maxEnd3(Array(2, 11, 3)) should equal(Array(3, 3, 3))
   }
+
+  """Given an array of ints, method "sum2"""" should """return the sum of the first 2 elements in the array. If the array length is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.""" in {
+    ArrayI.sum2(Array(1, 2, 3)) should equal(3)
+    ArrayI.sum2(Array(1, 1)) should equal(2)
+    ArrayI.sum2(Array(1, 1, 1, 1)) should equal(2)
+    ArrayI.sum2(Array()) should equal(0)
+    ArrayI.sum2(Array(1)) should equal(1)
+  }
 }

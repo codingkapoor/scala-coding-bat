@@ -34,4 +34,8 @@ object ArrayI {
     val res = if (arr.head > arr.last) arr.head else arr.last
     Array.fill(arr.length) { res }
   }
+
+  def sum2(arr: Array[Int]): Int = {
+    if (arr.length < 1) 0 else arr.take(2).reduceLeft(_ + _)
+  }
 }
