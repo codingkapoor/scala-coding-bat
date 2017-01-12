@@ -25,8 +25,13 @@ object ArrayI {
   def rotateLeft3(arr: Array[Int]): Array[Int] = {
     arr.tail :+ arr.head
   }
-  
-  def reverse3(arr: Array[Int]) = {
+
+  def reverse3(arr: Array[Int]): Array[Int] = {
     arr.reverse
+  }
+
+  def maxEnd3(arr: Array[Int]): Array[Int] = {
+    val res = if (arr.head > arr.last) arr.head else arr.last
+    Array.fill(arr.length) { res }
   }
 }
