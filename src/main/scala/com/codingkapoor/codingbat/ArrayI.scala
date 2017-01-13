@@ -82,19 +82,51 @@ object ArrayI {
     if (sumA > sumB) a else if (sumA < sumB) b else a
   }
 
-  def makeMiddle(nums: Array[Int]) = {
+  def makeMiddle(nums: Array[Int]): Array[Int] = {
     Array(nums((nums.length / 2) - 1), nums(nums.length / 2))
   }
 
-  def plusTwo(a: Array[Int], b: Array[Int]) = {
+  def plusTwo(a: Array[Int], b: Array[Int]): Array[Int] = {
     a ++ b
   }
 
-  def swapEnds(arr: Array[Int]) = {
+  def swapEnds(arr: Array[Int]): Array[Int] = {
     if (arr.length < 2) arr else {
       val first = arr(0); val last = arr(arr.length - 1)
       arr(0) = last; arr(arr.length - 1) = first
       arr
     }
+  }
+
+  def midThree(arr: Array[Int]) = {
+    val mid = arr.length / 2
+    Array(arr(mid - 1), arr(mid), arr(mid + 1))
+  }
+
+  def maxTriple(arr: Array[Int]): Int = {
+    if (arr.length == 1) arr(0)
+    Array(arr(0), arr(arr.length / 2), arr(arr.length - 1)).max
+  }
+
+  def frontPiece(arr: Array[Int]): Array[Int] = {
+    if (arr.length < 2) arr else Array(arr(0), arr(1))
+  }
+
+  def unlucky1(arr: Array[Int]): Boolean = {
+    if (arr.length < 2) false else {
+      val res = arr.zip(arr.tail).map(x => s"${x._1}" + s"${x._2}")
+      res.head == "13" || res.tail.head == "13" || res.last == "13"
+    }
+  }
+
+  def make2(a: Array[Int], b: Array[Int]): Array[Int] = {
+    (a ++ b).take(2)
+  }
+
+  def front11(a: Array[Int], b: Array[Int]): Array[Int] = {
+    def getFirst(arr: Array[Int]) = if (arr.length < 1) "" else s"${arr.head}"
+
+    val res = getFirst(a) + getFirst(b)
+    res.toArray.map(_.toString).map(_.toInt)
   }
 }

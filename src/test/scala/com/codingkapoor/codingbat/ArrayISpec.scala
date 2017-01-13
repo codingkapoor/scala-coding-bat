@@ -130,4 +130,44 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.swapEnds(Array(1, 2, 3)) should equal(Array(3, 2, 1))
     ArrayI.swapEnds(Array(8, 6, 7, 9, 5)) should equal(Array(5, 6, 7, 9, 8))
   }
+
+  """Given an array of ints of odd length, method "midThree"""" should """return a new array length 3 containing the elements from the middle of the array. The array length will be at least 3.""" in {
+    ArrayI.midThree(Array(1, 2, 3, 4, 5)) should equal(Array(2, 3, 4))
+    ArrayI.midThree(Array(8, 6, 7, 5, 3, 0, 9)) should equal(Array(7, 5, 3))
+    ArrayI.midThree(Array(1, 2, 3)) should equal(Array(1, 2, 3))
+  }
+
+  """Given an array of ints of odd length, method "maxTriple"""" should """look at the first, last, and middle values in the array and return the largest. The array length will be a least 1.""" in {
+    ArrayI.maxTriple(Array(1, 2, 3)) should equal(3)
+    ArrayI.maxTriple(Array(1, 5, 3)) should equal(5)
+    ArrayI.maxTriple(Array(5, 2, 3)) should equal(5)
+  }
+
+  """Given an int array of any length, method """"" should """return a new array of its first 2 elements. If the array is smaller than length 2, use whatever elements are present.""" in {
+    ArrayI.frontPiece(Array(1, 2, 3)) should equal(Array(1, 2))
+    ArrayI.frontPiece(Array(1, 2)) should equal(Array(1, 2))
+    ArrayI.frontPiece(Array(1)) should equal(Array(1))
+  }
+
+  """We'll say that a 1 immediately followed by a 3 in an array is an "unlucky" 1. Method "unlucky1"""" should """return true if the given array contains an unlucky 1 in the first 2 or last 2 positions in the array.""" in {
+    ArrayI.unlucky1(Array(1, 3, 4, 5)) should equal(true)
+    ArrayI.unlucky1(Array(2, 1, 3, 4, 5)) should equal(true)
+    ArrayI.unlucky1(Array(1, 1, 1)) should equal(false)
+    ArrayI.unlucky1(Array(1, 3)) should equal(true)
+    ArrayI.unlucky1(Array(1)) should equal(false)
+  }
+
+  """Given 2 int arrays, a and b, method "make2"""" should """return a new array length 2 containing, as much as will fit, the elements from a followed by the elements from b. The arrays may be any length, including 0, but there will be 2 or more elements available between the 2 arrays.""" in {
+    ArrayI.make2(Array(4, 5), Array(1, 2, 3)) should equal(Array(4, 5))
+    ArrayI.make2(Array(4), Array(1, 2, 3)) should equal(Array(4, 1))
+    ArrayI.make2(Array(), Array(1, 2)) should equal(Array(1, 2))
+    ArrayI.make2(Array(), Array(1)) should equal(Array(1))
+    ArrayI.make2(Array(), Array()) should equal(Array())
+  }
+
+  """Given 2 int arrays, a and b, of any length, method "front11"""" should """return a new array with the first element of each array. If either array is length 0, ignore that array.""" in {
+    ArrayI.front11(Array(1, 2, 3), Array(7, 9, 8)) should equal(Array(1, 7))
+    ArrayI.front11(Array(1), Array(2)) should equal(Array(1, 2))
+    ArrayI.front11(Array(1, 7), Array()) should equal(Array(1))
+  }
 }
