@@ -82,4 +82,19 @@ object ArrayI {
     if (sumA > sumB) a else if (sumA < sumB) b else a
   }
 
+  def makeMiddle(nums: Array[Int]) = {
+    Array(nums((nums.length / 2) - 1), nums(nums.length / 2))
+  }
+
+  def plusTwo(a: Array[Int], b: Array[Int]) = {
+    a ++ b
+  }
+
+  def swapEnds(arr: Array[Int]) = {
+    if (arr.length < 2) arr else {
+      val first = arr(0); val last = arr(arr.length - 1)
+      arr(0) = last; arr(arr.length - 1) = first
+      arr
+    }
+  }
 }

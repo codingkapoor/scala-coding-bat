@@ -112,4 +112,22 @@ class ArrayISpec extends FlatSpec with Matchers {
     ArrayI.biggerTwo(Array(3, 4), Array(1, 2)) should equal(Array(3, 4))
     ArrayI.biggerTwo(Array(1, 1), Array(1, 2)) should equal(Array(1, 2))
   }
+
+  """Given an array of ints of even length, method """"" should """return a new array length 2 containing the middle two elements from the original array. The original array will be length 2 or more.""" in {
+    ArrayI.makeMiddle(Array(1, 2, 3, 4)) should equal(Array(2, 3))
+    ArrayI.makeMiddle(Array(7, 1, 2, 3, 4, 9)) should equal(Array(2, 3))
+    ArrayI.makeMiddle(Array(1, 2)) should equal(Array(1, 2))
+  }
+
+  """Given 2 int arrays, each length 2, method "plusTwo"""" should """return a new array length 4 containing all their elements.""" in {
+    ArrayI.plusTwo(Array(1, 2), Array(3, 4)) should equal(Array(1, 2, 3, 4))
+    ArrayI.plusTwo(Array(4, 4), Array(2, 2)) should equal(Array(4, 4, 2, 2))
+    ArrayI.plusTwo(Array(9, 2), Array(3, 4)) should equal(Array(9, 2, 3, 4))
+  }
+
+  """Given an array of ints, method "swapEnds"""" should """swap the first and last elements in the array. Return the modified array. The array length will be at least 1.""" in {
+    ArrayI.swapEnds(Array(1, 2, 3, 4)) should equal(Array(4, 2, 3, 1))
+    ArrayI.swapEnds(Array(1, 2, 3)) should equal(Array(3, 2, 1))
+    ArrayI.swapEnds(Array(8, 6, 7, 9, 5)) should equal(Array(5, 6, 7, 9, 8))
+  }
 }
