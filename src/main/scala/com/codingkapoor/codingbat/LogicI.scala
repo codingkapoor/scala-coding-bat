@@ -14,7 +14,7 @@ object LogicI {
     if (isSummer) temp >= 60 && temp <= 100 else temp >= 60 && temp <= 90
   }
 
-  def caughtSpeeding(speed: Int, isBirthday: Boolean) = {
+  def caughtSpeeding(speed: Int, isBirthday: Boolean): Int = {
     if (isBirthday) {
       if (speed <= 65) 0
       else if (speed >= 66 && speed <= 85) 1
@@ -24,5 +24,10 @@ object LogicI {
       else if (speed >= 61 && speed <= 81) 1
       else 2
     }
+  }
+
+  def sortaSum(a: Int, b: Int): Int = {
+    val sum = a + b
+    if (sum >= 10 && sum <= 19) 20 else sum
   }
 }

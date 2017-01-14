@@ -28,4 +28,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.caughtSpeeding(65, false) should equal(1)
     LogicI.caughtSpeeding(65, true) should equal(0)
   }
+
+  """Given 2 ints, a and b, method "sortaSum"""" should """return their sum. However, sums in the range 10..19 inclusive, are forbidden, so in that case just return 20.""" in {
+    LogicI.sortaSum(3, 4) should equal(7)
+    LogicI.sortaSum(9, 4) should equal(20)
+    LogicI.sortaSum(10, 11) should equal(21)
+  }
 }
