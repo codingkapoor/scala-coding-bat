@@ -16,4 +16,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.dateFashion(5, 2) should equal(0)
     LogicI.dateFashion(5, 5) should equal(1)
   }
+
+  """The squirrels in Palo Alto spend most of the day playing. In particular, they play if the temperature is between 60 and 90 (inclusive). Unless it is summer, then the upper limit is 100 instead of 90. Given an int temperature and a boolean isSummer, method "squirrelPlay"""" should """return true if the squirrels play and false otherwise.""" in {
+    LogicI.squirrelPlay(70, false) should equal(true)
+    LogicI.squirrelPlay(95, false) should equal(false)
+    LogicI.squirrelPlay(95, true) should equal(true)
+  }
 }
