@@ -6,6 +6,7 @@ Solutions to CodingBat problems in Scala
 1. [Warmup-I](https://github.com/codingkapoor/scala-coding-bat#warmup-i)
 2. [Warmup-II](https://github.com/codingkapoor/scala-coding-bat#warmup-ii)
 3. [String-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#string-i)
+4. [Array-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#array-i)
 
 ## Warmup-I
 ### [sleepIn](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupI.scala)
@@ -441,7 +442,7 @@ has271([2, 7, 1]) → true
 ```
 
 ## String-I
-###[helloName](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [helloName](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!".
 
 ```
@@ -450,7 +451,7 @@ helloName("Alice") → "Hello Alice!"
 helloName("X") → "Hello X!"
 ```
 
-###[makeAbba](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [makeAbba](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given two strings, a and b, return the result of putting them together in the order abba, e.g. "Hi" and "Bye" returns "HiByeByeHi".
 
 ```
@@ -459,7 +460,7 @@ makeAbba("Yo", "Alice") → "YoAliceAliceYo"
 makeAbba("What", "Up") → "WhatUpUpWhat"
 ```
 
-###[makeTags](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [makeTags](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 The web is built with HTML strings like "<i>Yay</i>" which draws Yay as italic text. In this example, the "i" tag makes <i> and </i> which surround the word "Yay". Given tag and word strings, create the HTML string with tags around the word, e.g. "<i>Yay</i>".
 
 ```
@@ -468,7 +469,7 @@ makeTags("i", "Hello") → "<i>Hello</i>"
 makeTags("cite", "Yay") → "<cite>Yay</cite>"
 ```
 
-###[makeOutWord](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [makeOutWord](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given an "out" string length 4, such as "(())", and a word, return a new string where the word is in the middle of the out string, e.g. "((word))". Note: use str.substring(i, j) to extract the String starting at index i and going up to but not including index j.
 
 ```
@@ -477,7 +478,7 @@ makeOutWord("(())", "WooHoo") → "((WooHoo))"
 makeOutWord("[[]]", "word") → "[[word]]"
 ```
 
-###[extraEnd](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [extraEnd](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a new string made of 3 copies of the last 2 chars of the original string. The string length will be at least 2.
 
 ```
@@ -486,7 +487,7 @@ extraEnd("ab") → "ababab"
 extraEnd("Hi") → "HiHiHi"
 ```
 
-###[firstTwo](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [firstTwo](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return the string made of its first two chars, so the String "Hello" yields "He". If the string is shorter than length 2, return whatever there is, so "X" yields "X", and the empty string "" yields the empty string "". Note that str.length() returns the length of a string.
 
 ```
@@ -495,7 +496,7 @@ firstTwo("abcdefg") → "ab"
 firstTwo("ab") → "ab"
 ```
 
-###[firstHalf](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [firstHalf](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
 
 ```
@@ -504,7 +505,7 @@ firstHalf("HelloThere") → "Hello"
 firstHalf("abcdef") → "abc"
 ```
 
-###[withoutEnd](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [withoutEnd](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a version without the first and last char, so "Hello" yields "ell". The string length will be at least 2.
 
 ```
@@ -513,7 +514,7 @@ withoutEnd("java") → "av"
 withoutEnd("coding") → "odin"
 ```
 
-###[comboString](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [comboString](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty (length 0).
 
 ```
@@ -522,7 +523,7 @@ comboString("hi", "Hello") → "hiHellohi"
 comboString("aaa", "b") → "baaab"
 ```
 
-###[nonStart](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [nonStart](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given 2 strings, return their concatenation, except omit the first char of each. The strings will be at least length 1.
 
 ```
@@ -531,7 +532,7 @@ nonStart("java", "code") → "avaode"
 nonStart("shotl", "java") → "hotlava"
 ```
 
-###[left2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [left2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. The string length will be at least 2.
 
 ```
@@ -540,7 +541,7 @@ left2("java") → "vaja"
 left2("Hi") → "Hi"
 ```
 
-###[right2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [right2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a "rotated right 2" version where the last 2 chars are moved to the start. The string length will be at least 2.
 
 ```
@@ -549,7 +550,7 @@ right2("java") → "vaja"
 right2("Hi") → "Hi"
 ```
 
-###[theEnd](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [theEnd](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a string length 1 from its front, unless front is false, in which case return a string length 1 from its back. The string will be non-empty.
 
 ```
@@ -558,7 +559,7 @@ theEnd("Hello", false) → "o"
 theEnd("oh", true) → "o"
 ```
 
-###[withouEnd2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [withouEnd2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a version without both the first and last char of the string. The string may be any length, including 0.
 
 ```
@@ -567,7 +568,7 @@ withouEnd2("abc") → "b"
 withouEnd2("ab") → ""
 ```
 
-###[middleTwo](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [middleTwo](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string of even length, return a string made of the middle two chars, so the string "string" yields "ri". The string length will be at least 2.
 
 ```
@@ -576,7 +577,7 @@ middleTwo("code") → "od"
 middleTwo("Practice") → "ct"
 ```
 
-###[endsLy](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [endsLy](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return true if it ends in "ly".
 
 ```
@@ -585,7 +586,7 @@ endsLy("y") → false
 endsLy("oddy") → false
 ```
 
-###[nTwice](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [nTwice](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string and an int n, return a string made of the first and last n chars from the string. The string length will be at least n.
 
 ```
@@ -594,7 +595,7 @@ nTwice("Chocolate", 3) → "Choate"
 nTwice("Chocolate", 1) → "Ce"
 ```
 
-###[twoChar](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [twoChar](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string and an index, return a string length 2 starting at the given index. If the index is too big or too small to define a string length 2, use the first 2 chars. The string length will be at least 2.
 
 ```
@@ -603,7 +604,7 @@ twoChar("java", 2) → "va"
 twoChar("java", 3) → "ja"
 ```
 
-###[middleThree](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [middleThree](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string of odd length, return the string length 3 from its middle, so "Candy" yields "and". The string length will be at least 3.
 
 ```
@@ -612,7 +613,7 @@ middleThree("and") → "and"
 middleThree("solving") → "lvi"
 ```
 
-###[hasBad](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [hasBad](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return true if "bad" appears starting at index 0 or 1 in the string, such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0. Note: use .equals() to compare 2 strings.
 
 ```
@@ -621,7 +622,7 @@ hasBad("xbadxx") → true
 hasBad("xxbadxx") → false
 ```
 
-###[atFirst](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [atFirst](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a string length 2 made of its first 2 chars. If the string length is less than 2, use '@' for the missing chars.
 
 ```
@@ -630,7 +631,7 @@ atFirst("hi") → "hi"
 atFirst("h") → "h@"
 ```
 
-###[lastChars](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [lastChars](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given 2 strings, a and b, return a new string made of the first char of a and the last char of b, so "yo" and "java" yields "ya". If either string is length 0, use '@' for its missing char.
 
 ```
@@ -639,7 +640,7 @@ lastChars("yo", "java") → "ya"
 lastChars("hi", "") → "h@"
 ```
 
-###[conCat](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [conCat](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given two strings, append them together (known as "concatenation") and return the result. However, if the concatenation creates a double-char, then omit one of the chars, so "abc" and "cat" yields "abcat".
 
 ```
@@ -648,7 +649,7 @@ conCat("dog", "cat") → "dogcat"
 conCat("abc", "") → "abc"
 ```
 
-###[lastTwo](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [lastTwo](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string of any length, return a new string where the last 2 chars, if present, are swapped, so "coding" yields "codign".
 
 ```
@@ -657,7 +658,7 @@ lastTwo("cat") → "cta"
 lastTwo("ab") → "ba"
 ```
 
-###[seeColor](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [seeColor](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, if the string begins with "red" or "blue" return that color string, otherwise return the empty string.
 
 ```
@@ -666,7 +667,7 @@ seeColor("xxred") → ""
 seeColor("blueTimes") → "blue"
 ```
 
-###[frontAgain](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [frontAgain](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return true if the first 2 chars in the string also appear at the end of the string, such as with "edited".
 
 ```
@@ -675,7 +676,7 @@ frontAgain("edit") → false
 frontAgain("ed") → true
 ```
 
-###[minCat](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [minCat](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given two strings, append them together (known as "concatenation") and return the result. However, if the strings are different lengths, omit chars from the longer string so it is the same length as the shorter string. So "Hello" and "Hi" yield "loHi". The strings may be any length.
 
 ```
@@ -684,7 +685,7 @@ minCat("Hello", "java") → "ellojava"
 minCat("java", "Hello") → "javaello"
 ```
 
-###[extraFront](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [extraFront](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a new string made of 3 copies of the first 2 chars of the original string. The string may be any length. If there are fewer than 2 chars, use whatever is there.
 
 ```
@@ -693,7 +694,7 @@ extraFront("ab") → "ababab"
 extraFront("H") → "HHH"
 ```
 
-###[without2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [without2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, if a length 2 substring appears at both its beginning and end, return a string without the substring at the beginning, so "HelloHe" yields "lloHe". The substring may overlap with itself, so "Hi" yields "". Otherwise, return the original string unchanged.
 
 ```
@@ -702,7 +703,7 @@ without2("HelloHi") → "HelloHi"
 without2("Hi") → ""
 ```
 
-###[deFront](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [deFront](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, return a version without the first 2 chars. Except keep the first char if it is 'a' and keep the second char if it is 'b'. The string may be any length. Harder than it looks.
 
 ```
@@ -711,7 +712,7 @@ deFront("java") → "va"
 deFront("away") → "aay"
 ```
 
-###[startWord](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [startWord](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string and a second "word" string, we'll say that the word matches the string if it appears at the front of the string, except its first char does not need to match exactly. On a match, return the front of the string, or otherwise return the empty string. So, so with the string "hippo" the word "hi" returns "hi" and "xip" returns "hip". The word will be at least length 1.
 
 ```
@@ -720,7 +721,7 @@ startWord("hippo", "xip") → "hip"
 startWord("hippo", "i") → "h"
 ```
 
-###[withoutX](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [withoutX](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, if the first or last chars are 'x', return the string without those 'x' chars, and otherwise return the string unchanged.
 
 ```
@@ -729,11 +730,254 @@ withoutX("xHi") → "Hi"
 withoutX("Hxix") → "Hxi"
 ```
 
-###[withoutX2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
+### [withoutX2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringI.scala)
 Given a string, if one or both of the first 2 chars is 'x', return the string without those 'x' chars, and otherwise return the string unchanged. This is a little harder than it looks.
 
 ```
 withoutX2("xHi") → "Hi"
 withoutX2("Hxi") → "Hi"
 withoutX2("Hi") → "Hi"
+```
+
+## Array-I
+
+### [firstLast6](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints, return true if 6 appears as either the first or last element in the array. The array will be length 1 or more.
+
+```
+firstLast6([1, 2, 6]) → true
+firstLast6([6, 1, 2, 3]) → true
+firstLast6([13, 6, 1, 2, 3]) → false
+```
+
+### [sameFirstLast](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints, return true if the array is length 1 or more, and the first element and the last element are equal.
+
+```
+sameFirstLast([1, 2, 3]) → false
+sameFirstLast([1, 2, 3, 1]) → true
+sameFirstLast([1, 2, 1]) → true
+```
+
+### [makePi](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
+
+```
+makePi() → [3, 1, 4]
+```
+
+### [commonEnd](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given 2 arrays of ints, a and b, return true if they have the same first element or they have the same last element. Both arrays will be length 1 or more.
+
+```
+commonEnd([1, 2, 3], [7, 3]) → true
+commonEnd([1, 2, 3], [7, 3, 2]) → false
+commonEnd([1, 2, 3], [1, 3]) → true
+```
+
+### [sum3](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints length 3, return the sum of all the elements.
+
+```
+sum3([1, 2, 3]) → 6
+sum3([5, 11, 2]) → 18
+sum3([7, 0, 0]) → 7
+```
+
+### [rotateLeft3](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints length 3, return an array with the elements "rotated left" so {1, 2, 3} yields {2, 3, 1}.
+
+```
+rotateLeft3([1, 2, 3]) → [2, 3, 1]
+rotateLeft3([5, 11, 9]) → [11, 9, 5]
+rotateLeft3([7, 0, 0]) → [0, 0, 7]
+```
+
+### [reverse3](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints length 3, return a new array with the elements in reverse order, so {1, 2, 3} becomes {3, 2, 1}.
+
+```
+reverse3([1, 2, 3]) → [3, 2, 1]
+reverse3([5, 11, 9]) → [9, 11, 5]
+reverse3([7, 0, 0]) → [0, 0, 7]
+```
+
+### [maxEnd3](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints length 3, figure out which is larger, the first or last element in the array, and set all the other elements to be that value. Return the changed array.
+
+```
+maxEnd3([1, 2, 3]) → [3, 3, 3]
+maxEnd3([11, 5, 9]) → [11, 11, 11]
+maxEnd3([2, 11, 3]) → [3, 3, 3]
+```
+
+### [sum2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints, return the sum of the first 2 elements in the array. If the array length is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.
+
+```
+sum2([1, 2, 3]) → 3
+sum2([1, 1]) → 2
+sum2([1, 1, 1, 1]) → 2
+```
+
+### [middleWay](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle elements.
+
+```
+middleWay([1, 2, 3], [4, 5, 6]) → [2, 5]
+middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
+middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
+```
+
+### [makeEnds](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints, return a new array length 2 containing the first and last elements from the original array. The original array will be length 1 or more.
+
+```
+makeEnds([1, 2, 3]) → [1, 3]
+makeEnds([1, 2, 3, 4]) → [1, 4]
+makeEnds([7, 4, 6, 2]) → [7, 2]
+```
+
+### [has23](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an int array length 2, return true if it contains a 2 or a 3.
+
+```
+has23([2, 5]) → true
+has23([4, 3]) → true
+has23([4, 5]) → false
+```
+
+### [no23](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an int array length 2, return true if it does not contain a 2 or 3.
+
+```
+no23([4, 5]) → true
+no23([4, 2]) → false
+no23([3, 5]) → false
+```
+
+### [makeLast](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an int array, return a new array with double the length where its last element is the same as the original array, and all the other elements are 0. The original array will be length 1 or more. Note: by default, a new int array contains all 0's.
+
+```
+makeLast([4, 5, 6]) → [0, 0, 0, 0, 0, 6]
+makeLast([1, 2]) → [0, 0, 0, 2]
+makeLast([3]) → [0, 3]
+```
+
+### [double23](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an int array, return true if the array contains 2 twice, or 3 twice. The array will be length 0, 1, or 2.
+
+```
+double23([2, 2]) → true
+double23([3, 3]) → true
+double23([2, 3]) → false
+```
+
+### [fix23](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an int array length 3, if there is a 2 in the array immediately followed by a 3, set the 3 element to 0. Return the changed array.
+
+```
+fix23([1, 2, 3]) → [1, 2, 0]
+fix23([2, 3, 5]) → [2, 0, 5]
+fix23([1, 2, 1]) → [1, 2, 1]
+```
+
+### [start1](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Start with 2 int arrays, a and b, of any length. Return how many of the arrays have 1 as their first element.
+
+```
+start1([1, 2, 3], [1, 3]) → 2
+start1([7, 2, 3], [1]) → 1
+start1([1, 2], []) → 1
+```
+
+### [biggerTwo](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Start with 2 int arrays, a and b, each length 2. Consider the sum of the values in each array. Return the array which has the largest sum. In event of a tie, return a.
+
+```
+biggerTwo([1, 2], [3, 4]) → [3, 4]
+biggerTwo([3, 4], [1, 2]) → [3, 4]
+biggerTwo([1, 1], [1, 2]) → [1, 2]
+```
+
+### [makeMiddle](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints of even length, return a new array length 2 containing the middle two elements from the original array. The original array will be length 2 or more.
+
+```
+makeMiddle([1, 2, 3, 4]) → [2, 3]
+makeMiddle([7, 1, 2, 3, 4, 9]) → [2, 3]
+makeMiddle([1, 2]) → [1, 2]
+```
+
+### [plusTwo](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given 2 int arrays, each length 2, return a new array length 4 containing all their elements.
+
+```
+plusTwo([1, 2], [3, 4]) → [1, 2, 3, 4]
+plusTwo([4, 4], [2, 2]) → [4, 4, 2, 2]
+plusTwo([9, 2], [3, 4]) → [9, 2, 3, 4]
+```
+
+### [swapEnds](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints, swap the first and last elements in the array. Return the modified array. The array length will be at least 1.
+
+```
+swapEnds([1, 2, 3, 4]) → [4, 2, 3, 1]
+swapEnds([1, 2, 3]) → [3, 2, 1]
+swapEnds([8, 6, 7, 9, 5]) → [5, 6, 7, 9, 8]
+```
+
+### [midThree](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints of odd length, return a new array length 3 containing the elements from the middle of the array. The array length will be at least 3.
+
+```
+midThree([1, 2, 3, 4, 5]) → [2, 3, 4]
+midThree([8, 6, 7, 5, 3, 0, 9]) → [7, 5, 3]
+midThree([1, 2, 3]) → [1, 2, 3]
+```
+
+### [maxTriple](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an array of ints of odd length, look at the first, last, and middle values in the array and return the largest. The array length will be a least 1.
+
+```
+maxTriple([1, 2, 3]) → 3
+maxTriple([1, 5, 3]) → 5
+maxTriple([5, 2, 3]) → 5
+```
+
+### [frontPiece](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given an int array of any length, return a new array of its first 2 elements. If the array is smaller than length 2, use whatever elements are present.
+
+```
+frontPiece([1, 2, 3]) → [1, 2]
+frontPiece([1, 2]) → [1, 2]
+frontPiece([1]) → [1]
+```
+
+### [unlucky1](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+We'll say that a 1 immediately followed by a 3 in an array is an "unlucky" 1. Return true if the given array contains an unlucky 1 in the first 2 or last 2 positions in the array.
+
+```
+unlucky1([1, 3, 4, 5]) → true
+unlucky1([2, 1, 3, 4, 5]) → true
+unlucky1([1, 1, 1]) → false
+```
+
+### [make2](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given 2 int arrays, a and b, return a new array length 2 containing, as much as will fit, the elements from a followed by the elements from b. The arrays may be any length, including 0, but there will be 2 or more elements available between the 2 arrays.
+
+```
+make2([4, 5], [1, 2, 3]) → [4, 5]
+make2([4], [1, 2, 3]) → [4, 1]
+make2([], [1, 2]) → [1, 2]
+```
+
+### [front11](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/ArrayI.scala)
+Given 2 int arrays, a and b, of any length, return a new array with the first element of each array. If either array is length 0, ignore that array.
+
+```
+front11([1, 2, 3], [7, 9, 8]) → [1, 7]
+front11([1], [2]) → [1, 2]
+front11([1, 7], []) → [1]
 ```
