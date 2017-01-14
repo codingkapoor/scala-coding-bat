@@ -40,4 +40,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.alarmClock(5, false) should equal("7:00")
     LogicI.alarmClock(0, false) should equal("10:00")
   }
+
+  """The number 6 is a truly great number. Given two int values, a and b, method "love6"""" should """return true if either one is 6. Or if their sum or difference is 6.""" in {
+    LogicI.love6(6, 4) should equal(true)
+    LogicI.love6(4, 5) should equal(false)
+    LogicI.love6(1, 5) should equal(true)
+  }
 }

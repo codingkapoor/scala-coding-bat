@@ -38,5 +38,8 @@ object LogicI {
       if (day >= 1 && day <= 5) "7:00" else "10:00"
     }
   }
-  
+
+  def love6(a: Int, b: Int) = {
+    a == 6 || b == 6 || (a + b) == 6 || Math.abs(a - b) == 6
+  }
 }
