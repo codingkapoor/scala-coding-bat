@@ -30,4 +30,13 @@ object LogicI {
     val sum = a + b
     if (sum >= 10 && sum <= 19) 20 else sum
   }
+
+  def alarmClock(day: Int, vacation: Boolean): String = {
+    if (vacation) {
+      if (day >= 1 && day <= 5) "10:00" else "off"
+    } else {
+      if (day >= 1 && day <= 5) "7:00" else "10:00"
+    }
+  }
+  
 }

@@ -34,4 +34,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.sortaSum(9, 4) should equal(20)
     LogicI.sortaSum(10, 11) should equal(21)
   }
+
+  """Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, and a boolean indicating if we are on vacation, method "alarmClock"""" should """return a string of the form "7:00" indicating when the alarm clock should ring. Weekdays, the alarm should be "7:00" and on the weekend it should be "10:00". Unless we are on vacation -- then on weekdays it should be "10:00" and weekends it should be "off".""" in {
+    LogicI.alarmClock(1, false) should equal("7:00")
+    LogicI.alarmClock(5, false) should equal("7:00")
+    LogicI.alarmClock(0, false) should equal("10:00")
+  }
 }
