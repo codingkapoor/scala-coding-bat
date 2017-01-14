@@ -52,4 +52,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.in1To10(11, false) should equal(false)
     LogicI.in1To10(11, true) should equal(true)
   }
+
+  """We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11. Method """"" should """return true if the given non-negative number is special.""" in {
+    LogicI.specialEleven(22) should equal(true)
+    LogicI.specialEleven(23) should equal(true)
+    LogicI.specialEleven(24) should equal(false)
+  }
 }

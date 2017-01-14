@@ -50,4 +50,8 @@ object LogicI {
       n >= 1 && n <= 10
     }
   }
+
+  def specialEleven(n: Int): Boolean = {
+    n % 11 == 0 || n % 11 == 1
+  }
 }
