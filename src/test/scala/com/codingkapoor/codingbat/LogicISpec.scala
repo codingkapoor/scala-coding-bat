@@ -22,4 +22,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.squirrelPlay(95, false) should equal(false)
     LogicI.squirrelPlay(95, true) should equal(true)
   }
+
+  """You are driving a little too fast, and a police officer stops you. Write code to compute the result, encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. If speed is 60 or less, method "caughtSpeeding"""" should """return 0 as result. If speed is between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the result is 2. Unless it is your birthday -- on that day, your speed can be 5 higher in all cases.""" in {
+    LogicI.caughtSpeeding(60, false) should equal(0)
+    LogicI.caughtSpeeding(65, false) should equal(1)
+    LogicI.caughtSpeeding(65, true) should equal(0)
+  }
 }

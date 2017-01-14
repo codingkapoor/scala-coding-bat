@@ -13,4 +13,16 @@ object LogicI {
   def squirrelPlay(temp: Int, isSummer: Boolean): Boolean = {
     if (isSummer) temp >= 60 && temp <= 100 else temp >= 60 && temp <= 90
   }
+
+  def caughtSpeeding(speed: Int, isBirthday: Boolean) = {
+    if (isBirthday) {
+      if (speed <= 65) 0
+      else if (speed >= 66 && speed <= 85) 1
+      else 2
+    } else {
+      if (speed <= 60) 0
+      else if (speed >= 61 && speed <= 81) 1
+      else 2
+    }
+  }
 }
