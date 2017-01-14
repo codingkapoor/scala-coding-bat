@@ -46,4 +46,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.love6(4, 5) should equal(false)
     LogicI.love6(1, 5) should equal(true)
   }
+
+  """Given a number n, method "in1To10"""" should """return true if n is in the range 1..10, inclusive. Unless "outsideMode" is true, in which case return true if the number is less or equal to 1, or greater or equal to 10.""" in {
+    LogicI.in1To10(5, false) should equal(true)
+    LogicI.in1To10(11, false) should equal(false)
+    LogicI.in1To10(11, true) should equal(true)
+  }
 }

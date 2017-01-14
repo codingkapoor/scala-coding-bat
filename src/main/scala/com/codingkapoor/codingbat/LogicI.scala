@@ -39,7 +39,15 @@ object LogicI {
     }
   }
 
-  def love6(a: Int, b: Int) = {
+  def love6(a: Int, b: Int): Boolean = {
     a == 6 || b == 6 || (a + b) == 6 || Math.abs(a - b) == 6
+  }
+
+  def in1To10(n: Int, outsideMode: Boolean): Boolean = {
+    if (outsideMode) {
+      n <= 1 || n >= 10
+    } else {
+      n >= 1 && n <= 10
+    }
   }
 }
