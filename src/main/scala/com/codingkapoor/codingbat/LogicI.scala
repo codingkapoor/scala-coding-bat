@@ -66,4 +66,22 @@ object LogicI {
   def less20(n: Int) = {
     (n + 1) % 20 == 0 || (n + 2) % 20 == 0
   }
+
+  def nearTen(num: Int) = {
+    num % 10 == 0 || num % 10 == 1 || num % 10 == 2 || num % 10 == 8 || num % 10 == 9
+  }
+
+  def teenSum(a: Int, b: Int): Int = {
+    def isTeen(x: Int) = if (x >= 13 && x <= 19) true else false
+
+    if (isTeen(a) || isTeen(b)) 19 else a + b
+  }
+
+  def answerCell(isMorning: Boolean, isMom: Boolean, isAsleep: Boolean): Boolean = {
+    if (isAsleep) false else {
+      if (isMorning) {
+        if (isMom) true else false
+      } else true
+    }
+  }
 }

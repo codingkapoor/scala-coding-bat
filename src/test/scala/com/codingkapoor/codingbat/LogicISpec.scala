@@ -77,4 +77,21 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.less20(20) should equal(false)
   }
 
+  """Given a non-negative number "num", method "nearTen"""" should """return true if num is within 2 of a multiple of 10.""" in {
+    LogicI.nearTen(12) should equal(true)
+    LogicI.nearTen(17) should equal(false)
+    LogicI.nearTen(19) should equal(true)
+  }
+
+  """Given 2 ints, a and b, method "teenSum"""" should """return their sum. However, "teen" values in the range 13..19 inclusive, are extra lucky. So if either value is a teen, just return 19.""" in {
+    LogicI.teenSum(3, 4) should equal(7)
+    LogicI.teenSum(10, 13) should equal(19)
+    LogicI.teenSum(13, 2) should equal(19)
+  }
+
+  """Your cell phone rings. Method "answerCell"""" should """return true if you should answer it. Normally you answer, except in the morning you only answer if it is your mom calling. In all cases, if you are asleep, you do not answer.""" in {
+    LogicI.answerCell(false, false, false) should equal(true)
+    LogicI.answerCell(false, false, true) should equal(false)
+    LogicI.answerCell(true, false, false) should equal(false)
+  }
 }
