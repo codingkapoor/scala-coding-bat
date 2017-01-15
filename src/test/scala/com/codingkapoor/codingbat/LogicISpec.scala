@@ -94,4 +94,22 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.answerCell(false, false, true) should equal(false)
     LogicI.answerCell(true, false, false) should equal(false)
   }
+
+  """We are having a party with amounts of tea and candy. Method "teaParty"""" should """return the int outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is good (1) if both tea and candy are at least 5. However, if either tea or candy is at least double the amount of the other one, the party is great (2). However, in all cases, if either tea or candy is less than 5, the party is always bad (0).""" in {
+    LogicI.teaParty(6, 8) should equal(1)
+    LogicI.teaParty(3, 5) should equal(0)
+    LogicI.teaParty(20, 6) should equal(2)
+  }
+
+  """Given a string str, if the string starts with "f" method "fizzString"""" should """return "Fizz". If the string ends with "b" return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all other cases, return the string unchanged.""" in {
+    LogicI.fizzString("fig") should equal("Fizz")
+    LogicI.fizzString("dib") should equal("Buzz")
+    LogicI.fizzString("fib") should equal("FizzBuzz")
+  }
+
+  """Given an int n, method "fizzString2"""" should """return the string form of the number followed by "!". So the int 6 yields "6!". Except if the number is divisible by 3 use "Fizz" instead of the number, and if the number is divisible by 5 use "Buzz", and if divisible by both 3 and 5, use "FizzBuzz".""" in {
+    LogicI.fizzString2(1) should equal("1!")
+    LogicI.fizzString2(2) should equal("2!")
+    LogicI.fizzString2(3) should equal("Fizz!")
+  }
 }

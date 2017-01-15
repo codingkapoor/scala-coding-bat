@@ -84,4 +84,26 @@ object LogicI {
       } else true
     }
   }
+
+  def teaParty(tea: Int, candy: Int) = {
+    if (tea >= (candy * 2) || candy >= (tea * 2)) 2
+    else if (tea >= 5 && candy >= 5) 1
+    else if (tea < 5 || candy < 5) 0
+  }
+
+  def fizzString(str: String) = {
+    val i = if (str.startsWith("f")) {
+      "Fizz" + { if (str.endsWith("b")) "Buzz" else "" }
+    } else if (str.endsWith("b")) { "Buzz" } else str
+
+    i
+  }
+
+  def fizzString2(n: Int) = {
+    val res = if (n % 3 == 0 && n % 5 == 0) "FizzBuzz" else {
+      if (n % 3 == 0) "Fizz" else if (n % 5 == 0) "Buzz" else s"$n"
+    }
+
+    res + "!"
+  }
 }
