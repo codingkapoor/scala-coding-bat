@@ -54,4 +54,16 @@ object LogicI {
   def specialEleven(n: Int): Boolean = {
     n % 11 == 0 || n % 11 == 1
   }
+
+  def more20(n: Int) = {
+    n % 20 == 1 || n % 20 == 2
+  }
+
+  def old35(n: Int) = {
+    (n % 3 == 0 && n % 5 != 0) || (n % 3 != 0 && n % 5 == 0)
+  }
+
+  def less20(n: Int) = {
+    (n + 1) % 20 == 0 || (n + 2) % 20 == 0
+  }
 }

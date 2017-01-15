@@ -58,4 +58,23 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.specialEleven(23) should equal(true)
     LogicI.specialEleven(24) should equal(false)
   }
+
+  """Method "more20"""" should """return true if the given non-negative number is 1 or 2 more than a multiple of 20.""" in {
+    LogicI.more20(20) should equal(false)
+    LogicI.more20(21) should equal(true)
+    LogicI.more20(22) should equal(true)
+  }
+
+  """Method "old35"""" should """return true if the given non-negative number is a multiple of 3 or 5, but not both.""" in {
+    LogicI.old35(3) should equal(true)
+    LogicI.old35(10) should equal(true)
+    LogicI.old35(15) should equal(false)
+  }
+
+  """Method "less20"""" should """return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and 39 return true, but 40 returns false.""" in {
+    LogicI.less20(18) should equal(true)
+    LogicI.less20(19) should equal(true)
+    LogicI.less20(20) should equal(false)
+  }
+
 }
