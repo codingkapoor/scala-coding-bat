@@ -142,4 +142,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.lessBy10(1, 7, 10) should equal(false)
     LogicI.lessBy10(11, 1, 7) should equal(true)
   }
+
+  """Method "withoutDoubles"""" should """return the sum of two 6-sided dice rolls, each in the range 1..6. However, if noDoubles is true, if the two dice show the same value, increment one die to the next value, wrapping around to 1 if its value was 6.""" in {
+    LogicI.withoutDoubles(2, 3, true) should equal(5)
+    LogicI.withoutDoubles(3, 3, true) should equal(7)
+    LogicI.withoutDoubles(3, 3, false) should equal(6)
+  }
 }

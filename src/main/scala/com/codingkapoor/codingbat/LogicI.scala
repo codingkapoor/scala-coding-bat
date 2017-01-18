@@ -140,4 +140,15 @@ object LogicI {
     val ls = List(a, b, c)
     ls.zip(ls.tail :+ ls.head).filter(x => Math.abs(x._1 - x._2) >= 10).size > 0
   }
+
+  def withoutDoubles(die1: Int, die2: Int, noDoubles: Boolean) = {
+    def nextDie(die: Int): Int = {
+      val res = die + 1
+      if (res <= 6) res % 7 else res % 6
+    }
+
+    if (noDoubles && die1 == die2) {
+      die1 + nextDie(die2)
+    } else die1 + die2
+  }
 }
