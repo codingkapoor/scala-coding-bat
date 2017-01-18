@@ -118,4 +118,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.twoAsOne(3, 1, 2) should equal(true)
     LogicI.twoAsOne(3, 2, 2) should equal(false)
   }
+
+  """Given three ints, a b c, method "inOrder"""" should """return true if b is greater than a, and c is greater than b. However, with the exception that if "bOk" is true, b does not need to be greater than a.""" in {
+    LogicI.inOrder(1, 2, 4, false) should equal(true)
+    LogicI.inOrder(1, 2, 1, false) should equal(false)
+    LogicI.inOrder(1, 1, 2, true) should equal(true)
+  }
 }

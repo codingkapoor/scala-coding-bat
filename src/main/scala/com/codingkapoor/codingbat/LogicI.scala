@@ -55,19 +55,19 @@ object LogicI {
     n % 11 == 0 || n % 11 == 1
   }
 
-  def more20(n: Int) = {
+  def more20(n: Int): Boolean = {
     n % 20 == 1 || n % 20 == 2
   }
 
-  def old35(n: Int) = {
+  def old35(n: Int): Boolean = {
     (n % 3 == 0 && n % 5 != 0) || (n % 3 != 0 && n % 5 == 0)
   }
 
-  def less20(n: Int) = {
+  def less20(n: Int): Boolean = {
     (n + 1) % 20 == 0 || (n + 2) % 20 == 0
   }
 
-  def nearTen(num: Int) = {
+  def nearTen(num: Int): Boolean = {
     num % 10 == 0 || num % 10 == 1 || num % 10 == 2 || num % 10 == 8 || num % 10 == 9
   }
 
@@ -85,13 +85,14 @@ object LogicI {
     }
   }
 
-  def teaParty(tea: Int, candy: Int) = {
+  def teaParty(tea: Int, candy: Int): Int = {
     if (tea >= (candy * 2) || candy >= (tea * 2)) 2
     else if (tea >= 5 && candy >= 5) 1
     else if (tea < 5 || candy < 5) 0
+    else 0
   }
 
-  def fizzString(str: String) = {
+  def fizzString(str: String): String = {
     val i = if (str.startsWith("f")) {
       "Fizz" + { if (str.endsWith("b")) "Buzz" else "" }
     } else if (str.endsWith("b")) { "Buzz" } else str
@@ -99,7 +100,7 @@ object LogicI {
     i
   }
 
-  def fizzString2(n: Int) = {
+  def fizzString2(n: Int): String = {
     val res = if (n % 3 == 0 && n % 5 == 0) "FizzBuzz" else {
       if (n % 3 == 0) "Fizz" else if (n % 5 == 0) "Buzz" else s"$n"
     }
@@ -107,10 +108,18 @@ object LogicI {
     res + "!"
   }
 
-  def twoAsOne(a: Int, b: Int, c: Int) = {
+  def twoAsOne(a: Int, b: Int, c: Int): Boolean = {
     val ls = List(a, b, c)
     val res = ls.zip(ls.tail :+ ls.head).zip(ls.last :: ls.take(2)).filter(x => (x._1._1 + x._1._2) == x._2).size
 
     res > 0
+  }
+
+  def inOrder(a: Int, b: Int, c: Int, bOk: Boolean) = {
+    if (bOk) {
+      c > b
+    } else {
+      b > a && c > b
+    }
   }
 }
