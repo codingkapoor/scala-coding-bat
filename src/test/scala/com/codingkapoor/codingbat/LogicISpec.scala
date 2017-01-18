@@ -112,4 +112,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.fizzString2(2) should equal("2!")
     LogicI.fizzString2(3) should equal("Fizz!")
   }
+
+  """Given three ints, a b c, method "twoAsOne"""" should """return true if it is possible to add two of the ints to get the third.""" in {
+    LogicI.twoAsOne(1, 2, 3) should equal(true)
+    LogicI.twoAsOne(3, 1, 2) should equal(true)
+    LogicI.twoAsOne(3, 2, 2) should equal(false)
+  }
 }

@@ -106,4 +106,11 @@ object LogicI {
 
     res + "!"
   }
+
+  def twoAsOne(a: Int, b: Int, c: Int) = {
+    val ls = List(a, b, c)
+    val res = ls.zip(ls.tail :+ ls.head).zip(ls.last :: ls.take(2)).filter(x => (x._1._1 + x._1._2) == x._2).size
+
+    res > 0
+  }
 }
