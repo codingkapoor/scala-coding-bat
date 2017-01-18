@@ -136,4 +136,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.lastDigit(23, 19, 12) should equal(false)
     LogicI.lastDigit(23, 19, 3) should equal(true)
   }
+
+  """Given three ints, a b c, method "lessBy10"""" should """return true if one of them is 10 or more less than one of the others.""" in {
+    LogicI.lessBy10(1, 7, 11) should equal(true)
+    LogicI.lessBy10(1, 7, 10) should equal(false)
+    LogicI.lessBy10(11, 1, 7) should equal(true)
+  }
 }

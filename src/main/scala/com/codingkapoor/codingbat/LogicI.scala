@@ -135,4 +135,9 @@ object LogicI {
     val res = List(a, b, c).map(_ % 10)
     res.zip(res.tail :+ res.head).filter(x => x._1 == x._2).size > 0
   }
+
+  def lessBy10(a: Int, b: Int, c: Int): Boolean = {
+    val ls = List(a, b, c)
+    ls.zip(ls.tail :+ ls.head).filter(x => Math.abs(x._1 - x._2) >= 10).size > 0
+  }
 }
