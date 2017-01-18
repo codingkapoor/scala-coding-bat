@@ -130,4 +130,9 @@ object LogicI {
       c > b && b > a
     }
   }
+
+  def lastDigit(a: Int, b: Int, c: Int): Boolean = {
+    val res = List(a, b, c).map(_ % 10)
+    res.zip(res.tail :+ res.head).filter(x => x._1 == x._2).size > 0
+  }
 }

@@ -130,4 +130,10 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.inOrderEqual(5, 7, 6, false) should equal(false)
     LogicI.inOrderEqual(5, 5, 7, true) should equal(true)
   }
+
+  """Given three ints, a b c, method "lastDigit"""" should """return true if two or more of them have the same rightmost digit. The ints are non-negative.""" in {
+    LogicI.lastDigit(23, 19, 13) should equal(true)
+    LogicI.lastDigit(23, 19, 12) should equal(false)
+    LogicI.lastDigit(23, 19, 3) should equal(true)
+  }
 }
