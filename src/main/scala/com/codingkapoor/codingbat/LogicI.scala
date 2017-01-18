@@ -115,11 +115,19 @@ object LogicI {
     res > 0
   }
 
-  def inOrder(a: Int, b: Int, c: Int, bOk: Boolean) = {
+  def inOrder(a: Int, b: Int, c: Int, bOk: Boolean): Boolean = {
     if (bOk) {
       c > b
     } else {
       b > a && c > b
+    }
+  }
+
+  def inOrderEqual(a: Int, b: Int, c: Int, equalOk: Boolean): Boolean = {
+    if (equalOk) {
+      c >= b && b >= a
+    } else {
+      c > b && b > a
     }
   }
 }
