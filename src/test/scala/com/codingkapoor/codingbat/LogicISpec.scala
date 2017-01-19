@@ -148,4 +148,40 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.withoutDoubles(3, 3, true) should equal(7)
     LogicI.withoutDoubles(3, 3, false) should equal(6)
   }
+
+  """Given two int values, method "maxMod5"""" should """return whichever value is larger. However if the two values have the same remainder when divided by 5, then the return the smaller value. However, in all cases, if the two values are the same, return 0.""" in {
+    LogicI.maxMod5(2, 3) should equal(3)
+    LogicI.maxMod5(6, 2) should equal(6)
+    LogicI.maxMod5(3, 2) should equal(3)
+  }
+
+  """You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2. If they are all the value 2, method "redTicket"""" should """returns 10 as result. Otherwise if they are all the same, the result is 5. Otherwise so long as both b and c are different from a, the result is 1. Otherwise the result is 0.""" in {
+    LogicI.redTicket(2, 2, 2) should equal(10)
+    LogicI.redTicket(2, 2, 1) should equal(0)
+    LogicI.redTicket(0, 0, 0) should equal(5)
+  }
+
+  """You have a green lottery ticket, with ints a, b, and c on it. If the numbers are all different from each other, method "greenTicket"""" should """return 0 as result. If all of the numbers are the same, the result is 20. If two of the numbers are the same, the result is 10.""" in {
+    LogicI.greenTicket(1, 2, 3) should equal(0)
+    LogicI.greenTicket(2, 2, 2) should equal(20)
+    LogicI.greenTicket(1, 1, 2) should equal(10)
+  }
+//
+//  """""" should """""" in {
+//    LogicI.blueTicket(9, 1, 0) should equal(10)
+//    LogicI.blueTicket(9, 2, 0) should equal(0)
+//    LogicI.blueTicket(6, 1, 4) should equal(10)
+//  }
+//
+//  """""" should """""" in {
+//    LogicI.shareDigit(12, 23) should equal(true)
+//    LogicI.shareDigit(12, 43) should equal(false)
+//    LogicI.shareDigit(12, 44) should equal(false)
+//  }
+//
+//  """""" should """""" in {
+//    LogicI.sumLimit(2, 3) should equal(5)
+//    LogicI.sumLimit(8, 3) should equal(8)
+//    LogicI.sumLimit(8, 1) should equal(9)
+//  }
 }

@@ -141,7 +141,7 @@ object LogicI {
     ls.zip(ls.tail :+ ls.head).filter(x => Math.abs(x._1 - x._2) >= 10).size > 0
   }
 
-  def withoutDoubles(die1: Int, die2: Int, noDoubles: Boolean) = {
+  def withoutDoubles(die1: Int, die2: Int, noDoubles: Boolean): Int = {
     def nextDie(die: Int): Int = {
       val res = die + 1
       if (res <= 6) res % 7 else res % 6
@@ -150,5 +150,42 @@ object LogicI {
     if (noDoubles && die1 == die2) {
       die1 + nextDie(die2)
     } else die1 + die2
+  }
+
+  def maxMod5(a: Int, b: Int): Int = {
+    if (a == b) 0
+    else {
+      if ((a % 5) == (b % 5)) List(a, b).min
+      else List(a, b).max
+    }
+  }
+
+  def redTicket(a: Int, b: Int, c: Int): Int = {
+    val ls = List(a, b, c).distinct
+
+    if (ls.size == 1) {
+      if (ls(0) == 2) 10 else 5
+    } else {
+      if (b != a && c != a) 1 else 0
+    }
+  }
+
+  def greenTicket(a: Int, b: Int, c: Int) = {
+    val ls = List(a, b, c)
+    val distinct = ls.distinct
+
+    if (distinct.size == ls.size) 0 else if (distinct.size == 1) 20 else if (distinct.size == ls.size - 1) 10
+  }
+
+  def blueTicket(a: Int, b: Int, c: Int) = {
+
+  }
+
+  def shareDigit(a: Int, b: Int) = {
+
+  }
+
+  def sumLimit(a: Int, b: Int) = {
+
   }
 }
