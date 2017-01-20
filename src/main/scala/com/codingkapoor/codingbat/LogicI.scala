@@ -94,8 +94,12 @@ object LogicI {
 
   def fizzString(str: String): String = {
     val i = if (str.startsWith("f")) {
-      "Fizz" + { if (str.endsWith("b")) "Buzz" else "" }
-    } else if (str.endsWith("b")) { "Buzz" } else str
+      "Fizz" + {
+        if (str.endsWith("b")) "Buzz" else ""
+      }
+    } else if (str.endsWith("b")) {
+      "Buzz"
+    } else str
 
     i
   }
@@ -110,9 +114,7 @@ object LogicI {
 
   def twoAsOne(a: Int, b: Int, c: Int): Boolean = {
     val ls = List(a, b, c)
-    val res = ls.zip(ls.tail :+ ls.head).zip(ls.last :: ls.take(2)).filter(x => (x._1._1 + x._1._2) == x._2).size
-
-    res > 0
+    ls.zip(ls.tail :+ ls.head).zip(ls.last :: ls.take(2)).exists(x => (x._1._1 + x._1._2) == x._2)
   }
 
   def inOrder(a: Int, b: Int, c: Int, bOk: Boolean): Boolean = {
@@ -133,12 +135,12 @@ object LogicI {
 
   def lastDigit(a: Int, b: Int, c: Int): Boolean = {
     val res = List(a, b, c).map(_ % 10)
-    res.zip(res.tail :+ res.head).filter(x => x._1 == x._2).size > 0
+    res.zip(res.tail :+ res.head).exists(x => x._1 == x._2)
   }
 
   def lessBy10(a: Int, b: Int, c: Int): Boolean = {
     val ls = List(a, b, c)
-    ls.zip(ls.tail :+ ls.head).filter(x => Math.abs(x._1 - x._2) >= 10).size > 0
+    ls.zip(ls.tail :+ ls.head).exists(x => Math.abs(x._1 - x._2) >= 10)
   }
 
   def withoutDoubles(die1: Int, die2: Int, noDoubles: Boolean): Int = {
@@ -170,11 +172,11 @@ object LogicI {
     }
   }
 
-  def greenTicket(a: Int, b: Int, c: Int) = {
+  def greenTicket(a: Int, b: Int, c: Int): Int = {
     val ls = List(a, b, c)
     val distinct = ls.distinct
 
-    if (distinct.size == ls.size) 0 else if (distinct.size == 1) 20 else if (distinct.size == ls.size - 1) 10
+    if (distinct.size == ls.size) 0 else if (distinct.size == 1) 20 else if (distinct.size == ls.size - 1) 10 else -1
   }
 
   def blueTicket(a: Int, b: Int, c: Int) = {
