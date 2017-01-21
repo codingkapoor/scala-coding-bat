@@ -7,7 +7,7 @@ Solutions to CodingBat problems in Scala
 2. [Warmup-II](https://github.com/codingkapoor/scala-coding-bat#warmup-ii)
 3. [String-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#string-i)
 4. [Array-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#array-i)
-5. [Logic-I]()
+5. [Logic-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#logic-i)
 
 ## Warmup-I
 ### [sleepIn](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupI.scala)
