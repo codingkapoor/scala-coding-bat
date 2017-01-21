@@ -166,7 +166,7 @@ object LogicI {
     val ls = List(a, b, c).distinct
 
     if (ls.size == 1) {
-      if (ls(0) == 2) 10 else 5
+      if (ls.head == 2) 10 else 5
     } else {
       if (b != a && c != a) 1 else 0
     }
@@ -179,15 +179,19 @@ object LogicI {
     if (distinct.size == ls.size) 0 else if (distinct.size == 1) 20 else if (distinct.size == ls.size - 1) 10 else -1
   }
 
-  def blueTicket(a: Int, b: Int, c: Int) = {
+  def blueTicket(a: Int, b: Int, c: Int): Int = {
+    val ls = List(a, b, c)
+    val sum = ls.zip(ls.tail :+ ls.head).map(x => x._1 + x._2)
 
+    if (sum.contains(10)) 10 else if (sum(2) - sum.head >= 10 || sum(1) - sum.head >= 10) 5 else 0
   }
 
-  def shareDigit(a: Int, b: Int) = {
-
+  def shareDigit(a: Int, b: Int): Boolean = {
+    a.toString.toList.exists(b.toString.toList.contains)
   }
 
-  def sumLimit(a: Int, b: Int) = {
-
+  def sumLimit(a: Int, b: Int): Int = {
+    val sum = a + b
+    if (sum.toString.length <= a.toString.length) sum else a
   }
 }

@@ -90,9 +90,9 @@ class LogicISpec extends FlatSpec with Matchers {
   }
 
   """Your cell phone rings. Method "answerCell"""" should """return true if you should answer it. Normally you answer, except in the morning you only answer if it is your mom calling. In all cases, if you are asleep, you do not answer.""" in {
-    LogicI.answerCell(false, false, false) should equal(true)
-    LogicI.answerCell(false, false, true) should equal(false)
-    LogicI.answerCell(true, false, false) should equal(false)
+    LogicI.answerCell(isMorning = false, isMom = false, isAsleep = false) should equal(true)
+    LogicI.answerCell(isMorning = false, isMom = false, isAsleep = true) should equal(false)
+    LogicI.answerCell(isMorning = true, isMom = false, isAsleep = false) should equal(false)
   }
 
   """We are having a party with amounts of tea and candy. Method "teaParty"""" should """return the int outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is good (1) if both tea and candy are at least 5. However, if either tea or candy is at least double the amount of the other one, the party is great (2). However, in all cases, if either tea or candy is less than 5, the party is always bad (0).""" in {
@@ -166,22 +166,22 @@ class LogicISpec extends FlatSpec with Matchers {
     LogicI.greenTicket(2, 2, 2) should equal(20)
     LogicI.greenTicket(1, 1, 2) should equal(10)
   }
-//
-//  """""" should """""" in {
-//    LogicI.blueTicket(9, 1, 0) should equal(10)
-//    LogicI.blueTicket(9, 2, 0) should equal(0)
-//    LogicI.blueTicket(6, 1, 4) should equal(10)
-//  }
-//
-//  """""" should """""" in {
-//    LogicI.shareDigit(12, 23) should equal(true)
-//    LogicI.shareDigit(12, 43) should equal(false)
-//    LogicI.shareDigit(12, 44) should equal(false)
-//  }
-//
-//  """""" should """""" in {
-//    LogicI.sumLimit(2, 3) should equal(5)
-//    LogicI.sumLimit(8, 3) should equal(8)
-//    LogicI.sumLimit(8, 1) should equal(9)
-//  }
+
+  """You have a blue lottery ticket, with ints a, b, and c on it. This makes three pairs, which we'll call ab, bc, and ac. Consider the sum of the numbers in each pair. If any pair sums to exactly 10, method "blueTicket"""" should """return 10 as the result.  Otherwise if the ab sum is exactly 10 more than either bc or ac sums, the result is 5. Otherwise the result is 0.""" in {
+    LogicI.blueTicket(9, 1, 0) should equal(10)
+    LogicI.blueTicket(9, 2, 0) should equal(0)
+    LogicI.blueTicket(6, 1, 4) should equal(10)
+  }
+
+  """Given two ints, each in the range 10..99, method "shareDigit"""" should """return true if there is a digit that appears in both numbers, such as the 2 in 12 and 23.""" in {
+    LogicI.shareDigit(12, 23) should equal(true)
+    LogicI.shareDigit(12, 43) should equal(false)
+    LogicI.shareDigit(12, 44) should equal(false)
+  }
+
+  """Given 2 non-negative ints, a and b, method "sumLimit"""" should """return their sum, so long as the sum has the same number of digits as a. If the sum has more digits than a, just return a without b.""" in {
+    LogicI.sumLimit(2, 3) should equal(5)
+    LogicI.sumLimit(8, 3) should equal(8)
+    LogicI.sumLimit(8, 1) should equal(9)
+  }
 }
