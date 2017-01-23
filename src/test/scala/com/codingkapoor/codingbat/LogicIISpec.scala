@@ -21,4 +21,22 @@ class LogicIISpec extends FlatSpec with Matchers {
     LogicII.luckySum(1, 2, 13) should equal(3)
     LogicII.luckySum(1, 13, 3) should equal(1)
   }
+
+  """Given 3 int values, a b c, method "noTeenSum"""" should """return their sum. However, if any of the values is a teen -- in the range 13..19 inclusive -- then that value counts as 0, except 15 and 16 do not count as a teens.""" in {
+    LogicII.noTeenSum(1, 2, 3) should equal(6)
+    LogicII.noTeenSum(2, 13, 1) should equal(3)
+    LogicII.noTeenSum(2, 1, 14) should equal(3)
+  }
+
+  """For this problem, we'll round an int value up to the next multiple of 10 if its rightmost digit is 5 or more, so 15 rounds up to 20. Alternately, round down to the previous multiple of 10 if its rightmost digit is less than 5, so 12 rounds down to 10. Given 3 ints, a b c, method "roundSum"""" should """return the sum of their rounded values.""" in {
+    LogicII.roundSum(16, 17, 18) should equal(60)
+    LogicII.roundSum(12, 13, 14) should equal(30)
+    LogicII.roundSum(6, 4, 4) should equal(10)
+  }
+
+  """Given three ints, a b c, method "closeFar"""" should """return true if one of b or c is "close" (differing from a by at most 1), while the other is "far", differing from both other values by 2 or more.""" in {
+    LogicII.closeFar(1, 2, 10) should equal(true)
+    LogicII.closeFar(1, 2, 3) should equal(false)
+    LogicII.closeFar(4, 1, 3) should equal(true)
+  }
 }
