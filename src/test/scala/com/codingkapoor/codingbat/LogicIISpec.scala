@@ -39,4 +39,22 @@ class LogicIISpec extends FlatSpec with Matchers {
     LogicII.closeFar(1, 2, 3) should equal(false)
     LogicII.closeFar(4, 1, 3) should equal(true)
   }
+
+  """Given 2 int values greater than 0, method "blackJack"""" should """return whichever value is nearest to 21 without going over. Return 0 if they both go over.""" in {
+    LogicII.blackJack(19, 21) should equal(21)
+    LogicII.blackJack(21, 19) should equal(21)
+    LogicII.blackJack(19, 22) should equal(19)
+  }
+
+  """Given three ints, a b c, one of them is small, one is medium and one is large. Method "evenlySpaced"""" should """return true if the three values are evenly spaced, so the difference between small and medium is the same as the difference between medium and large.""" in {
+    LogicII.evenlySpaced(2, 4, 6) should equal(true)
+    LogicII.evenlySpaced(4, 6, 2) should equal(true)
+    LogicII.evenlySpaced(4, 6, 3) should equal(false)
+  }
+
+  """We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). Method "makeChocolate"""" should """return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.""" in {
+    LogicII.makeChocolate(4, 1, 9) should equal(4)
+    LogicII.makeChocolate(4, 1, 10) should equal(-1)
+    LogicII.makeChocolate(4, 1, 7) should equal(2)
+  }
 }

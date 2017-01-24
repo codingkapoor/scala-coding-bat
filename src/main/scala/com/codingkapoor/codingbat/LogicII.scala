@@ -43,4 +43,22 @@ object LogicII {
     else false
   }
 
+  def blackJack(a: Int, b: Int): Int = {
+    val ls = List(a, b).filterNot(_ > 21)
+    ls.zip(ls.map(x => Math.abs(x - 21))).minBy(_._2)._1
+  }
+
+  def evenlySpaced(a: Int, b: Int, c: Int): Boolean = {
+    val ls = List(a, b, c).sorted
+    Math.abs(ls.tail.head - ls.head) == Math.abs(ls.last - ls.tail.head)
+  }
+
+  def makeChocolate(small: Int, big: Int, goal: Int): Int = {
+    val smallBar = 1
+    val bigBar = 5
+
+    val diff = goal - (bigBar * big)
+    val smalls = diff / smallBar
+    if (diff % smallBar == 0 && smalls <= small) smalls else -1
+  }
 }
