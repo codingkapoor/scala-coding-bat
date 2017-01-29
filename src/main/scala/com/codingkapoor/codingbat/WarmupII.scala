@@ -16,8 +16,8 @@ object WarmupII {
   }
 
   def doubleX(str: String): Boolean = {
-    val ls = str.toList.zipWithIndex.filter(_._1 == 'x').view take (2)
-    ls(1)._2 == ls(0)._2 + 1
+    val ls = str.toList.zipWithIndex.filter(_._1 == 'x').view take 2
+    ls(1)._2 == ls.head._2 + 1
   }
 
   def stringBits(str: String): String = {
@@ -39,16 +39,16 @@ object WarmupII {
   }
 
   def arrayCount9(ints: List[Int]): Int = {
-    ints.filter(_ == 9).size
+    ints.count(_ == 9)
   }
 
   def arrayFront9(ints: List[Int]): Boolean = {
-    ints.take(4).filter(_ == 9).size > 0
+    ints.take(4).count(_ == 9) > 0
   }
 
   def array123(ints: List[Int]): Boolean = {
     val pattern = "123".r
-    pattern.findAllIn(ints.mkString).size > 0
+    pattern.findAllIn(ints.mkString).nonEmpty
   }
 
   /*
@@ -75,7 +75,7 @@ object WarmupII {
 
   def stringMatch(a: String, b: String): Int = {
     val ls = (a zip a.tail) zip (b zip b.tail)
-    ls.filter(x => x._1 == x._2).size
+    ls.count(x => x._1 == x._2)
   }
 
   def stringX(str: String): String = {
@@ -92,16 +92,16 @@ object WarmupII {
 
   def array667(nums: List[Int]): Int = {
     val pairs = nums zip nums.tail
-    pairs.filter(x => x._2 == 6 || x._2 == 7).filter(_._1 == 6).size
+    pairs.filter(x => x._2 == 6 || x._2 == 7).count(_._1 == 6)
   }
 
   def noTriples(nums: List[Int]): Boolean = {
     val ls = (nums, nums.tail, nums.tail.tail).zipped.toList
-    ls.filter(x => x._1 == x._2 && x._1 == x._3).size == 0
+    ls.count(x => x._1 == x._2 && x._1 == x._3) == 0
   }
 
-  def has271(nums: List[Int]) = {
+  def has271(nums: List[Int]): Boolean = {
     val ls = (nums, nums.tail, nums.tail.tail).zipped.toList
-    ls.filter(x => x._2 == x._1 + 5 && x._3 <= x._1 - 1).size > 0
+    ls.count(x => x._2 == x._1 + 5 && x._3 <= x._1 - 1) > 0
   }
 }

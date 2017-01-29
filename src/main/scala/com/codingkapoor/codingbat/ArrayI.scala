@@ -19,7 +19,7 @@ object ArrayI {
   }
 
   def sum3(arr: Array[Int]): Int = {
-    arr.reduceLeft(_ + _)
+    arr.sum
   }
 
   def rotateLeft3(arr: Array[Int]): Array[Int] = {
@@ -36,7 +36,7 @@ object ArrayI {
   }
 
   def sum2(arr: Array[Int]): Int = {
-    if (arr.length < 1) 0 else arr.take(2).reduceLeft(_ + _)
+    if (arr.length < 1) 0 else arr.take(2).sum
   }
 
   def middleWay(a: Array[Int], b: Array[Int]): Array[Int] = {
@@ -63,7 +63,7 @@ object ArrayI {
   }
 
   def double23(arr: Array[Int]): Boolean = {
-    arr.filter(_ == 2).size == 2 || arr.filter(_ == 3).size == 2
+    arr.count(_ == 2) == 2 || arr.count(_ == 3) == 2
   }
 
   def fix23(arr: Array[Int]): Array[Int] = {
@@ -71,13 +71,13 @@ object ArrayI {
   }
 
   def start1(a: Array[Int], b: Array[Int]): Int = {
-    Array(a.take(1), b.take(1)).flatten.filter(_ == 1).size
+    Array(a.take(1), b.take(1)).flatten.count(_ == 1)
   }
 
   def biggerTwo(a: Array[Int], b: Array[Int]): Array[Int] = {
 
-    val sumA = a.foldLeft(0)(_ + _)
-    val sumB = b.foldLeft(0)(_ + _)
+    val sumA = a.sum
+    val sumB = b.sum
 
     if (sumA > sumB) a else if (sumA < sumB) b else a
   }
@@ -98,7 +98,7 @@ object ArrayI {
     }
   }
 
-  def midThree(arr: Array[Int]) = {
+  def midThree(arr: Array[Int]): Array[Int] = {
     val mid = arr.length / 2
     Array(arr(mid - 1), arr(mid), arr(mid + 1))
   }

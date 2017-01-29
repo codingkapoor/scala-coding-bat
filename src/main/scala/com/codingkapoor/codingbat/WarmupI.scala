@@ -15,7 +15,7 @@ object WarmupI {
   }
 
   def diff21(n: Int): Int = {
-    val absDiff = Math.abs(n - 21);
+    val absDiff = Math.abs(n - 21)
     if (n > 21) 2 * absDiff else absDiff
   }
 
@@ -81,7 +81,7 @@ object WarmupI {
   }
 
   def loneTeen(a: Int, b: Int): Boolean = {
-    List(a, b).filter(x => x >= 13 && x <= 19).size == 1
+    List(a, b).count(x => x >= 13 && x <= 19) == 1
   }
 
   def delDel(str: String): String = {
