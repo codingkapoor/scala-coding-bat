@@ -21,12 +21,12 @@ object StringII {
   }
 
   def endOther(a: String, b: String): Boolean = {
-    val ls = List(a, b).sortWith(_ < _)
-    ls.head.mkString.endsWith(ls.tail.mkString)
+    val ls = List(a.toLowerCase, b.toLowerCase).sortWith(_ < _)
+    ls.last.endsWith(ls.head)
   }
 
   def xyzThere(str: String): Boolean = {
-    val pattern1 = s".xyz".r
+    val pattern1 = s"[.]xyz".r
     val pattern2 = s"xyz".r
 
     if (pattern1.findAllIn(str).isEmpty) {
@@ -71,8 +71,8 @@ object StringII {
     val res = str.iterator.sliding(3).toList.map(_.mkString)
     val mid = res.size / 2
 
-    if (mid % 2 == 0) res(mid) == "xyz" || res(mid - 1) == "xyz"
-    else res(mid) == "xyz" || res(mid - 1) == "xyz" || res(mid + 1) == "xyz"
+    if (res.size % 2 == 0) res(mid) == "xyz" || res(mid - 1) == "xyz" || res(mid + 1) == "xyz"
+    else res(mid) == "xyz"
   }
 
   def getSandwich(str: String): String = {
@@ -90,10 +90,7 @@ object StringII {
   }
 
   def oneTwo(str: String): String = {
-    if (str.length < 3) str
-    else {
-      str.iterator.sliding(3).toList.map(x => x.tail :+ x.head).map(_.mkString).reduce(_ + _)
-    }
+    str.grouped(3).toList.map(x => if (x.length < 3) x else x.tail :+ x.head).mkString
   }
 
   def zipZap(str: String): String = {
@@ -106,13 +103,17 @@ object StringII {
     pattern.replaceAllIn(str, "")
   }
 
-//  def plusOut(str: String, word: String): String = {
-//    str.toList.map(i => if(i != 'x' && i != 'y') '+' else i).mkString
-//  }
-//
-//  def wordEnds(str: String, word: String): String = {
-//    val pattern = s"[a-z|A-Z|0-9]?[XY]*[a-z|A-Z|0-9]?".r
-//    pattern.findAllIn(str).toList.map(x => s"XY".r.replaceAllIn(x, "")).mkString
-//  }
+  def plusOut(str: String, word: String): String = {
+    val res = str.split(word).map(x => "+" * x.length).mkString(word)
+    if (str.endsWith(word)) res + word else res
+  }
+
+  // Yet to device an appropriate regex for this problem.
+  // The closest I could reach is defined below.
+  def wordEnds(str: String, word: String) = {
+    val str = "abcXY123XYijk"
+    val pattern = s"(?=([a-z|A-Z|0-9]?(XY)+[a-z|A-Z|0-9]?))".r
+    pattern.findAllMatchIn(str).map(_.group(1)).toList
+  }
 
 }
