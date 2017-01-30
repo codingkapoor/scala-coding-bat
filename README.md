@@ -7,8 +7,9 @@ Solutions to CodingBat problems in Scala
 2. [Warmup-II](https://github.com/codingkapoor/scala-coding-bat#warmup-ii)
 3. [String-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#string-i)
 4. [String-II](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#string-ii)
-5. [Array-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#array-i)
-6. [Logic-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#logic-i)
+5. [String-III](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#string-iii)
+6. [Array-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#array-i)
+7. [Logic-I](https://github.com/codingkapoor/scala-coding-bat/blob/master/README.md#logic-i)
 
 ## Warmup-I
 ### [sleepIn](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/WarmupI.scala)
@@ -929,6 +930,44 @@ Given a string and a non-empty word string, return a string made of each char ju
 wordEnds("abcXY123XYijk", "XY") → "c13i"
 wordEnds("XY123XY", "XY") → "13"
 wordEnds("XY1XY", "XY") → "11"
+```
+
+## String-III
+
+### [countYZ](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringIII.scala)
+Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in "fez" count, but not the 'y' in "yellow" (not case sensitive). We'll say that a y or z is at the end of a word if there is not an alphabetic letter immediately following it. (Note: Character.isLetter(char) tests if a char is an alphabetic letter.)
+
+```
+countYZ("fez day") → 2
+countYZ("day fez") → 2
+countYZ("day fyyyz") → 2
+```
+
+### [withoutString](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringIII.scala)
+Given two strings, base and remove, return a version of the base string where all instances of the remove string have been removed (not case sensitive). You may assume that the remove string is length 1 or more. Remove only non-overlapping instances, so with "xxx" removing "xx" leaves "x".
+
+```
+withoutString("Hello there", "llo") → "He there"
+withoutString("Hello there", "e") → "Hllo thr"
+withoutString("Hello there", "x") → "Hello there"
+```
+
+### [equalIsNot](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringIII.scala)
+Given a string, return true if the number of appearances of "is" anywhere in the string is equal to the number of appearances of "not" anywhere in the string (case sensitive).
+
+```
+equalIsNot("This is not") → false
+equalIsNot("This is notnot") → true
+equalIsNot("noisxxnotyynotxisi") → true
+```
+
+### [gHappy](https://github.com/codingkapoor/scala-coding-bat/blob/master/src/main/scala/com/codingkapoor/codingbat/StringIII.scala)
+We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right. Return true if all the g's in the given string are happy.
+
+```
+gHappy("xxggxx") → true
+gHappy("xxgxx") → false
+gHappy("xxggyygxx") → false
 ```
 
 ## Array-I
