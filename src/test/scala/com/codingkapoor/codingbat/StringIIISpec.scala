@@ -27,4 +27,47 @@ class StringIIISpec extends FlatSpec with Matchers {
     StringIII.gHappy("xxgxx") should equal(false)
     StringIII.gHappy("xxggyygxx") should equal(false)
   }
+
+//  """We'll say that a "triple" in a string is a char appearing three times in a row. Method "countTriple"""" should """return the number of triples in the given string. The triples may overlap.""" in {
+//    StringIII.countTriple("abcXXXabc") should equal(1)
+//    StringIII.countTriple("xxxabyyyycd") should equal(3)
+//    StringIII.countTriple("a") should equal(0)
+//  }
+
+  """Given a string, method "sumDigits"""" should """return the sum of the digits 0-9 that appear in the string, ignoring all other characters. Return 0 if there are no digits in the string.""" in {
+    StringIII.sumDigits("aa1bc2d3") should equal(6)
+    StringIII.sumDigits("aa11b33") should equal(8)
+    StringIII.sumDigits("Chocolate") should equal(0)
+  }
+
+  """Given a string, method "sameEnds"""" should """return the longest substring that appears at both the beginning and end of the string without overlapping.""" in {
+    StringIII.sameEnds("abXYab") should equal("ab")
+    StringIII.sameEnds("xx") should equal("x")
+    StringIII.sameEnds("xxx") should equal("x")
+  }
+
+  """Given a string, method "mirrorEnds"""" should """look for a mirror image (backwards) string at both the beginning and end of the given string. In other words, zero or more characters at the very begining of the given string, and at the very end of the string in reverse order (possibly overlapping).""" in {
+    StringIII.mirrorEnds("abXYZba") should equal("ab")
+    StringIII.mirrorEnds("abca") should equal("a")
+    StringIII.mirrorEnds("aba") should equal("aba")
+  }
+
+//  """Given a string, method "maxBlock"""" should """return the length of the largest "block" in the string. A block is a run of adjacent chars that are the same.""" in {
+//    StringIII.maxBlock("hoopla") should equal(2)
+//    StringIII.maxBlock("abbCCCddBBBxx") should equal(3)
+//    StringIII.maxBlock("") should equal(0)
+//  }
+
+  """Given a string, method "sumNumbers"""" should """return the sum of the numbers appearing in the string, ignoring all other characters. A number is a series of 1 or more digit chars in a row.""" in {
+    StringIII.sumNumbers("abc123xyz") should equal(123)
+    StringIII.sumNumbers("aa11b33") should equal(44)
+    StringIII.sumNumbers("7 11") should equal(18)
+  }
+
+//  """Given a string, method "notReplace"""" should """return a string where every appearance of the lowercase word "is" has been replaced with "is not". The word "is" should not be immediately preceeded or followed by a letter -- so for example the "is" in "this" does not count.""" in {
+//    StringIII.notReplace("is test") should equal("is not test")
+//    StringIII.notReplace("is-is") should equal("is not-is not")
+//    StringIII.notReplace("This is right") should equal("This is not right")
+//  }
+
 }
