@@ -27,7 +27,8 @@ object StringIII {
   }
 
   def countTriple(str: String) = {
-
+    val pattern = s"(?=((.)\\2{2}))".r
+    pattern.findAllMatchIn(str).map(_.group(1)).toList.size
   }
 
   def sumDigits(str: String): Int = {
@@ -55,13 +56,20 @@ object StringIII {
     str.zip(str.reverse).takeWhile(x => x._1 == x._2).map(x => x._1).mkString
   }
 
-  def maxBlock(str: String) = {}
+  def maxBlock(str: String) = {
+    val pattern = "(.)\\1+".r
+    pattern.findAllIn(str).toList.sortWith(_ < _).headOption match {
+      case Some(r) => r.length
+      case None    => 0
+    }
+  }
 
   def sumNumbers(str: String): Int = {
     val pattern = "[0-9]+".r
     pattern.findAllIn(str).toList.map(_.toInt).sum
   }
 
+  // Yet to device an appropriate regex for this problem.
   def notReplace(str: String) = {}
 
 }

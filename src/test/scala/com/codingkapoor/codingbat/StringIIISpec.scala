@@ -28,11 +28,11 @@ class StringIIISpec extends FlatSpec with Matchers {
     StringIII.gHappy("xxggyygxx") should equal(false)
   }
 
-//  """We'll say that a "triple" in a string is a char appearing three times in a row. Method "countTriple"""" should """return the number of triples in the given string. The triples may overlap.""" in {
-//    StringIII.countTriple("abcXXXabc") should equal(1)
-//    StringIII.countTriple("xxxabyyyycd") should equal(3)
-//    StringIII.countTriple("a") should equal(0)
-//  }
+  """We'll say that a "triple" in a string is a char appearing three times in a row. Method "countTriple"""" should """return the number of triples in the given string. The triples may overlap.""" in {
+    StringIII.countTriple("abcXXXabc") should equal(1)
+    StringIII.countTriple("xxxabyyyycd") should equal(3)
+    StringIII.countTriple("a") should equal(0)
+  }
 
   """Given a string, method "sumDigits"""" should """return the sum of the digits 0-9 that appear in the string, ignoring all other characters. Return 0 if there are no digits in the string.""" in {
     StringIII.sumDigits("aa1bc2d3") should equal(6)
@@ -52,11 +52,11 @@ class StringIIISpec extends FlatSpec with Matchers {
     StringIII.mirrorEnds("aba") should equal("aba")
   }
 
-//  """Given a string, method "maxBlock"""" should """return the length of the largest "block" in the string. A block is a run of adjacent chars that are the same.""" in {
-//    StringIII.maxBlock("hoopla") should equal(2)
-//    StringIII.maxBlock("abbCCCddBBBxx") should equal(3)
-//    StringIII.maxBlock("") should equal(0)
-//  }
+  """Given a string, method "maxBlock"""" should """return the length of the largest "block" in the string. A block is a run of adjacent chars that are the same.""" in {
+    StringIII.maxBlock("hoopla") should equal(2)
+    StringIII.maxBlock("abbCCCddBBBxx") should equal(3)
+    StringIII.maxBlock("") should equal(0)
+  }
 
   """Given a string, method "sumNumbers"""" should """return the sum of the numbers appearing in the string, ignoring all other characters. A number is a series of 1 or more digit chars in a row.""" in {
     StringIII.sumNumbers("abc123xyz") should equal(123)
