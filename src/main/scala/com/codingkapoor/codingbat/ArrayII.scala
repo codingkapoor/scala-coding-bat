@@ -40,4 +40,17 @@ object ArrayII {
   def more14(nums: Array[Int]): Boolean = {
     nums.count(_ == 1) > nums.count(_ == 4)
   }
+
+  def fizzArray(n: Int): Array[Int] = {
+    (0 until n).toArray
+  }
+
+  def only14(nums: Array[Int]): Boolean = {
+    nums.count(x => x == 1 || x == 4) == nums.length
+  }
+
+  def fizzArray2(n: Int): Array[String] = {
+    (0 until n).toArray.map(_.toString)
+  }
+
 }

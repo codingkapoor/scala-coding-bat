@@ -57,4 +57,22 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.more14(Array(1, 4, 1, 4)) should equal(false)
     ArrayII.more14(Array(1, 1)) should equal(true)
   }
+
+  """Given a number n, method "fizzArray"""" should """create and return a new int array of length n, containing the numbers 0, 1, 2, ... n-1. The given n may be 0, in which case just return a length 0 array.""" in {
+    ArrayII.fizzArray(4) should equal(Array(0, 1, 2, 3))
+    ArrayII.fizzArray(1) should equal(Array(0))
+    ArrayII.fizzArray(10) should equal(Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
+  }
+
+  """Given an array of ints, method "only14"""" should """return true if every element is a 1 or a 4.""" in {
+    ArrayII.only14(Array(1, 4, 1, 4)) should equal(true)
+    ArrayII.only14(Array(1, 4, 2, 4)) should equal(false)
+    ArrayII.only14(Array(1, 1)) should equal(true)
+  }
+
+  """Given a number n, method "fizzArray2"""" should """create and return a new string array of length n, containing the strings "0", "1" "2" .. through n-1. N may be 0, in which case just return a length 0 array.""" in {
+    ArrayII.fizzArray2(4) should equal(Array("0", "1", "2", "3"))
+    ArrayII.fizzArray2(10) should equal(Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"))
+    ArrayII.fizzArray2(2) should equal(Array("0", "1"))
+  }
 }
