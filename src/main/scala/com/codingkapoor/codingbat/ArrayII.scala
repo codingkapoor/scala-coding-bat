@@ -53,4 +53,19 @@ object ArrayII {
     (0 until n).toArray.map(_.toString)
   }
 
+  def no14(nums: Array[Int]): Boolean = {
+    (nums.contains(1) && !nums.contains(4)) || (!nums.contains(1) && nums.contains(4))
+  }
+
+  def isEverywhere(nums: Array[Int], value: Int): Boolean = {
+    nums.iterator.sliding(2).toList.count(x => x.head == value || x.last == value) == nums.length - 1
+  }
+
+  def either24(nums: Array[Int]): Boolean = {
+    val twos = nums.iterator.sliding(2).toList.count(x => x.head == 2 && x.last == 2)
+    val fours = nums.iterator.sliding(2).toList.count(x => x.head == 4 && x.last == 4)
+
+    twos > 0 && fours == 0 || twos == 0 && fours > 0
+  }
+
 }

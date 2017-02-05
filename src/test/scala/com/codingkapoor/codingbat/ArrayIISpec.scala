@@ -75,4 +75,23 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.fizzArray2(10) should equal(Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"))
     ArrayII.fizzArray2(2) should equal(Array("0", "1"))
   }
+
+  """Given an array of ints, method "no14"""" should """return true if it contains no 1's or it contains no 4's.""" in {
+    ArrayII.no14(Array(1, 2, 3)) should equal(true)
+    ArrayII.no14(Array(1, 2, 3, 4)) should equal(false)
+    ArrayII.no14(Array(2, 3, 4)) should equal(true)
+  }
+
+  """We'll say that a value is "everywhere" in an array if for every pair of adjacent elements in the array, at least one of the pair is that value. Method "isEverywhere"""" should """return true if the given value is everywhere in the array.""" in {
+    ArrayII.isEverywhere(Array(1, 2, 1, 3), 1) should equal(true)
+    ArrayII.isEverywhere(Array(1, 2, 1, 3), 2) should equal(false)
+    ArrayII.isEverywhere(Array(1, 2, 1, 3, 4), 1) should equal(false)
+  }
+
+  """Given an array of ints, method "either24"""" should """return true if the array contains a 2 next to a 2 or a 4 next to a 4, but not both.""" in {
+    ArrayII.either24(Array(1, 2, 2)) should equal(true)
+    ArrayII.either24(Array(4, 4, 1)) should equal(true)
+    ArrayII.either24(Array(4, 4, 1, 2, 2)) should equal(false)
+  }
+
 }
