@@ -129,4 +129,10 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.twoTwo(Array(2, 2, 4)) should equal(true)
     ArrayII.twoTwo(Array(2, 2, 4, 2)) should equal(false)
   }
+
+  """Method "tripleUp"""" should """return true if the array contains, somewhere, three increasing adjacent numbers like .... 4, 5, 6, ... or 23, 24, 25.""" in {
+    ArrayII.tripleUp(Array(1, 4, 5, 6, 2)) should equal(true)
+    ArrayII.tripleUp(Array(1, 2, 3)) should equal(true)
+    ArrayII.tripleUp(Array(1, 2, 4)) should equal(false)
+  }
 }

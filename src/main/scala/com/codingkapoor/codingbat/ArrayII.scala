@@ -96,4 +96,10 @@ object ArrayII {
     val pattern = "(?=(22))".r
     pattern.findAllMatchIn("2242").map(_.group(1)).toList.flatten.size == nums.count(_ == 2)
   }
+
+  def sameEnds(nums: Array[Int], len: Int) = {}
+
+  def tripleUp(nums: Array[Int]): Boolean = {
+    nums.iterator.sliding(3).toList.count(x => x(1) * 3 == x.sum) > 0
+  }
 }
