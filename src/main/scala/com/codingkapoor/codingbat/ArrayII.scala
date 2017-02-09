@@ -68,4 +68,18 @@ object ArrayII {
     twos > 0 && fours == 0 || twos == 0 && fours > 0
   }
 
+  def matchUp(nums: Array[Int], nums2: Array[Int]): Int = {
+    nums.zip(nums2).count(x => Math.abs(x._1 - x._2) <= 2 && Math.abs(x._1 - x._2) != 0)
+  }
+
+  def has77(nums: Array[Int]): Boolean = {
+    val pattern = "7[0-9]?7".r
+    pattern.findAllIn(nums.mkString).nonEmpty
+  }
+
+  def has12(nums: Array[Int]): Boolean = {
+    val pattern = "1[0-9]*2".r
+    pattern.findAllIn(nums.mkString).nonEmpty
+  }
+
 }

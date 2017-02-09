@@ -94,4 +94,21 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.either24(Array(4, 4, 1, 2, 2)) should equal(false)
   }
 
+  """Given arrays nums1 and nums2 of the same length, for every element in nums1, consider the corresponding element in nums2 (at the same index). Method "matchUp"""" should """return the count of the number of times that the two elements differ by 2 or less, but are not equal.""" in {
+    ArrayII.matchUp(Array(1, 2, 3), Array(2, 3, 10)) should equal(2)
+    ArrayII.matchUp(Array(1, 2, 3), Array(2, 3, 5)) should equal(3)
+    ArrayII.matchUp(Array(1, 2, 3), Array(2, 3, 3)) should equal(2)
+  }
+
+  """Given an array of ints, method "has77"""" should """return true if the array contains two 7's next to each other, or there are two 7's separated by one element, such as with {7, 1, 7}.""" in {
+    ArrayII.has77(Array(1, 7, 7)) should equal(true)
+    ArrayII.has77(Array(1, 7, 1, 7)) should equal(true)
+    ArrayII.has77(Array(1, 7, 1, 1, 7)) should equal(false)
+  }
+
+  """Given an array of ints, method "has12"""" should """return true if there is a 1 in the array with a 2 somewhere later in the array.""" in {
+    ArrayII.has12(Array(1, 3, 2)) should equal(true)
+    ArrayII.has12(Array(3, 1, 2)) should equal(true)
+    ArrayII.has12(Array(3, 1, 4, 5, 2)) should equal(true)
+  }
 }
