@@ -82,4 +82,18 @@ object ArrayII {
     pattern.findAllIn(nums.mkString).nonEmpty
   }
 
+  def modThree(nums: Array[Int]): Boolean = {
+    val pattern = "[13579][13579][13579]|[2468][2468][2468]".r
+    pattern.findAllIn(nums.mkString).nonEmpty
+  }
+
+  def haveThree(nums: Array[Int]): Boolean = {
+    val pattern = "3[0-9]+3[0-9]+3".r
+    pattern.findAllIn(nums.mkString).toList.flatMap(_.toList).count(_ == '3') == 3
+  }
+
+  def twoTwo(nums: Array[Int]): Boolean = {
+    val pattern = "(?=(22))".r
+    pattern.findAllMatchIn("2242").map(_.group(1)).toList.flatten.size == nums.count(_ == 2)
+  }
 }

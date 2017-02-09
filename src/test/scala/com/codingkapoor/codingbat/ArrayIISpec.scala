@@ -111,4 +111,22 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.has12(Array(3, 1, 2)) should equal(true)
     ArrayII.has12(Array(3, 1, 4, 5, 2)) should equal(true)
   }
+
+  """Given an array of ints, method "modThree"""" should """return true if the array contains either 3 even or 3 odd values all next to each other.""" in {
+    ArrayII.modThree(Array(2, 1, 3, 5)) should equal(true)
+    ArrayII.modThree(Array(2, 1, 2, 5)) should equal(false)
+    ArrayII.modThree(Array(2, 4, 2, 5)) should equal(true)
+  }
+
+  """Given an array of ints, method "haveThree"""" should """return true if the value 3 appears in the array exactly 3 times, and no 3's are next to each other.""" in {
+    ArrayII.haveThree(Array(3, 1, 3, 1, 3)) should equal(true)
+    ArrayII.haveThree(Array(3, 1, 3, 3)) should equal(false)
+    ArrayII.haveThree(Array(3, 4, 3, 3, 4)) should equal(false)
+  }
+
+  """Given an array of ints, method "twoTwo"""" should """return true if every 2 that appears in the array is next to another 2.""" in {
+    ArrayII.twoTwo(Array(4, 2, 2, 3)) should equal(true)
+    ArrayII.twoTwo(Array(2, 2, 4)) should equal(true)
+    ArrayII.twoTwo(Array(2, 2, 4, 2)) should equal(false)
+  }
 }
