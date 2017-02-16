@@ -130,9 +130,46 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.twoTwo(Array(2, 2, 4, 2)) should equal(false)
   }
 
+  """Method "sameEnds"""" should """return true if the group of N numbers at the start and end of the array are the same.""" in {
+    ArrayII.sameEnds(Array(5, 6, 45, 99, 13, 5, 6), 1) should equal(false)
+    ArrayII.sameEnds(Array(5, 6, 45, 99, 13, 5, 6), 2) should equal(true)
+    ArrayII.sameEnds(Array(5, 6, 45, 99, 13, 5, 6), 3) should equal(false)
+  }
+
   """Method "tripleUp"""" should """return true if the array contains, somewhere, three increasing adjacent numbers like .... 4, 5, 6, ... or 23, 24, 25.""" in {
     ArrayII.tripleUp(Array(1, 4, 5, 6, 2)) should equal(true)
     ArrayII.tripleUp(Array(1, 2, 3)) should equal(true)
     ArrayII.tripleUp(Array(1, 2, 4)) should equal(false)
+  }
+
+  """Given start and end numbers, method "fizzArray3"""" should """return a new array containing the sequence of integers from start up to but not including end,""" in {
+    ArrayII.fizzArray3(5, 10) should equal(Array(5, 6, 7, 8, 9))
+    ArrayII.fizzArray3(11, 18) should equal(Array(11, 12, 13, 14, 15, 16, 17))
+    ArrayII.fizzArray3(1, 3) should equal(Array(1, 2))
+  }
+
+  """Method "shiftLeft"""" should """return an array that is "left shifted" by one.""" in {
+    ArrayII.shiftLeft(Array(6, 2, 5, 3)) should equal(Array(2, 5, 3, 6))
+    ArrayII.shiftLeft(Array(1, 2)) should equal(Array(2, 1))
+    ArrayII.shiftLeft(Array(1)) should equal(Array(1))
+  }
+
+  """For each multiple of 10 in the given array, method "tenRun"""" should """change all the values following it to be that multiple of 10, until encountering another multiple of 10.""" in {
+    ArrayII.tenRun(Array(2, 10, 3, 4, 20, 5)) should equal(Array(2, 10, 10, 10, 20, 20))
+    ArrayII.tenRun(Array(10, 1, 20, 2)) should equal(Array(10, 10, 20, 20))
+    ArrayII.tenRun(Array(10, 1, 9, 20)) should equal(Array(10, 10, 10, 20))
+    ArrayII.tenRun(Array(1, 2, 3, 10, 1, 2, 3, 4, 20, 5, 6, 30, 1, 2, 3, 4, 40)) should equal(Array(1, 2, 3, 10, 10, 10, 10, 10, 20, 20, 20, 30, 30, 30, 30, 30, 40))
+  }
+
+  """Given a non-empty array of ints, method "pre4"""" should """return a new array containing the elements from the original array that come before the first 4 in the original array. The original array will contain at least one 4.""" in {
+    ArrayII.pre4(Array(1, 2, 4, 1)) should equal(Array(1, 2))
+    ArrayII.pre4(Array(3, 1, 4)) should equal(Array(3, 1))
+    ArrayII.pre4(Array(1, 4, 4)) should equal(Array(1))
+  }
+
+  """Given a non-empty array of ints, method "post4"""" should """return a new array containing the elements from the original array that come after the last 4 in the original array. The original array will contain at least one 4.""" in {
+    ArrayII.post4(Array(2, 4, 1, 2)) should equal(Array(1, 2))
+    ArrayII.post4(Array(4, 1, 4, 2)) should equal(Array(2))
+    ArrayII.post4(Array(4, 4, 1, 2, 3)) should equal(Array(1, 2, 3))
   }
 }

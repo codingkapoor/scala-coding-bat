@@ -97,9 +97,38 @@ object ArrayII {
     pattern.findAllMatchIn("2242").map(_.group(1)).toList.flatten.size == nums.count(_ == 2)
   }
 
-  def sameEnds(nums: Array[Int], len: Int) = {}
+  def sameEnds(nums: Array[Int], len: Int) = {
+    nums.take(len).sorted sameElements nums.drop(nums.length - len).sorted
+  }
 
   def tripleUp(nums: Array[Int]): Boolean = {
     nums.iterator.sliding(3).toList.count(x => x(1) * 3 == x.sum) > 0
+  }
+
+  def fizzArray3(start: Int, end: Int): Array[Int] = {
+    (start until end).toArray
+  }
+
+  def shiftLeft(nums: Array[Int]): Array[Int] = {
+    nums.tail :+ nums.head
+  }
+
+  // tricky
+  def tenRun(nums: Array[Int]): Array[Int] = {
+    val arr = nums.zipWithIndex.filter(_._1 % 10 == 0)
+
+    val res = nums.toList.take(arr(0)._2) :::
+      (arr.sliding(2).toList.map(x => (x(0)._1, x(1)._2 - x(0)._2)) :+ (arr.last._1, nums.length - arr.last._2))
+        .foldLeft(Nil: List[Int]) { (acc, x) => acc ::: List.fill(x._2)(x._1) }
+
+    res.toArray
+  }
+
+  def pre4(nums: Array[Int]): Array[Int] = {
+    nums.slice(0, nums.indexOf(4))
+  }
+
+  def post4(nums: Array[Int]): Array[Int] = {
+    nums.reverse.slice(0, nums.reverse.indexOf(4)).reverse
   }
 }
