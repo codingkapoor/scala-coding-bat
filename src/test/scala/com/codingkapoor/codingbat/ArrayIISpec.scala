@@ -172,4 +172,22 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.post4(Array(4, 1, 4, 2)) should equal(Array(2))
     ArrayII.post4(Array(4, 4, 1, 2, 3)) should equal(Array(1, 2, 3))
   }
+
+  """Method "zeroFront"""" should """return an array that contains the exact same numbers as the given array, but rearranged so that all the zeros are grouped at the start of the array. The order of the non-zero numbers does not matter.""" in {
+    ArrayII.zeroFront(Array(1, 0, 0, 1)) should equal(Array(0, 0, 1, 1))
+    ArrayII.zeroFront(Array(0, 1, 1, 0, 1)) should equal(Array(0, 0, 1, 1, 1))
+    ArrayII.zeroFront(Array(1, 0)) should equal(Array(0, 1))
+  }
+
+  """Method "withoutTen"""" should """return a version of the given array where all the 10's have been removed. The remaining elements should shift left towards the start of the array as needed, and the empty spaces a the end of the array should be 0.""" in {
+    ArrayII.withoutTen(Array(1, 10, 10, 2)) should equal(Array(1, 2, 0, 0))
+    ArrayII.withoutTen(Array(10, 2, 10)) should equal(Array(2, 0, 0))
+    ArrayII.withoutTen(Array(1, 99, 10)) should equal(Array(1, 99, 0))
+  }
+
+  """Method "evenOdd""" should """return an array that contains the exact same numbers as the given array, but rearranged so that all the even numbers come before all the odd numbers. Other than that, the numbers can be in any order.""" in {
+    ArrayII.evenOdd(Array(1, 0, 1, 0, 0, 1, 1)) should equal(Array(0, 0, 0, 1, 1, 1, 1))
+    ArrayII.evenOdd(Array(3, 3, 2)) should equal(Array(2, 3, 3))
+    ArrayII.evenOdd(Array(2, 2, 2)) should equal(Array(2, 2, 2))
+  }
 }

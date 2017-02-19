@@ -131,4 +131,34 @@ object ArrayII {
   def post4(nums: Array[Int]): Array[Int] = {
     nums.reverse.slice(0, nums.reverse.indexOf(4)).reverse
   }
+
+  def notAlone(nums: Array[Int], value: Int) = {
+
+  }
+
+  def zeroFront(nums: Array[Int]): Array[Int] = {
+    val zeroCount = nums.count(_ == 0)
+    Array.fill(zeroCount)(0) ++ nums.filter(_ != 0)
+  }
+
+  def withoutTen(nums: Array[Int]): Array[Int] = {
+    val tenCount = nums.count(_ == 10)
+    nums.filter(_ != 10) ++ Array.fill(tenCount)(0)
+  }
+
+  def zeroMax(nums: Array[Int]) = {
+
+  }
+
+  def evenOdd(nums: Array[Int]): Array[Int] = {
+    nums.filter(_ % 2 == 0) ++ nums.filter(_ % 2 != 0)
+  }
+
+  def fizzBuzz(start: Int, end: Int): Array[String] = {
+    val r = (start to end).toList
+    r.zip(1 until r.size).map {
+      x => if (x._2 % 3 == 0 && x._2 % 5 == 0) "FizzBuzz" else if (x._2 % 3 == 0) "Fizz" else if (x._2 % 5 == 0) "Buzz" else x._1
+    }.map(_.toString).toArray
+  }
+
 }
