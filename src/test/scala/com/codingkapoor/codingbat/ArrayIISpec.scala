@@ -173,6 +173,12 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.post4(Array(4, 4, 1, 2, 3)) should equal(Array(1, 2, 3))
   }
 
+  """We'll say that an element in an array is "alone" if there are values before and after it, and those values are different from it. Method "notAlone"""" should """return a version of the given array where every instance of the given value which is alone is replaced by whichever value to its left or right is larger.""" in {
+    ArrayII.notAlone(Array(1, 2, 3), 2) should equal(Array(1, 3, 3))
+    ArrayII.notAlone(Array(1, 2, 3, 2, 5, 2), 2) should equal(Array(1, 3, 3, 5, 5, 2))
+    ArrayII.notAlone(Array(3, 4), 3) should equal(Array(3, 4))
+  }
+
   """Method "zeroFront"""" should """return an array that contains the exact same numbers as the given array, but rearranged so that all the zeros are grouped at the start of the array. The order of the non-zero numbers does not matter.""" in {
     ArrayII.zeroFront(Array(1, 0, 0, 1)) should equal(Array(0, 0, 1, 1))
     ArrayII.zeroFront(Array(0, 1, 1, 0, 1)) should equal(Array(0, 0, 1, 1, 1))

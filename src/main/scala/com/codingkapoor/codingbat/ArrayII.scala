@@ -135,7 +135,17 @@ object ArrayII {
   }
 
   def notAlone(nums: Array[Int], value: Int) = {
+    // List of tuples of what to replace with and where to replace
+    val ls = nums.zipWithIndex.sliding(3).toList.filter(x => x(1)._1 == value).map(x => (List(x.head._1, x(2)._1).max, x(1)._2))
 
+    @tailrec
+    def notAloneR(res: List[Int], ls: List[(Int, Int)]): List[Int] = ls match {
+      case Nil => res
+      case x :: Nil => notAloneR((res.take(x._2) :+ x._1) ::: res.drop(x._2 + 1), Nil)
+      case x :: xs => notAloneR((res.take(x._2) :+ x._1) ::: res.drop(x._2 + 1), xs)
+    }
+
+    notAloneR(nums.toList, ls)
   }
 
   def zeroFront(nums: Array[Int]): Array[Int] = {
