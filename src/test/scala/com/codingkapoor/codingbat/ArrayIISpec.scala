@@ -186,14 +186,20 @@ class ArrayIISpec extends FlatSpec with Matchers {
   }
 
   """Method "zeroMax"""" should """return a version of the given array where each zero value in the array is replaced by the largest odd value to the right of the zero in the array. If there is no odd value to the right of the zero, leave the zero as a zero.""" in {
-  ArrayII.zeroMax(Array(0, 5, 0, 3)) should equal(Array(5, 5, 3, 3))
-  ArrayII.zeroMax(Array(0, 4, 0, 2)) should equal(Array(0, 4, 0, 2))
-  ArrayII.zeroMax(Array(0, 5, 0)) should equal(Array(5, 5, 0))
+    ArrayII.zeroMax(Array(0, 5, 0, 3)) should equal(Array(5, 5, 3, 3))
+    ArrayII.zeroMax(Array(0, 4, 0, 2)) should equal(Array(0, 4, 0, 2))
+    ArrayII.zeroMax(Array(0, 5, 0)) should equal(Array(5, 5, 0))
   }
 
   """Method "evenOdd""" should """return an array that contains the exact same numbers as the given array, but rearranged so that all the even numbers come before all the odd numbers. Other than that, the numbers can be in any order.""" in {
     ArrayII.evenOdd(Array(1, 0, 1, 0, 0, 1, 1)) should equal(Array(0, 0, 0, 1, 1, 1, 1))
     ArrayII.evenOdd(Array(3, 3, 2)) should equal(Array(2, 3, 3))
     ArrayII.evenOdd(Array(2, 2, 2)) should equal(Array(2, 2, 2))
+  }
+
+  """Consider the series of numbers beginning at start and running up to but not including end, so for example start=1 and end=5 gives the series 1, 2, 3, 4. Method "fizzBuzz"""" should """return a new String[] array containing the string form of these numbers, except for multiples of 3, use "Fizz" instead of the number, for multiples of 5 use "Buzz", and for multiples of both 3 and 5 use "FizzBuzz".""" in {
+    ArrayII.fizzBuzz(1, 6) should equal(Array("1", "2", "Fizz", "4", "Buzz"))
+    ArrayII.fizzBuzz(1, 8) should equal(Array("1", "2", "Fizz", "4", "Buzz", "Fizz", "7"))
+    ArrayII.fizzBuzz(1, 11) should equal(Array("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz"))
   }
 }
