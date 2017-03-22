@@ -1,5 +1,7 @@
 package com.codingkapoor.codingbat
 
+import scala.annotation.tailrec
+
 object ArrayII {
 
   def countEvens(nums: Array[Int]): Int = {
@@ -146,8 +148,20 @@ object ArrayII {
     nums.filter(_ != 10) ++ Array.fill(tenCount)(0)
   }
 
-  def zeroMax(nums: Array[Int]) = {
+  def zeroMax(nums: Array[Int]): Array[Int] = {
 
+    @tailrec
+    def zeroMaxR(ls: List[Int]): List[Int] = {
+      val zeros = ls.zipWithIndex.filter(_._1 == 0)
+      if (zeros.isEmpty) return ls
+
+      val odds = ls.drop(zeros.head._2 + 1).filter(_ % 2 != 0)
+      if (odds.isEmpty) return ls
+
+      zeroMaxR(ls.take(zeros.head._2) ::: (odds.max :: ls.drop(zeros.head._2 + 1)))
+    }
+
+    zeroMaxR(nums.toList).toArray
   }
 
   def evenOdd(nums: Array[Int]): Array[Int] = {

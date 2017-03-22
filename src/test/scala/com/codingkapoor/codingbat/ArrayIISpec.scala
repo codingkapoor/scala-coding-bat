@@ -185,6 +185,12 @@ class ArrayIISpec extends FlatSpec with Matchers {
     ArrayII.withoutTen(Array(1, 99, 10)) should equal(Array(1, 99, 0))
   }
 
+  """Method "zeroMax"""" should """return a version of the given array where each zero value in the array is replaced by the largest odd value to the right of the zero in the array. If there is no odd value to the right of the zero, leave the zero as a zero.""" in {
+  ArrayII.zeroMax(Array(0, 5, 0, 3)) should equal(Array(5, 5, 3, 3))
+  ArrayII.zeroMax(Array(0, 4, 0, 2)) should equal(Array(0, 4, 0, 2))
+  ArrayII.zeroMax(Array(0, 5, 0)) should equal(Array(5, 5, 0))
+  }
+
   """Method "evenOdd""" should """return an array that contains the exact same numbers as the given array, but rearranged so that all the even numbers come before all the odd numbers. Other than that, the numbers can be in any order.""" in {
     ArrayII.evenOdd(Array(1, 0, 1, 0, 0, 1, 1)) should equal(Array(0, 0, 0, 1, 1, 1, 1))
     ArrayII.evenOdd(Array(3, 3, 2)) should equal(Array(2, 3, 3))
