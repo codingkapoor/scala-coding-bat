@@ -51,4 +51,9 @@ object ArrayIII {
 
     canBalanceR(1)
   }
+
+  def linearIn(outer: Array[Int], inner: Array[Int]) = {
+    inner.forall(outer.contains)
+  }
+
 }

@@ -26,4 +26,10 @@ class ArrayIIISpec extends FlatSpec with Matchers {
     ArrayIII.canBalance(Array(2, 1, 1, 2, 1)) should equal(false)
     ArrayIII.canBalance(Array(10, 10)) should equal(true)
   }
+
+  """Given two arrays of ints sorted in increasing order, outer and inner, method "linearIn"""" should """eturn true if all of the numbers in inner appear in outer.""" in {
+    ArrayIII.linearIn(Array(1, 2, 4, 6), Array(2, 4)) should equal(true)
+    ArrayIII.linearIn(Array(1, 2, 4, 6), Array(2, 3, 4)) should equal(false)
+    ArrayIII.linearIn(Array(1, 2, 4, 4, 6), Array(2, 4)) should equal(true)
+  }
 }
