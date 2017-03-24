@@ -23,4 +23,19 @@ object ArrayIII {
     fix34R(arr.toList, ls.toList).toArray
   }
 
+  def fix45(arr: Array[Int]) = {
+    val k1 = arr.zipWithIndex.filter { x => x._1 == 4 }
+    val k2 = arr.zipWithIndex.filter { x => x._1 == 5 }
+    val ls = k1.zip(k2)
+
+    @tailrec
+    def fix45R(res: List[Int], ls: List[((Int, Int), (Int, Int))]): List[Int] = ls match {
+      case Nil => res
+      case ((4, p), (5, q)) :: Nil => res.updated(q, res(p + 1)).updated(p + 1, 5)
+      case ((4, p), (5, q)) :: xs => fix45R(res.updated(q, res(p + 1)).updated(p + 1, 5), xs)
+    }
+
+    fix45R(arr.toList, ls.toList).toArray
+  }
+
 }

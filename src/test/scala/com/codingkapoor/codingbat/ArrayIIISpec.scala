@@ -14,4 +14,10 @@ class ArrayIIISpec extends FlatSpec with Matchers {
     ArrayIII.fix34(Array(1, 3, 1, 4, 4, 3, 1)) should equal(Array(1, 3, 4, 1, 1, 3, 4))
     ArrayIII.fix34(Array(3, 2, 2, 4)) should equal(Array(3, 4, 2, 2))
   }
+
+  """Method "fix45"""" should """return an array that contains exactly the same numbers as the given array, but rearranged so that every 4 is immediately followed by a 5. Do not move the 4's, but every other number may move. The array contains the same number of 4's and 5's, and every 4 has a number after it that is not a 4. In this version, 5's may appear anywhere in the original array.""" in {
+    ArrayIII.fix45(Array(5, 4, 9, 4, 9, 5)) should equal(Array(9, 4, 5, 4, 5, 9))
+    ArrayIII.fix45(Array(1, 4, 1, 5)) should equal(Array(1, 4, 5, 1))
+    ArrayIII.fix45(Array(1, 4, 1, 5, 5, 4, 1)) should equal(Array(1, 4, 5, 1, 1, 4, 5))
+  }
 }
