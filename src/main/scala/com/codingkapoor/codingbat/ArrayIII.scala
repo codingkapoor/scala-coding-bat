@@ -38,4 +38,17 @@ object ArrayIII {
     fix45R(arr.toList, ls.toList).toArray
   }
 
+  def canBalance(ls: Array[Int]) = {
+
+    @tailrec
+    def canBalanceR(index: Int): Boolean = {
+      if (index == ls.length) false
+      else {
+        if (ls.take(index).sum == ls.drop(index).sum) true
+        else canBalanceR(index + 1)
+      }
+    }
+
+    canBalanceR(1)
+  }
 }

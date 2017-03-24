@@ -20,4 +20,10 @@ class ArrayIIISpec extends FlatSpec with Matchers {
     ArrayIII.fix45(Array(1, 4, 1, 5)) should equal(Array(1, 4, 5, 1))
     ArrayIII.fix45(Array(1, 4, 1, 5, 5, 4, 1)) should equal(Array(1, 4, 5, 1, 1, 4, 5))
   }
+
+  """Given a non-empty array, method "canBalance"""" should """return true if there is a place to split the array so that the sum of the numbers on one side is equal to the sum of the numbers on the other side.""" in {
+    ArrayIII.canBalance(Array(1, 1, 1, 2, 1)) should equal(true)
+    ArrayIII.canBalance(Array(2, 1, 1, 2, 1)) should equal(false)
+    ArrayIII.canBalance(Array(10, 10)) should equal(true)
+  }
 }
