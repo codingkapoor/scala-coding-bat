@@ -38,4 +38,10 @@ class ArrayIIISpec extends FlatSpec with Matchers {
     ArrayIII.squareUp(2) should equal(Array(0, 1, 2, 1))
     ArrayIII.squareUp(4) should equal(Array(0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 2, 1, 4, 3, 2, 1))
   }
+
+  """Given n>=0, method "seriesUp"""" should """create an array with the pattern {1,    1, 2,    1, 2, 3,   ... 1, 2, 3 .. n} (spaces added to show the grouping).""" in {
+    ArrayIII.seriesUp(3) should equal(Array(1, 1, 2, 1, 2, 3))
+    ArrayIII.seriesUp(4) should equal(Array(1, 1, 2, 1, 2, 3, 1, 2, 3, 4))
+    ArrayIII.seriesUp(2) should equal(Array(1, 1, 2))
+  }
 }

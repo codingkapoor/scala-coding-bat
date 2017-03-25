@@ -67,4 +67,15 @@ object ArrayIII {
     squareUpR(Nil, n)
   }
 
+  def seriesUp(n: Int) = {
+
+    @tailrec
+    def seriesUpR(ls: List[Int], counter: Int): List[Int] = {
+      if (counter == 0) ls
+      else seriesUpR(List.range(1, counter + 1) ::: ls, counter - 1)
+    }
+
+    seriesUpR(Nil, n)
+  }
+
 }
