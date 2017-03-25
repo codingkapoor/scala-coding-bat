@@ -64,7 +64,7 @@ object ArrayIII {
       else squareUpR(List.fill(n - counter)(0) ::: List.range(1, counter + 1).reverse ::: ls, counter - 1)
     }
 
-    squareUpR(Nil, n)
+    squareUpR(Nil, n).toArray
   }
 
   def seriesUp(n: Int) = {
@@ -75,7 +75,16 @@ object ArrayIII {
       else seriesUpR(List.range(1, counter + 1) ::: ls, counter - 1)
     }
 
-    seriesUpR(Nil, n)
+    seriesUpR(Nil, n).toArray
   }
 
+  def countClumps(nums: Array[Int]) = {
+    def split[T](list: List[T]): List[List[T]] = list match {
+      case Nil => Nil
+      case h :: _ => val segment = list takeWhile h.==
+        segment :: split(list drop segment.length)
+    }
+
+    split(nums.toList).count(_.size > 1)
+  }
 }

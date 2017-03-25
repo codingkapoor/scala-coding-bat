@@ -44,4 +44,10 @@ class ArrayIIISpec extends FlatSpec with Matchers {
     ArrayIII.seriesUp(4) should equal(Array(1, 1, 2, 1, 2, 3, 1, 2, 3, 4))
     ArrayIII.seriesUp(2) should equal(Array(1, 1, 2))
   }
+
+  """Say that a "clump" in an array is a series of 2 or more adjacent elements of the same value. Method "countClumps"""" should """return the number of clumps in the given array.""" in {
+    ArrayIII.countClumps(Array(1, 2, 2, 3, 4, 4)) should equal(2)
+    ArrayIII.countClumps(Array(1, 1, 2, 1, 1)) should equal(2)
+    ArrayIII.countClumps(Array(1, 1, 1, 1, 1)) should equal(1)
+  }
 }
