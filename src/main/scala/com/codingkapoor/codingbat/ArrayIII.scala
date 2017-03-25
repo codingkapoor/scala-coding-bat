@@ -56,4 +56,15 @@ object ArrayIII {
     inner.forall(outer.contains)
   }
 
+  def squareUp(n: Int) = {
+
+    @tailrec
+    def squareUpR(ls: List[Int], counter: Int): List[Int] = {
+      if (counter == 0) ls
+      else squareUpR(List.fill(n - counter)(0) ::: List.range(1, counter + 1).reverse ::: ls, counter - 1)
+    }
+
+    squareUpR(Nil, n)
+  }
+
 }

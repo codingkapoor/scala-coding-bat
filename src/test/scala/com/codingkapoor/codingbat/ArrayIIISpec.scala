@@ -32,4 +32,10 @@ class ArrayIIISpec extends FlatSpec with Matchers {
     ArrayIII.linearIn(Array(1, 2, 4, 6), Array(2, 3, 4)) should equal(false)
     ArrayIII.linearIn(Array(1, 2, 4, 4, 6), Array(2, 4)) should equal(true)
   }
+
+  """Given n>=0, method "squareUp"""" should """create an array length n*n with the following pattern, shown here for n=3 : {0, 0, 1,    0, 2, 1,    3, 2, 1}""" in {
+    ArrayIII.squareUp(3) should equal(Array(0, 0, 1, 0, 2, 1, 3, 2, 1))
+    ArrayIII.squareUp(2) should equal(Array(0, 1, 2, 1))
+    ArrayIII.squareUp(4) should equal(Array(0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 2, 1, 4, 3, 2, 1))
+  }
 }
