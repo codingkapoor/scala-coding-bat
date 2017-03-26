@@ -78,6 +78,9 @@ object ArrayIII {
     seriesUpR(Nil, n).toArray
   }
 
+  // TODO
+  def maxMirror(nums: List[Int]) = ???
+
   def countClumps(nums: Array[Int]) = {
     def split[T](list: List[T]): List[List[T]] = list match {
       case Nil => Nil
