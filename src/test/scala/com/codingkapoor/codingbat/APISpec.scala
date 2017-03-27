@@ -34,4 +34,10 @@ class APISpec extends FlatSpec with Matchers {
     API.wordsFront(Array("a", "b", "c", "d"), 3) should equal(Array("a", "b", "c"))
   }
 
+  """Given an array of strings, method "wordsWithoutList"""" should """return a new List (e.g. an ArrayList) where all the strings of the given length are omitted.""" in {
+    API.wordsWithoutList(Array("a", "bb", "b", "ccc"), 1) should equal(Array("bb", "ccc"))
+    API.wordsWithoutList(Array("a", "bb", "b", "ccc"), 3) should equal(Array("a", "bb", "b"))
+    API.wordsWithoutList(Array("a", "bb", "b", "ccc"), 4) should equal(Array("a", "bb", "b", "ccc"))
+  }
+
 }

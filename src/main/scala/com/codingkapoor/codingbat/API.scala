@@ -27,6 +27,8 @@ object API {
     words.take(n)
   }
 
-
+  def wordsWithoutList(words: Array[String], len: Int) = {
+    words.filterNot(_.length == len)
+  }
 
 }
