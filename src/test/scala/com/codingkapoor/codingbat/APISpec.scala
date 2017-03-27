@@ -21,4 +21,11 @@ class APISpec extends FlatSpec with Matchers {
     API.scoresClump(Array(3, 4, 6)) should equal(false)
     API.scoresClump(Array(1, 3, 5, 5)) should equal(true)
   }
+
+  """Given an array of strings, method "wordsCount"""" should """return the count of the number of strings with the given length.""" in {
+    API.wordsCount(Array("a", "bb", "b", "ccc"), 1) should equal(2)
+    API.wordsCount(Array("a", "bb", "b", "ccc"), 3) should equal(1)
+    API.wordsCount(Array("a", "bb", "b", "ccc"), 4) should equal(0)
+  }
+
 }

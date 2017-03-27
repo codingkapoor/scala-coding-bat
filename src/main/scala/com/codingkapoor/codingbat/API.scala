@@ -16,4 +16,11 @@ object API {
     } > 0
   }
 
+  // TODO
+  def scoresAverage() = {}
+
+  def wordsCount(words: Array[String], len: Int) = {
+    words.map(_.length).count(_ == len)
+  }
+
 }
