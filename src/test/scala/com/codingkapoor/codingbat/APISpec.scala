@@ -10,4 +10,10 @@ class APISpec extends FlatSpec with Matchers {
     API.scoresIncreasing(Array(1, 1, 4)) should equal(true)
   }
 
+  """Given an array of scores, method """"" should """return true if there are scores of 100 next to each other in the array. The array length will be at least 2.""" in {
+    API.scores100(Array(1, 100, 100)) should equal(true)
+    API.scores100(Array(1, 100, 99, 100)) should equal(false)
+    API.scores100(Array(100, 1, 100, 100)) should equal(true)
+  }
+
 }
