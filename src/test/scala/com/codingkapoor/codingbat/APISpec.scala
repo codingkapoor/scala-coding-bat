@@ -28,4 +28,10 @@ class APISpec extends FlatSpec with Matchers {
     API.wordsCount(Array("a", "bb", "b", "ccc"), 4) should equal(0)
   }
 
+  """Given an array of strings, method "wordsFront"""" should """return a new array containing the first N strings. N will be in the range 1..length.""" in {
+    API.wordsFront(Array("a", "b", "c", "d"), 1) should equal(Array("a"))
+    API.wordsFront(Array("a", "b", "c", "d"), 2) should equal(Array("a", "b"))
+    API.wordsFront(Array("a", "b", "c", "d"), 3) should equal(Array("a", "b", "c"))
+  }
+
 }

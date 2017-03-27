@@ -23,4 +23,10 @@ object API {
     words.map(_.length).count(_ == len)
   }
 
+  def wordsFront(words: Array[String], n: Int) = {
+    words.take(n)
+  }
+
+
+
 }
