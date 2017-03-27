@@ -31,4 +31,8 @@ object API {
     words.filterNot(_.length == len)
   }
 
+  def hasOne(n: Int): Boolean = {
+    n.toString.map(_.asDigit).contains(1)
+  }
+
 }

@@ -40,4 +40,10 @@ class APISpec extends FlatSpec with Matchers {
     API.wordsWithoutList(Array("a", "bb", "b", "ccc"), 4) should equal(Array("a", "bb", "b", "ccc"))
   }
 
+  """Given a positive int n, method "hasOne"""" should """return true if it contains a 1 digit. Note: use % to get the rightmost digit, and / to discard the rightmost digit.""" in {
+    API.hasOne(10) should equal(true)
+    API.hasOne(22) should equal(false)
+    API.hasOne(220) should equal(false)
+  }
+
 }
