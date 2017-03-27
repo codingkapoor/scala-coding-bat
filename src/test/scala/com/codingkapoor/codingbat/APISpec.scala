@@ -46,4 +46,10 @@ class APISpec extends FlatSpec with Matchers {
     API.hasOne(220) should equal(false)
   }
 
+  """We'll say that a positive int divides itself if every digit in the number divides into the number evenly. So for example 128 divides itself since 1, 2, and 8 all divide into 128 evenly. We'll say that 0 does not divide into anything evenly, so no number with a 0 digit divides itself. Method "dividesSelf"""" should """should find whether a given number divides itself.""" in {
+    API.dividesSelf(128) should equal(true)
+    API.dividesSelf(12) should equal(true)
+    API.dividesSelf(120) should equal(false)
+  }
+
 }

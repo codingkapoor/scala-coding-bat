@@ -35,4 +35,11 @@ object API {
     n.toString.map(_.asDigit).contains(1)
   }
 
+  def dividesSelf(n: Int): Boolean = {
+    val digits = n.toString.map(_.asDigit)
+    if (digits.contains(0)) return false
+
+    digits.forall(x => n % x == 0)
+  }
+
 }
