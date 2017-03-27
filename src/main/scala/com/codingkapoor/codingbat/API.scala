@@ -10,4 +10,10 @@ object API {
     arr.sliding(2).count(x => x(0) == 100 && x(1) == 100) > 0
   }
 
+  def scoresClump(scores: Array[Int]): Boolean = {
+    scores.sliding(3).count {
+      case Array(x, y, z) => Math.abs(x - y) <= 2 && Math.abs(y - z) <= 2 && Math.abs(z - x) <= 2
+    } > 0
+  }
+
 }

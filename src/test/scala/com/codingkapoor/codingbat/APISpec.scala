@@ -16,4 +16,9 @@ class APISpec extends FlatSpec with Matchers {
     API.scores100(Array(100, 1, 100, 100)) should equal(true)
   }
 
+  """Given an array of scores sorted in increasing order, method "scoresClump"""" should """return true if the array contains 3 adjacent scores that differ from each other by at most 2, such as with {3, 4, 5} or {3, 5, 5}.""" in {
+    API.scoresClump(Array(3, 4, 5)) should equal(true)
+    API.scoresClump(Array(3, 4, 6)) should equal(false)
+    API.scoresClump(Array(1, 3, 5, 5)) should equal(true)
+  }
 }
