@@ -42,4 +42,8 @@ object API {
     digits.forall(x => n % x == 0)
   }
 
+  def copyEvens(nums: Array[Int], count: Int): Array[Int] = {
+    nums.filter(_ % 2 == 0).take(count)
+  }
+
 }

@@ -52,4 +52,10 @@ class APISpec extends FlatSpec with Matchers {
     API.dividesSelf(120) should equal(false)
   }
 
+  """Given an array of positive ints, method "copyEvens"""" should """return a new array of length "count" containing the first even numbers from the original array. The original array will contain at least "count" even numbers.""" in {
+    API.copyEvens(Array(3, 2, 4, 5, 8), 2) should equal(Array(2, 4))
+    API.copyEvens(Array(3, 2, 4, 5, 8), 3) should equal(Array(2, 4, 8))
+    API.copyEvens(Array(6, 1, 2, 4, 5, 8), 3) should equal(Array(6, 2, 4))
+  }
+
 }
