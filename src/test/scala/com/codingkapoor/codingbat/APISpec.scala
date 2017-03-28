@@ -82,4 +82,10 @@ class APISpec extends FlatSpec with Matchers {
     API.wordsWithout(Array("a", "b", "c", "a"), "c") should equal(Array("a", "b", "a"))
   }
 
+  """Given two arrays, A and B, of non-negative int scores. A "special" score is one which is a multiple of 10, such as 40 or 90. Method "scoresSpecial"""" should """return the sum of largest special score in A and the largest special score in B.""" in {
+    API.scoresSpecial(Array(12, 10, 4), Array(2, 20, 30)) should equal(40)
+    API.scoresSpecial(Array(20, 10, 4), Array(2, 20, 10)) should equal(40)
+    API.scoresSpecial(Array(12, 11, 4), Array(2, 20, 31)) should equal(20)
+  }
+
 }

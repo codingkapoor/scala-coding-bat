@@ -64,4 +64,11 @@ object API {
     words.filterNot(_ == target)
   }
 
+  def scoresSpecial(score1: Array[Int], score2: Array[Int]) = {
+    val res1 = score1.filter(_ % 10 == 0)
+    val res2 = score2.filter(_ % 10 == 0)
+
+    (if (res1.isEmpty) 0 else res1.max) + (if (res2.isEmpty) 0 else res2.max)
+  }
+
 }
