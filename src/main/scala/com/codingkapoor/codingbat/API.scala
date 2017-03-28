@@ -46,4 +46,8 @@ object API {
     nums.filter(_ % 2 == 0).take(count)
   }
 
+  def copyEndy(arr: Array[Int], count: Int): Array[Int] = {
+    arr.filter(x => x >= 0 && x <= 10 || x >= 90 && x <= 100).take(count)
+  }
+
 }

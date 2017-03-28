@@ -58,4 +58,10 @@ class APISpec extends FlatSpec with Matchers {
     API.copyEvens(Array(6, 1, 2, 4, 5, 8), 3) should equal(Array(6, 2, 4))
   }
 
+  """We'll say that a positive int n is "endy" if it is in the range 0..10 or 90..100 (inclusive). Given an array of positive ints, method "copyEndy"""" should """return a new array of length "count" containing the first endy numbers from the original array. The original array will contain at least "count" endy numbers.""" in {
+    API.copyEndy(Array(9, 11, 90, 22, 6), 2) should equal(Array(9, 90))
+    API.copyEndy(Array(9, 11, 90, 22, 6), 3) should equal(Array(9, 90, 6))
+    API.copyEndy(Array(12, 1, 1, 13, 0, 20), 2) should equal(Array(1, 1))
+  }
+
 }
