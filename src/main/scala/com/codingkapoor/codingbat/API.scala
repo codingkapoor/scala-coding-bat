@@ -16,8 +16,13 @@ object API {
     } > 0
   }
 
-  // TODO
-  def scoresAverage() = {}
+  def scoresAverage(scores: Array[Int]): Int = {
+    val (x, y) = scores.splitAt(scores.length / 2)
+    val avgX = x.sum / x.length
+    val avgY = y.sum / y.length
+
+    if (avgX > avgY) avgX else avgY
+  }
 
   def wordsCount(words: Array[String], len: Int) = {
     words.map(_.length).count(_ == len)

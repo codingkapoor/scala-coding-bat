@@ -22,6 +22,12 @@ class APISpec extends FlatSpec with Matchers {
     API.scoresClump(Array(1, 3, 5, 5)) should equal(true)
   }
 
+  """Given an array of scores, method "scoresAverage """" should """compute the int average of the first half and the second half, and return whichever is larger.""" in {
+    API.scoresAverage(Array(2, 2, 4, 4)) should equal(4)
+    API.scoresAverage(Array(4, 4, 4, 2, 2, 2)) should equal(4)
+    API.scoresAverage(Array(3, 4, 5, 1, 2, 3)) should equal(4)
+  }
+
   """Given an array of strings, method "wordsCount"""" should """return the count of the number of strings with the given length.""" in {
     API.wordsCount(Array("a", "bb", "b", "ccc"), 1) should equal(2)
     API.wordsCount(Array("a", "bb", "b", "ccc"), 3) should equal(1)
