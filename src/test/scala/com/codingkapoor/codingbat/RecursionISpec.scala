@@ -28,4 +28,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.bunnyEars2(2) should equal(5)
   }
 
+  """We have triangle made of blocks. The topmost row has 1 block, the next row down has 2 blocks, the next row has 3 blocks, and so on. Method "triangle"""" should """compute recursively (no loops or multiplication) the total number of blocks in such a triangle with the given number of rows.""" in {
+    RecursionI.triangle(0) should equal(0)
+    RecursionI.triangle(1) should equal(1)
+    RecursionI.triangle(2) should equal(3)
+  }
+
 }

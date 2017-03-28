@@ -32,4 +32,10 @@ object RecursionI {
     else 3 + bunnyEars2(bunnies - 1)
   }
 
+  def triangle(rows: Int): Int = {
+    if (rows == 0) 0 else if (rows == 1) 1 else {
+      rows + triangle(rows - 1)
+    }
+  }
+
 }
