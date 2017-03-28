@@ -75,4 +75,12 @@ object API {
     heights.slice(start, end + 1).sliding(2).map { case Array(x, y) => Math.abs(y - x) }.sum
   }
 
+
+  def sumHeights2(heights: Array[Int], start: Int, end: Int) = {
+    heights.slice(start, end + 1).sliding(2).map {
+      case Array(x, y) if x < y => (y - x) * 2
+      case Array(x, y) if x > y => x - y
+    }.sum
+  }
+
 }
