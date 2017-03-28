@@ -60,4 +60,8 @@ object API {
     }.sum
   }
 
+  def wordsWithout(words: Array[String], target: String) = {
+    words.filterNot(_ == target)
+  }
+
 }

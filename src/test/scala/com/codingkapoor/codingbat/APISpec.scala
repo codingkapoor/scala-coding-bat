@@ -76,4 +76,10 @@ class APISpec extends FlatSpec with Matchers {
     API.scoreUp(Array("a", "a", "b", "b"), Array("a", "a", "b", "b")) should equal(16)
   }
 
+  """Given an array of strings, method "wordsWithout"""" should """return a new array without the strings that are equal to the target string.""" in {
+    API.wordsWithout(Array("a", "b", "c", "a"), "a") should equal(Array("b", "c"))
+    API.wordsWithout(Array("a", "b", "c", "a"), "b") should equal(Array("a", "c", "a"))
+    API.wordsWithout(Array("a", "b", "c", "a"), "c") should equal(Array("a", "b", "a"))
+  }
+
 }
