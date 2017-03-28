@@ -16,4 +16,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.bunnyEars(2) should equal(4)
   }
 
+  """Method "fibonacci"""" should """returns the nth fibonacci number, with n=0 representing the start of the sequence.""" in {
+    RecursionI.fibonacci(0) should equal(0)
+    RecursionI.fibonacci(1) should equal(1)
+    RecursionI.fibonacci(2) should equal(1)
+  }
+
 }
