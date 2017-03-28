@@ -22,4 +22,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.fibonacci(2) should equal(1)
   }
 
+  """We have bunnies standing in a line, numbered 1, 2, ... The odd bunnies (1, 3, ..) have the normal 2 ears. The even bunnies (2, 4, ..) we'll say have 3 ears, because they each have a raised foot. Method "bunnyEars2"""" should """return the number of "ears" in the bunny line 1, 2, ... n (without loops or multiplication).""" in {
+    RecursionI.bunnyEars2(0) should equal(0)
+    RecursionI.bunnyEars2(1) should equal(2)
+    RecursionI.bunnyEars2(2) should equal(5)
+  }
+
 }

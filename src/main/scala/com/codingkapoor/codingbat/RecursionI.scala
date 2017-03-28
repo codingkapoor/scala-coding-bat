@@ -26,4 +26,10 @@ object RecursionI {
     fibonacciR(0, 1, n)
   }
 
+  def bunnyEars2(bunnies: Int): Int = {
+    if (bunnies == 0) 0
+    else if (bunnies % 2 != 0) 2 + bunnyEars2(bunnies - 1)
+    else 3 + bunnyEars2(bunnies - 1)
+  }
+
 }
