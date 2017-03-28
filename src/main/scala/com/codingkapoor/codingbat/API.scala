@@ -83,4 +83,10 @@ object API {
     }.sum
   }
 
+  def bigHeights(heights: Array[Int], start: Int, end: Int) = {
+    heights.slice(start, end + 1).sliding(2).map {
+      case Array(x, y) => if (Math.abs(y - x) >= 5) 1 else 0
+    }.sum
+  }
+
 }
