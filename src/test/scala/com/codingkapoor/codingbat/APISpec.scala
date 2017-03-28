@@ -64,4 +64,10 @@ class APISpec extends FlatSpec with Matchers {
     API.copyEndy(Array(12, 1, 1, 13, 0, 20), 2) should equal(Array(1, 1))
   }
 
+  """Given 2 arrays that are the same length containing strings, method "matchUp"""" should """compares the 1st string in one array to the 1st string in the other array, the 2nd to the 2nd and so on and then counts the number of times that the 2 strings are non-empty and start with the same char. The strings may be any length, including 0.""" in {
+    API.matchUp(Array("aa", "bb", "cc"), Array("aaa", "xx", "bb")) should equal(1)
+    API.matchUp(Array("aa", "bb", "cc"), Array("aaa", "b", "bb")) should equal(2)
+    API.matchUp(Array("aa", "bb", "cc"), Array("", "", "ccc")) should equal(1)
+  }
+
 }

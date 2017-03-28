@@ -50,4 +50,8 @@ object API {
     arr.filter(x => x >= 0 && x <= 10 || x >= 90 && x <= 100).take(count)
   }
 
+  def matchUp(arr1: Array[String], arr2: Array[String]) = {
+    arr1.zip(arr2).count(x => x._2.startsWith(x._1.head.toString))
+  }
+
 }
