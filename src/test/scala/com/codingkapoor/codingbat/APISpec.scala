@@ -70,4 +70,10 @@ class APISpec extends FlatSpec with Matchers {
     API.matchUp(Array("aa", "bb", "cc"), Array("", "", "ccc")) should equal(1)
   }
 
+  """The "key" array is an array containing the correct answers to an exam, like {"a", "a", "b", "b"}. the "answers" array contains a student's answers, with "?" representing a question left blank. The two arrays are not empty and are the same length. Method "scoreUp"""" should """return the score for this array of answers, giving +4 for each correct answer, -1 for each incorrect answer, and +0 for each blank answer.""" in {
+    API.scoreUp(Array("a", "a", "b", "b"), Array("a", "c", "b", "c")) should equal(6)
+    API.scoreUp(Array("a", "a", "b", "b"), Array("a", "a", "b", "c")) should equal(11)
+    API.scoreUp(Array("a", "a", "b", "b"), Array("a", "a", "b", "b")) should equal(16)
+  }
+
 }

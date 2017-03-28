@@ -54,4 +54,10 @@ object API {
     arr1.zip(arr2).count(x => x._2.startsWith(x._1.head.toString))
   }
 
+  def scoreUp(key: Array[String], answers: Array[String]) = {
+    key.zip(answers).map {
+      x => if (x._1 == x._2) 4 else if (x._2 == "?") 0 else -1
+    }.sum
+  }
+
 }
