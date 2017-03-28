@@ -106,4 +106,10 @@ class APISpec extends FlatSpec with Matchers {
     API.bigHeights(Array(5, 3, 6, 7, 2), 0, 4) should equal(1)
   }
 
+  """Start with two arrays of strings, a and b, each in alphabetical order, possibly with duplicates. Method "commonTwo"""" should """return the count of the number of strings which appear in both arrays.""" in {
+    API.commonTwo(Array("a", "c", "x"), Array("b", "c", "d", "x")) should equal(2)
+    API.commonTwo(Array("a", "c", "x"), Array("a", "b", "c", "x", "z")) should equal(3)
+    API.commonTwo(Array("a", "b", "c"), Array("a", "b", "c")) should equal(3)
+  }
+
 }

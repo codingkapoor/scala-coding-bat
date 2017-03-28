@@ -89,4 +89,11 @@ object API {
     }.sum
   }
 
+  // TODO
+  def userCompare() = {}
+
+  def commonTwo(arr1: Array[String], arr2: Array[String]) = {
+    arr1.intersect(arr2).length
+  }
+
 }
