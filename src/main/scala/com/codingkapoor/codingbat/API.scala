@@ -71,4 +71,8 @@ object API {
     (if (res1.isEmpty) 0 else res1.max) + (if (res2.isEmpty) 0 else res2.max)
   }
 
+  def sumHeights(heights: Array[Int], start: Int, end: Int) = {
+    heights.slice(start, end + 1).sliding(2).map { case Array(x, y) => Math.abs(y - x) }.sum
+  }
+
 }

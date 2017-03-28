@@ -88,4 +88,10 @@ class APISpec extends FlatSpec with Matchers {
     API.scoresSpecial(Array(12, 11, 4), Array(2, 20, 31)) should equal(20)
   }
 
+  """We have an array of heights, representing the altitude along a walking trail. Given start/end indexes into the array, method "sumHeights"""" should """return the sum of the changes for a walk beginning at the start index and ending at the end index.""" in {
+    API.sumHeights(Array(5, 3, 6, 7, 2), 2, 4) should equal(6)
+    API.sumHeights(Array(5, 3, 6, 7, 2), 0, 1) should equal(2)
+    API.sumHeights(Array(5, 3, 6, 7, 2), 0, 4) should equal(11)
+  }
+
 }
