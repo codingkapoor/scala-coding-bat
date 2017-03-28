@@ -106,6 +106,12 @@ class APISpec extends FlatSpec with Matchers {
     API.bigHeights(Array(5, 3, 6, 7, 2), 0, 4) should equal(1)
   }
 
+  """Start with two arrays of strings, A and B, each with its elements in alphabetical order and without duplicates. Method "mergeTwo"""" should """return a new array containing the first N elements from the two arrays. The result array should be in alphabetical order and without duplicates.""" in {
+    API.mergeTwo(Array("a", "c", "z"), Array("b", "f", "z"), 3) should equal(Array("a", "b", "c"))
+    API.mergeTwo(Array("a", "c", "z"), Array("c", "f", "z"), 3) should equal(Array("a", "c", "f"))
+    API.mergeTwo(Array("f", "g", "z"), Array("c", "f", "g"), 3) should equal(Array("c", "f", "g"))
+  }
+
   """Start with two arrays of strings, a and b, each in alphabetical order, possibly with duplicates. Method "commonTwo"""" should """return the count of the number of strings which appear in both arrays.""" in {
     API.commonTwo(Array("a", "c", "x"), Array("b", "c", "d", "x")) should equal(2)
     API.commonTwo(Array("a", "c", "x"), Array("a", "b", "c", "x", "z")) should equal(3)

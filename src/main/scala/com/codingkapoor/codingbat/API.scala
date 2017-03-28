@@ -92,6 +92,12 @@ object API {
   // TODO
   def userCompare() = {}
 
+  def mergeTwo(arr1: Array[String], arr2: Array[String], n: Int) = {
+    arr1.zipAll(arr2, "", "").flatMap {
+      x => Array(x._1, x._2)
+    }.filterNot(_ == "").distinct.take(n).sorted
+  }
+
   def commonTwo(arr1: Array[String], arr2: Array[String]) = {
     arr1.intersect(arr2).length
   }
