@@ -127,4 +127,16 @@ object RecursionI {
     array6R(res = false, nums.drop(index).toList)
   }
 
+  def array11(nums: Array[Int], index: Int) = {
+
+    @tailrec
+    def array11R(counter: Int, ls: List[Int]): Int = ls match {
+      case Nil => counter
+      case x :: Nil => if (x == 11) array11R(counter + 1, Nil) else array11R(counter, Nil)
+      case x :: xs => if (x == 11) array11R(counter + 1, xs) else array11R(counter, xs)
+    }
+
+    array11R(0, nums.drop(index).toList)
+  }
+
 }

@@ -94,4 +94,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.array6(Array(6), 0) should equal(true)
   }
 
+  """Given an array of ints, method "array11"""" should """compute recursively the number of times that the value 11 appears in the array. We'll use the convention of considering only the part of the array that begins at the given index.""" in {
+    RecursionI.array11(Array(1, 2, 11), 0) should equal(1)
+    RecursionI.array11(Array(11, 11), 0) should equal(2)
+    RecursionI.array11(Array(1, 2, 3, 4), 0) should equal(0)
+  }
+
 }
