@@ -82,4 +82,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.changePi("pip") should equal("3.14p")
   }
 
+  """Given a string, method "noX"""" should """compute recursively a new string where all the 'x' chars have been removed.""" in {
+    RecursionI.noX("xaxb") should equal("ab")
+    RecursionI.noX("abc") should equal("abc")
+    RecursionI.noX("xx") should equal("")
+  }
+
 }

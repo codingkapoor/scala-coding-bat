@@ -104,4 +104,15 @@ object RecursionI {
     changePiR(Nil, str.toList).mkString
   }
 
+  def noX(str: String) = {
+
+    @tailrec
+    def noXR(res: List[Char], ls: List[Char]): List[Char] = ls match {
+      case x :: Nil => if (x == 'x') res else res :+ x
+      case x :: xs => if (x == 'x') noXR(res, xs) else noXR(res :+ x, xs)
+    }
+
+    noXR(Nil, str.toList).mkString
+  }
+
 }
