@@ -72,4 +72,16 @@ object RecursionI {
     powerNR(n, base)
   }
 
+  def countX(str: String) = {
+
+    @tailrec
+    def countXR(res: Int, ls: List[Char]): Int = ls match {
+      case Nil => res
+      case x :: Nil => if (x == 'x') countXR(res + 1, Nil) else countXR(res, Nil)
+      case x :: xs => if (x == 'x') countXR(res + 1, xs) else countXR(res, xs)
+    }
+
+    countXR(0, str.toList)
+  }
+
 }

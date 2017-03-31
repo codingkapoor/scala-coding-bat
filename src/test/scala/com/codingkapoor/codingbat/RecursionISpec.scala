@@ -58,4 +58,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.powerN(3, 3) should equal(27)
   }
 
+  """Given a string, method "countX"""" should """compute recursively (no loops) the number of lowercase 'x' chars in the string.""" in {
+    RecursionI.countX("xxhixx") should equal(4)
+    RecursionI.countX("xhixhix") should equal(3)
+    RecursionI.countX("hi") should equal(0)
+  }
+
 }
