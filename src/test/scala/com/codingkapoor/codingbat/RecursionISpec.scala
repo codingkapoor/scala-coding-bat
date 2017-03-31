@@ -76,4 +76,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.changeXY("xhixhix") should equal("yhiyhiy")
   }
 
+  """Given a string, method "changePi"""" should """compute recursively (no loops) a new string where all appearances of "pi" have been replaced by "3.14".""" in {
+    RecursionI.changePi("xpix") should equal("x3.14x")
+    RecursionI.changePi("pipi") should equal("3.143.14")
+    RecursionI.changePi("pip") should equal("3.14p")
+  }
+
 }

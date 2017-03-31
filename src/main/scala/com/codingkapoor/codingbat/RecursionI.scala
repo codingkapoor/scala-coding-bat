@@ -91,5 +91,17 @@ object RecursionI {
   def changeXY(str: String) = {
     str.replaceAll("x", "y")
   }
-  
+
+  def changePi(str: String) = {
+
+    @tailrec
+    def changePiR(res: List[Char], ls: List[Char]): List[Char] = ls match {
+      case Nil => res
+      case x :: Nil => changePiR(res :+ x, Nil)
+      case x :: y :: xs => if (x == 'p' && y == 'i') changePiR(res :+ '3' :+ '.' :+ '1' :+ '4', xs) else changePiR(res :+ x, y :: xs)
+    }
+
+    changePiR(Nil, str.toList).mkString
+  }
+
 }
