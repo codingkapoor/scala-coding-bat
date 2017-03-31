@@ -84,4 +84,8 @@ object RecursionI {
     countXR(0, str.toList)
   }
 
+  def countHi(str: String) = {
+    str.sliding(2).toList.count(_ == "hi")
+  }
+
 }

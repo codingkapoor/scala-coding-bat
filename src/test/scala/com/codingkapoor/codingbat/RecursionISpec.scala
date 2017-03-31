@@ -64,4 +64,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.countX("hi") should equal(0)
   }
 
+  """Given a string, method "countHi"""" should """compute recursively (no loops) the number of times lowercase "hi" appears in the string.""" in {
+    RecursionI.countHi("xxhixx") should equal(1)
+    RecursionI.countHi("xhixhix") should equal(2)
+    RecursionI.countHi("hi") should equal(1)
+  }
+
 }
