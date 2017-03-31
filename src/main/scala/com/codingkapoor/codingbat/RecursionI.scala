@@ -38,4 +38,8 @@ object RecursionI {
     }
   }
 
+  def sumDigits(n: Int) = {
+    n.toString.map(_.asDigit).sum
+  }
+
 }

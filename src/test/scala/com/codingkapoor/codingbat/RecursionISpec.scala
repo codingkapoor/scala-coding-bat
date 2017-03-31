@@ -34,4 +34,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.triangle(2) should equal(3)
   }
 
+  """Given a non-negative int n, method "sumDigits"""" should """return the sum of its digits recursively (no loops).""" in {
+    RecursionI.sumDigits(126) should equal(9)
+    RecursionI.sumDigits(49) should equal(13)
+    RecursionI.sumDigits(12) should equal(3)
+  }
+
 }
