@@ -70,4 +70,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.countHi("hi") should equal(1)
   }
 
+  """Given a string, method "changeXY"""" should """compute recursively (no loops) a new string where all the lowercase 'x' chars have been changed to 'y' chars.""" in {
+    RecursionI.changeXY("codex") should equal("codey")
+    RecursionI.changeXY("xxhixx") should equal("yyhiyy")
+    RecursionI.changeXY("xhixhix") should equal("yhiyhiy")
+  }
+
 }

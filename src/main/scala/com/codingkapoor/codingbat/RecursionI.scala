@@ -88,4 +88,8 @@ object RecursionI {
     str.sliding(2).toList.count(_ == "hi")
   }
 
+  def changeXY(str: String) = {
+    str.replaceAll("x", "y")
+  }
+  
 }
