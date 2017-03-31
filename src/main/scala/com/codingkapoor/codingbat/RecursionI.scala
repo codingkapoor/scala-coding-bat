@@ -61,4 +61,15 @@ object RecursionI {
     count8(0, digitsInPair)
   }
 
+  def powerN(n: Int, base: Int) = {
+
+    @tailrec
+    def powerNR(res: Int, counter: Int): Int = {
+      if (counter == 1) res
+      else powerNR(res * n, counter - 1)
+    }
+
+    powerNR(n, base)
+  }
+
 }

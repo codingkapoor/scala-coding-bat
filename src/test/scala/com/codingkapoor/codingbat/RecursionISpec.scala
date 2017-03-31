@@ -52,4 +52,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.count8(8818) should equal(4)
   }
 
+  """Given base and n that are both 1 or more, method "powerN"""" should """compute recursively (no loops) the value of base to the n power, so powerN(3, 2) is 9 (3 squared).""" in {
+    RecursionI.powerN(3, 1) should equal(3)
+    RecursionI.powerN(3, 2) should equal(9)
+    RecursionI.powerN(3, 3) should equal(27)
+  }
+
 }
