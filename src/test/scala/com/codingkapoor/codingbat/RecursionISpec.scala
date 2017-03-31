@@ -46,4 +46,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.count7(123) should equal(0)
   }
 
+  """Given a non-negative int n, method "count8"""" should """compute recursively (no loops) the count of the occurrences of 8 as a digit, except that an 8 with another 8 immediately to its left counts double, so 8818 yields 4.""" in {
+    RecursionI.count8(8) should equal(1)
+    RecursionI.count8(818) should equal(2)
+    RecursionI.count8(8818) should equal(4)
+  }
+
 }

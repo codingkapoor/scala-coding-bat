@@ -46,4 +46,19 @@ object RecursionI {
     n.toString.map(_.asDigit).count(_ == 7)
   }
 
+  def count8(n: Int) = {
+    val digitsInPair = n.toString.toList.sliding(2, 2).toList
+
+    @tailrec
+    def count8(counter: Int, ls: List[List[Char]]): Int = ls match {
+      case Nil => counter
+      case x :: Nil =>
+        val c = x.count(_ == '8'); if (c == 2) count8(counter + c + 1, Nil) else count8(counter + c, Nil)
+      case x :: xs =>
+        val c = x.count(_ == '8'); if (c == 2) count8(counter + c + 1, xs) else count8(counter + c, xs)
+    }
+
+    count8(0, digitsInPair)
+  }
+
 }
