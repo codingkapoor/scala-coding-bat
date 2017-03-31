@@ -115,4 +115,16 @@ object RecursionI {
     noXR(Nil, str.toList).mkString
   }
 
+  def array6(nums: Array[Int], index: Int) = {
+
+    @tailrec
+    def array6R(res: Boolean, arr: List[Int]): Boolean = arr match {
+      case Nil => res
+      case x :: Nil => if (x == 6) array6R(res = true, Nil) else array6R(res = false, Nil)
+      case x :: xs => if (x == 6) array6R(res = true, Nil) else array6R(res = false, xs)
+    }
+
+    array6R(res = false, nums.drop(index).toList)
+  }
+
 }

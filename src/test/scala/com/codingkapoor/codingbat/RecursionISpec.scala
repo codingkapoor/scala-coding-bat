@@ -88,4 +88,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.noX("xx") should equal("")
   }
 
+  """Given an array of ints, method "array6"""" should """compute recursively if the array contains a 6. We'll use the convention of considering only the part of the array that begins at the given index.""" in {
+    RecursionI.array6(Array(1, 6, 4), 0) should equal(true)
+    RecursionI.array6(Array(1, 4), 0) should equal(false)
+    RecursionI.array6(Array(6), 0) should equal(true)
+  }
+
 }
