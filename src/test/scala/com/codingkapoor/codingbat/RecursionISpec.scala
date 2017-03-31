@@ -40,4 +40,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.sumDigits(12) should equal(3)
   }
 
+  """Given a non-negative int n, method "count7"""" should """return the count of the occurrences of 7 as a digit, so for example 717 yields 2. (no loops).""" in {
+    RecursionI.count7(717) should equal(2)
+    RecursionI.count7(7) should equal(1)
+    RecursionI.count7(123) should equal(0)
+  }
+
 }

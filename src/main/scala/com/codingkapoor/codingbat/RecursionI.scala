@@ -42,4 +42,8 @@ object RecursionI {
     n.toString.map(_.asDigit).sum
   }
 
+  def count7(n: Int) = {
+    n.toString.map(_.asDigit).count(_ == 7)
+  }
+
 }
