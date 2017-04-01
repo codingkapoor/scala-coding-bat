@@ -100,4 +100,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.array11(Array(1, 2, 3, 4), 0) should equal(0)
   }
 
+  """Given an array of ints, method "array220"""" should """compute recursively if the array contains somewhere a value followed in the array by that value times 10. We'll use the convention of considering only the part of the array that begins at the given index.""" in {
+    RecursionI.array220(Array(1, 2, 20), 0) should equal(true)
+    RecursionI.array220(Array(3, 30), 0) should equal(true)
+    RecursionI.array220(Array(3), 0) should equal(false)
+  }
+
 }

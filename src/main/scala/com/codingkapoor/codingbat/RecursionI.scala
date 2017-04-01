@@ -139,4 +139,11 @@ object RecursionI {
     array11R(0, nums.drop(index).toList)
   }
 
+  def array220(arr: Array[Int], index: Int) = {
+    arr.sliding(2).count {
+      case Array(x) => x / x == 2 // This condition is introduced to take care of cases when Array is left with only one element.
+      case Array(x, y) => y / x == 10
+    } > 0
+  }
+
 }
