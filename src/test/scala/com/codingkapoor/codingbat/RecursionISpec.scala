@@ -130,4 +130,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.countPairs("axbx") should equal(1)
   }
 
+  """Method countAbc""" should """count recursively the total number of "abc" and "aba" substrings that appear in the given string.""" in {
+    RecursionI.countAbc("abc") should equal(1)
+    RecursionI.countAbc("abcxxabc") should equal(2)
+    RecursionI.countAbc("abaxxaba") should equal(2)
+  }
+
 }

@@ -195,4 +195,9 @@ object RecursionI {
     countPairsR(0, str.toList)
   }
 
+  def countAbc(str: String) = {
+    val pattern = "abc|aba".r
+    pattern.findAllIn(str).toList.size
+  }
+
 }
