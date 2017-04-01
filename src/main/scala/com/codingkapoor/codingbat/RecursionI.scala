@@ -211,4 +211,18 @@ object RecursionI {
     pattern.findAllIn(str).toList.size
   }
 
+  def stringClean(str: String) = {
+
+    @tailrec
+    def stringCleanR(res: List[Char], ls: List[Char]): List[Char] = ls match {
+      case Nil => res
+      case x :: Nil => if (x == res.last) stringCleanR(res, Nil) else stringCleanR(res :+ x, Nil)
+      case x :: xs => if (x == res.last) stringCleanR(res, xs) else stringCleanR(res :+ x, xs)
+    }
+
+    stringCleanR(Nil :+ str.head, str.tail.toList).mkString
+  }
+
+  def stringCleanII(str: String) = str.distinct
+
 }

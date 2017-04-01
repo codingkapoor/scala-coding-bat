@@ -142,4 +142,16 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.count11("111") should equal(1)
   }
 
+  """Given a string, method "stringClean"""" should """return recursively a "cleaned" string where adjacent chars that are the same have been reduced to a single char. So "yyzzza" yields "yza".""" in {
+    RecursionI.stringClean("yyzzza") should equal("yza")
+    RecursionI.stringClean("abbbcdd") should equal("abcd")
+    RecursionI.stringClean("Hello") should equal("Helo")
+  }
+
+  """Given a string, method "stringCleanII"""" should """return recursively a "cleaned" string where adjacent chars that are the same have been reduced to a single char. So "yyzzza" yields "yza".""" in {
+    RecursionI.stringCleanII("yyzzza") should equal("yza")
+    RecursionI.stringCleanII("abbbcdd") should equal("abcd")
+    RecursionI.stringCleanII("Hello") should equal("Helo")
+  }
+
 }
