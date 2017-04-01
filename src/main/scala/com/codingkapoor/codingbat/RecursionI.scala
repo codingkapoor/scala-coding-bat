@@ -38,10 +38,12 @@ object RecursionI {
     }
   }
 
+  // Such problems can be solved far more conveniently in ways other than recursion in Scala.
   def sumDigits(n: Int) = {
     n.toString.map(_.asDigit).sum
   }
 
+  // Such problems can be solved far more conveniently in ways other than recursion in Scala.
   def count7(n: Int) = {
     n.toString.map(_.asDigit).count(_ == 7)
   }
@@ -84,10 +86,13 @@ object RecursionI {
     countXR(0, str.toList)
   }
 
+
+  // Such problems can be solved far more conveniently in ways other than recursion in Scala.
   def countHi(str: String) = {
     str.sliding(2).toList.count(_ == "hi")
   }
 
+  // Such problems can be solved far more conveniently in ways other than recursion in Scala.
   def changeXY(str: String) = {
     str.replaceAll("x", "y")
   }
@@ -195,6 +200,7 @@ object RecursionI {
     countPairsR(0, str.toList)
   }
 
+  // Such problems can be solved far more conveniently in ways other than recursion in Scala.
   def countAbc(str: String) = {
     val pattern = "abc|aba".r
     pattern.findAllIn(str).toList.size
