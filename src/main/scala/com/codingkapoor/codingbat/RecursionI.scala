@@ -206,4 +206,9 @@ object RecursionI {
     pattern.findAllIn(str).toList.size
   }
 
+  def count11(str: String) = {
+    val pattern = "11".r
+    pattern.findAllIn(str).toList.size
+  }
+
 }

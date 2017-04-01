@@ -136,4 +136,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.countAbc("abaxxaba") should equal(2)
   }
 
+  """Given a string, method "count11"""" should """compute recursively (no loops) the number of "11" substrings in the string. The "11" substrings should not overlap.""" in {
+    RecursionI.count11("11abc11") should equal(2)
+    RecursionI.count11("abc11x11x11") should equal(3)
+    RecursionI.count11("111") should equal(1)
+  }
+
 }
