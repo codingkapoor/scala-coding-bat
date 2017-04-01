@@ -164,6 +164,14 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.strCount("catcowcat", "cat") should equal(2)
     RecursionI.strCount("catcowcat", "cow") should equal(1)
     RecursionI.strCount("catcowcat", "dog") should equal(0)
+    RecursionI.strCount("aaaa", "aaa") should equal(1)
+  }
+
+  """Given a string and a non-empty substring sub, method "strCopies"""" should """compute recursively if at least n copies of sub appear in the string somewhere, possibly with overlapping. N will be non-negative.""" in {
+    RecursionI.strCopies("catcowcat", "cat", 2) should equal(true)
+    RecursionI.strCopies("catcowcat", "cow", 2) should equal(false)
+    RecursionI.strCopies("catcowcat", "cow", 1) should equal(true)
+    RecursionI.strCopies("aaaa", "aaa", 2) should equal(true)
   }
 
 }

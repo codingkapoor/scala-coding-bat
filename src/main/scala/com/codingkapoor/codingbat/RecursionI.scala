@@ -233,8 +233,15 @@ object RecursionI {
     pattern1.findAllIn(pattern2.replaceAllIn(str, "")).size
   }
 
+  // Non-overlapping is taken into consideration
   def strCount(str: String, sub: String) = {
-    str.sliding(3).count(_ == sub)
+    val pattern = sub.r
+    pattern.findAllIn(str).size
+  }
+
+  // Overlapping is taken into consideration
+  def strCopies(str: String, sub: String, n: Int) = {
+    str.sliding(3).count(_ == sub) == n
   }
 
 }
