@@ -186,10 +186,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.strCopies("aaaa", "aaa", 2) should equal(true)
   }
 
-//  """Given a string and a non-empty substring sub, method "strDist"""" should """compute recursively the largest substring which starts and ends with sub and return its length.""" in {
-//    RecursionI.strDist("catcowcat", "cat") should equal(9)
-//    RecursionI.strDist("catcowcat", "cow") should equal(3)
-//    RecursionI.strDist("cccatcowcatxx", "cat") should equal(9)
-//  }
+  """Given a string and a non-empty substring sub, method "strDist"""" should """compute recursively the largest substring which starts and ends with sub and return its length.""" in {
+    RecursionI.strDist("catcowcat", "cat") should equal(9)
+    RecursionI.strDist("catcowcat", "cow") should equal(3)
+    RecursionI.strDist("cccatcowcatxx", "cat") should equal(9)
+  }
 
 }

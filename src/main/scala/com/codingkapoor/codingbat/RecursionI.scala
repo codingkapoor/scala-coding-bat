@@ -257,6 +257,12 @@ object RecursionI {
     str.sliding(3).count(_ == sub) == n
   }
 
-  def strDist(str: String, sub: String) = {}
+  def strDist(str: String, sub: String) = {
+    val pattern1 = s"$sub[a-z]*$sub".r
+    val pattern2 = s"$sub".r
+
+    val res = pattern1.findAllIn(str).toList ::: pattern2.findAllIn(str).toList
+    if (res != Nil) res.sortBy(_.length).last.length else 0
+  }
 
 }
