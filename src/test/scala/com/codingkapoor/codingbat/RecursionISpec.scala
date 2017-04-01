@@ -160,6 +160,12 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.countHi2("xhixhi") should equal(0)
   }
 
+  """Given a string that contains a single pair of parenthesis, method "parentBit"""" should """compute recursively a new string made of only of the parenthesis and their contents, so "xyz(abc)123" yields "(abc)".""" in {
+    RecursionI.parenBit("xyz(abc)123") should equal("(abc)")
+    RecursionI.parenBit("x(hello)") should equal("(hello)")
+    RecursionI.parenBit("(xy)1") should equal("(xy)")
+  }
+
   """Given a string and a non-empty substring sub, method "strCount"""" should """compute recursively the number of times that sub appears in the string, without the sub strings overlapping.""" in {
     RecursionI.strCount("catcowcat", "cat") should equal(2)
     RecursionI.strCount("catcowcat", "cow") should equal(1)
@@ -173,5 +179,11 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.strCopies("catcowcat", "cow", 1) should equal(true)
     RecursionI.strCopies("aaaa", "aaa", 2) should equal(true)
   }
+
+//  """Given a string and a non-empty substring sub, method "strDist"""" should """compute recursively the largest substring which starts and ends with sub and return its length.""" in {
+//    RecursionI.strDist("catcowcat", "cat") should equal(9)
+//    RecursionI.strDist("catcowcat", "cow") should equal(3)
+//    RecursionI.strDist("cccatcowcatxx", "cat") should equal(9)
+//  }
 
 }

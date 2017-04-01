@@ -233,6 +233,14 @@ object RecursionI {
     pattern1.findAllIn(pattern2.replaceAllIn(str, "")).size
   }
 
+  def parenBit(str: String) = {
+    val pattern = """\([a-z]*\)""".r
+    pattern.findAllIn(str).toList.headOption match {
+      case Some(res) => res
+      case None => ""
+    }
+  }
+
   // Non-overlapping is taken into consideration
   def strCount(str: String, sub: String) = {
     val pattern = sub.r
@@ -243,5 +251,7 @@ object RecursionI {
   def strCopies(str: String, sub: String, n: Int) = {
     str.sliding(3).count(_ == sub) == n
   }
+
+  def strDist(str: String, sub: String) = {}
 
 }
