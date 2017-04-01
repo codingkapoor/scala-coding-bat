@@ -233,4 +233,8 @@ object RecursionI {
     pattern1.findAllIn(pattern2.replaceAllIn(str, "")).size
   }
 
+  def strCount(str: String, sub: String) = {
+    str.sliding(3).count(_ == sub)
+  }
+
 }
