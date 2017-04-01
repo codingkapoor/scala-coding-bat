@@ -124,4 +124,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.endX("xhixhix") should equal("hihixxx")
   }
 
+  """We'll say that a "pair" in a string is two instances of a char separated by a char. So "AxA" the A's make a pair. Pair's can overlap, so "AxAxA" contains 3 pairs -- 2 for A and 1 for x. Method "countpairs"""" should """recursively compute the number of pairs in the given string.""" in {
+    RecursionI.countPairs("axa") should equal(1)
+    RecursionI.countPairs("axax") should equal(2)
+    RecursionI.countPairs("axbx") should equal(1)
+  }
+
 }

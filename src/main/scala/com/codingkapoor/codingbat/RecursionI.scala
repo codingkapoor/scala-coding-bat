@@ -182,4 +182,17 @@ object RecursionI {
     endXR(Nil, str.toList).mkString + ("x" * str.count(_ == 'x'))
   }
 
+  def countPairs(str: String) = {
+
+    @tailrec
+    def countPairsR(res: Int, ls: List[Char]): Int = ls match {
+      case Nil => res
+      case _ :: Nil => res
+      case _ :: _ :: Nil => countPairsR(res, Nil)
+      case x :: y :: xs => if (x == xs.head) countPairsR(res + 1, y :: xs) else countPairsR(res, y :: xs)
+    }
+
+    countPairsR(0, str.toList)
+  }
+
 }
