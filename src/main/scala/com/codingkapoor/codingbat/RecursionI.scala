@@ -146,4 +146,16 @@ object RecursionI {
     } > 0
   }
 
+  def allStar(str: String) = {
+
+    @tailrec
+    def allStarR(res: List[Char], ls: List[Char]): List[Char] = ls match {
+      case Nil => res
+      case x :: Nil => allStarR(res :+ x, Nil)
+      case x :: xs => allStarR(res :+ x :+ '*', xs)
+    }
+
+    allStarR(Nil, str.toList).mkString
+  }
+
 }
