@@ -158,4 +158,16 @@ object RecursionI {
     allStarR(Nil, str.toList).mkString
   }
 
+  def pairStar(str: String) = {
+
+    @tailrec
+    def pairStarR(res: List[Char], ls: List[Char]): List[Char] = ls match {
+      case Nil => res
+      case x :: Nil => pairStarR(res :+ x, Nil)
+      case x :: xs => if (x == xs.head) pairStarR(res :+ x :+ '*', xs) else pairStarR(res :+ x, xs)
+    }
+
+    pairStarR(Nil, str.toList).mkString
+  }
+
 }

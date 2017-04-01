@@ -112,4 +112,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.allStar("ab") should equal("a*b")
   }
 
+  """Given a string, method "pairStar"""" should """compute recursively a new string where identical chars that are adjacent in the original string are separated from each other by a "*".""" in {
+    RecursionI.pairStar("hello") should equal("hel*lo")
+    RecursionI.pairStar("xxyy") should equal("x*xy*y")
+    RecursionI.pairStar("aaaa") should equal("a*a*a*a")
+  }
+
 }
