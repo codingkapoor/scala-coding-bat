@@ -170,4 +170,16 @@ object RecursionI {
     pairStarR(Nil, str.toList).mkString
   }
 
+  def endX(str: String) = {
+
+    @tailrec
+    def endXR(res: List[Char], ls: List[Char]): List[Char] = ls match {
+      case Nil => res
+      case x :: Nil => if (x == 'x') endXR(res, Nil) else endXR(res :+ x, Nil)
+      case x :: xs => if (x == 'x') endXR(res, xs) else endXR(res :+ x, xs)
+    }
+
+    endXR(Nil, str.toList).mkString + ("x" * str.count(_ == 'x'))
+  }
+
 }

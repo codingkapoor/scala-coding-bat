@@ -118,4 +118,10 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.pairStar("aaaa") should equal("a*a*a*a")
   }
 
+  """Given a string, method "endX"""" should """compute recursively a new string where all the lowercase 'x' chars have been moved to the end of the string.""" in {
+    RecursionI.endX("xxre") should equal("rexx")
+    RecursionI.endX("xxhixx") should equal("hixxxx")
+    RecursionI.endX("xhixhix") should equal("hihixxx")
+  }
+
 }
