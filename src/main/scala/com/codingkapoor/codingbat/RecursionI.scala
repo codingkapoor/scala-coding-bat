@@ -225,4 +225,12 @@ object RecursionI {
 
   def stringCleanII(str: String) = str.distinct
 
+  // Such problems can be solved far more conveniently in ways other than recursion in Scala.
+  def countHi2(str: String) = {
+    val pattern1 = "hi".r
+    val pattern2 = "xhi".r
+
+    pattern1.findAllIn(pattern2.replaceAllIn(str, "")).size
+  }
+
 }
