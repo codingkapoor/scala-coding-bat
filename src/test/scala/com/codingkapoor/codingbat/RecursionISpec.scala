@@ -166,6 +166,12 @@ class RecursionISpec extends FlatSpec with Matchers {
     RecursionI.parenBit("(xy)1") should equal("(xy)")
   }
 
+  """Given a string, method "nestParen"""" should """return true if it is a nesting of zero or more pairs of parenthesis, like "(())" or "((()))".""" in {
+    RecursionI.nestParen("(())") should equal(true)
+    RecursionI.nestParen("((()))") should equal(true)
+    RecursionI.nestParen("(((x))") should equal(false)
+  }
+
   """Given a string and a non-empty substring sub, method "strCount"""" should """compute recursively the number of times that sub appears in the string, without the sub strings overlapping.""" in {
     RecursionI.strCount("catcowcat", "cat") should equal(2)
     RecursionI.strCount("catcowcat", "cow") should equal(1)

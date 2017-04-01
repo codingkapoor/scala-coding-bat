@@ -241,6 +241,11 @@ object RecursionI {
     }
   }
 
+  def nestParen(str: String) = {
+    val pattern = """\([\(\)]*\)""".r
+    pattern.findAllIn(str).nonEmpty
+  }
+
   // Non-overlapping is taken into consideration
   def strCount(str: String, sub: String) = {
     val pattern = sub.r
