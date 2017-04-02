@@ -18,8 +18,17 @@ object MapI {
   }
 
   def mapAB(map: scala.collection.mutable.Map[String, String]) = {
-    if(map.contains("a") && map.contains("b"))
+    if (map.contains("a") && map.contains("b"))
       map += ("ab" -> (map("a") + map("b")))
+    map
+  }
+
+  def topping1(map: scala.collection.mutable.Map[String, String]) = {
+    map += ("bread" -> "butter")
+
+    if (map.contains("ice cream"))
+      map += ("ice cream" -> "cherry")
+
     map
   }
 

@@ -22,4 +22,10 @@ class MapISpec extends FlatSpec with Matchers {
     MapI.mapAB(scala.collection.mutable.Map("b" -> "2")) should equal(Map("b" -> "2"))
   }
 
+  """Given a map of food keys and topping values, method "topping1"""" should """modify and return the map as follows: if the key "ice cream" is present, set its value to "cherry". In all cases, set the key "bread" to have the value "butter".""" in {
+    MapI.topping1(scala.collection.mutable.Map("ice cream" -> "peanuts")) should equal(Map("bread" -> "butter", "ice cream" -> "cherry"))
+    MapI.topping1(scala.collection.mutable.Map("bread" -> "butter")) should equal(Map("bread" -> "butter"))
+    MapI.topping1(scala.collection.mutable.Map("pancake" -> "syrup")) should equal(Map("bread" -> "butter", "pancake" -> "syrup"))
+  }
+
 }
