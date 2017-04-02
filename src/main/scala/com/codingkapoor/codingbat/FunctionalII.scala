@@ -30,4 +30,8 @@ object FunctionalII {
     strings.map(_ + "y").filterNot(_.contains("yy"))
   }
 
+  def two2(nums: List[Int]): List[Int] = {
+    nums.map(_ * 2).filterNot(_ % 10 == 2)
+  }
+
 }

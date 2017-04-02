@@ -46,4 +46,10 @@ class FunctionalIISpec extends FlatSpec with Matchers {
     FunctionalII.noYY(List("xx", "ya", "zz")) should equal(List("xxy", "yay", "zzy"))
   }
 
+  """Given a list of non-negative integers, method "two2"""" should """return a list of those numbers multiplied by 2, omitting any of the resulting numbers that end in 2.""" in {
+    FunctionalII.two2(List(1, 2, 3)) should equal(List(4, 6))
+    FunctionalII.two2(List(2, 6, 11)) should equal(List(4))
+    FunctionalII.two2(List(0)) should equal(List(0))
+  }
+
 }
