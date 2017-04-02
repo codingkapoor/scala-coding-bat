@@ -52,4 +52,10 @@ class FunctionalIISpec extends FlatSpec with Matchers {
     FunctionalII.two2(List(0)) should equal(List(0))
   }
 
+  """Given a list of integers, method "square56""" should """return a list of those numbers squared and the product added to 10, omitting any of the resulting numbers that end in 5 or 6.""" in {
+    FunctionalII.square56(List(3, 1, 4)) should equal(List(19, 11))
+    FunctionalII.square56(List(1)) should equal(List(11))
+    FunctionalII.square56(List(2)) should equal(List(14))
+  }
+
 }

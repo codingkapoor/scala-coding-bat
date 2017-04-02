@@ -34,4 +34,8 @@ object FunctionalII {
     nums.map(_ * 2).filterNot(_ % 10 == 2)
   }
 
+  def square56(nums: List[Int]): List[Int] = {
+    nums.map(x => x * x).map(_ + 10).filterNot(x => x % 10 == 5 || x % 10 == 6)
+  }
+
 }
