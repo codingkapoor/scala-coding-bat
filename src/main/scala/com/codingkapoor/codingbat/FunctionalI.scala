@@ -30,4 +30,8 @@ object FunctionalI {
     nums.map(_ % 10)
   }
 
+  def lower(strings: List[String]): List[String] = {
+    strings.map(_.toLowerCase)
+  }
+
 }

@@ -46,4 +46,10 @@ class FunctionalISpec extends FlatSpec with Matchers {
     FunctionalI.rightDigit(List(10, 0)) should equal(List(0, 0))
   }
 
+  """Given a list of strings, method "lower"""" should """return a list where each string is converted to lower case.""" in {
+    FunctionalI.lower(List("Hello", "Hi")) should equal(List("hello", "hi"))
+    FunctionalI.lower(List("AAA", "BBB", "ccc")) should equal(List("aaa", "bbb", "ccc"))
+    FunctionalI.lower(List("KitteN", "ChocolaTE")) should equal(List("kitten", "chocolate"))
+  }
+
 }
