@@ -35,4 +35,8 @@ object MapII {
     strings.groupBy(x => x).mapValues(x => x.length).filter(x => x._2 % 2 == 0).map(x => x._1 * (x._2 / 2)).foldLeft("")((acc, s) => acc + s)
   }
 
+  def wordMultiple(strings: List[String]): Map[String, Boolean] = {
+    strings.groupBy(x => x).mapValues(x => x.length).mapValues(x => if (x >= 2) true else false)
+  }
+
 }

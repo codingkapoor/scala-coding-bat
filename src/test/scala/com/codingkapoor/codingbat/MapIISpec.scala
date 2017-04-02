@@ -49,4 +49,10 @@ class MapIISpec extends FlatSpec with Matchers {
     MapII.wordAppend(List("a", "", "a")) should equal("a")
   }
 
+  """Given an array of strings, method "wordMultiple""" should """return a Map<String, Boolean> where each different string is a key and its value is true if that string appears 2 or more times in the array.""" in {
+    MapII.wordMultiple(List("a", "b", "a", "c", "b")) should equal(Map("a" -> true, "b" -> true, "c" -> false))
+    MapII.wordMultiple(List("c", "b", "a")) should equal(Map("a" -> false, "b" -> false, "c" -> false))
+    MapII.wordMultiple(List("c", "c", "c", "c")) should equal(Map("c" -> true))
+  }
+
 }
