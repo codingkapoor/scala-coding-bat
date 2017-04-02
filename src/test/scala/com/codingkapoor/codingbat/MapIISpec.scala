@@ -30,4 +30,10 @@ class MapIISpec extends FlatSpec with Matchers {
     MapII.pairs(List("man", "moon", "good", "night")) should equal(Map("g" -> "d", "m" -> "n", "n" -> "t"))
   }
 
+  """Given an array of strings, method "wordCount"""" should """return a Map<String, Integer> with a key for each different string, with the value the number of times that string appears in the array.""" in {
+    MapII.wordCount(List("a", "b", "a", "c", "b")) should equal(Map("a" -> 2, "b" -> 2, "c" -> 1))
+    MapII.wordCount(List("c", "b", "a")) should equal(Map("a" -> 1, "b" -> 1, "c" -> 1))
+    MapII.wordCount(List("c", "c", "c", "c")) should equal(Map("c" -> 4))
+  }
+
 }

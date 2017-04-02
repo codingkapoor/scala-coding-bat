@@ -22,4 +22,8 @@ object MapII {
     strings.map { x => x.head.toString -> x.last.toString }.toMap
   }
 
+  def wordCount(strings: List[String]): Map[String, Int] = {
+    strings.map { x => x -> strings.count(_ == x) }.toMap
+  }
+
 }
