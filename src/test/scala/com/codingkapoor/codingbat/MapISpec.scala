@@ -46,4 +46,10 @@ class MapISpec extends FlatSpec with Matchers {
     MapI.mapAB2(scala.collection.mutable.Map("a" -> "1", "b" -> "2")) should equal(Map("a" -> "1", "b" -> "2"))
   }
 
+  """Method "mapAB3"""" should """modify and return the given map as follows: if exactly one of the keys "a" or "b" has a value in the map (but not both), set the other to have that same value in the map.""" in {
+    MapI.mapAB3(scala.collection.mutable.Map("a" -> "1", "c" -> "2")) should equal(Map("a" -> "1", "b" -> "1", "c" -> "2"))
+    MapI.mapAB3(scala.collection.mutable.Map("b" -> "1", "c" -> "2")) should equal(Map("a" -> "1", "b" -> "1", "c" -> "2"))
+    MapI.mapAB3(scala.collection.mutable.Map("a" -> "1", "b" -> "2", "c" -> "3")) should equal(Map("a" -> "1", "b" -> "2", "c" -> "3"))
+  }
+
 }
