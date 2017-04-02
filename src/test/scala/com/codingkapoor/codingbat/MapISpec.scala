@@ -16,4 +16,10 @@ class MapISpec extends FlatSpec with Matchers {
     MapI.mapShare(scala.collection.mutable.Map("b" -> "1", "c" -> "2", "d" -> "3")) should equal(Map("b" -> "1", "d" -> "3"))
   }
 
+  """Method "mapAB"""" should """modify and return the given map as follows: for this problem the map may or may not contain the "a" and "b" keys. If both keys are present, append their 2 string values together and store the result under the key "ab".""" in {
+    MapI.mapAB(scala.collection.mutable.Map("a" -> "1", "b" -> "2")) should equal(Map("a" -> "1", "b" -> "2", "ab" -> "12"))
+    MapI.mapAB(scala.collection.mutable.Map("a" -> "1")) should equal(Map("a" -> "1"))
+    MapI.mapAB(scala.collection.mutable.Map("b" -> "2")) should equal(Map("b" -> "2"))
+  }
+
 }
