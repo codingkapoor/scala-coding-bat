@@ -14,4 +14,8 @@ object FunctionalI {
     strings.map(x => x + "*")
   }
 
+  def copies3(strings: List[String]): List[String] = {
+    strings.map(x => x * 3)
+  }
+
 }

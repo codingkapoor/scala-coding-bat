@@ -22,4 +22,10 @@ class FunctionalISpec extends FlatSpec with Matchers {
     FunctionalI.addStar(List("*")) should equal(List("**"))
   }
 
+  """Given a list of strings, method "copies3"""" should """return a list where each string is replaced by 3 copies of the string concatenated together.""" in {
+    FunctionalI.copies3(List("a", "bb", "ccc")) should equal(List("aaa", "bbbbbb", "ccccccccc"))
+    FunctionalI.copies3(List("24", "a", "")) should equal(List("242424", "aaa", ""))
+    FunctionalI.copies3(List("hello", "there")) should equal(List("hellohellohello", "theretherethere"))
+  }
+
 }
