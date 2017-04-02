@@ -22,4 +22,8 @@ object FunctionalI {
     strings.map(x => "y" + x + "y")
   }
 
+  def math1(nums: List[Int]): List[Int] = {
+    nums.map(x => (x + 1) * 10)
+  }
+
 }

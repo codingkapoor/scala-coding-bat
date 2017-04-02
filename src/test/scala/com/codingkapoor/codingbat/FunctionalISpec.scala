@@ -34,4 +34,10 @@ class FunctionalISpec extends FlatSpec with Matchers {
     FunctionalI.moreY(List("yay")) should equal(List("yyayy"))
   }
 
+  """Given a list of integers, method "math1"""" should """return a list where each integer is added to 1 and the result is multiplied by 10.""" in {
+    FunctionalI.math1(List(1, 2, 3)) should equal(List(20, 30, 40))
+    FunctionalI.math1(List(6, 8, 6, 8, 1)) should equal(List(70, 90, 70, 90, 20))
+    FunctionalI.math1(List(10)) should equal(List(110))
+  }
+
 }
