@@ -71,4 +71,20 @@ object MapI {
     map
   }
 
+  def mapAB4(map: scala.collection.mutable.Map[String, String]) = {
+    if (map.contains("a") && map.contains("b")) {
+      if (map("a").length > map("b").length)
+        map += ("c" -> map("a"))
+      else if (map("a").length < map("b").length)
+        map += ("c" -> map("b"))
+      else {
+        map += ("a" -> "")
+        map += ("b" -> "")
+      }
+
+    }
+
+    map
+  }
+
 }

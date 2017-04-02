@@ -52,4 +52,11 @@ class MapISpec extends FlatSpec with Matchers {
     MapI.mapAB3(scala.collection.mutable.Map("a" -> "1", "b" -> "2", "c" -> "3")) should equal(Map("a" -> "1", "b" -> "2", "c" -> "3"))
   }
 
+  """Method "mapAB4"""" should """modify and return the given map as follows: if the keys "a" and "b" have values that have different lengths, then set "c" to have the longer value. If the values exist and have the same length, change them both to the empty string in the map.""" in {
+    MapI.mapAB4(scala.collection.mutable.Map("a" -> "aaa", "b" -> "bb", "c" -> "cake")) should equal(Map("a" -> "aaa", "b" -> "bb", "c" -> "aaa"))
+    MapI.mapAB4(scala.collection.mutable.Map("a" -> "aa", "b" -> "bbb", "c" -> "cake")) should equal(Map("a" -> "aa", "b" -> "bbb", "c" -> "bbb"))
+    MapI.mapAB4(scala.collection.mutable.Map("a" -> "aa", "b" -> "bbb")) should equal(Map("a" -> "aa", "b" -> "bbb", "c" -> "bbb"))
+    MapI.mapAB4(scala.collection.mutable.Map("a" -> "aaa", "b" -> "bbb")) should equal(Map("a" -> "", "b" -> ""))
+  }
+
 }
