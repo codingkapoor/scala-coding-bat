@@ -52,4 +52,13 @@ object MapI {
     map
   }
 
+  def mapAB2(map: scala.collection.mutable.Map[String, String]) = {
+    if (map.contains("a") && map.contains("b") && map("a") == map("b")) {
+      map -= "a"
+      map -= "b"
+    }
+
+    map
+  }
+
 }
