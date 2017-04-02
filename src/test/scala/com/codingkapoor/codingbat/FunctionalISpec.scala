@@ -52,4 +52,10 @@ class FunctionalISpec extends FlatSpec with Matchers {
     FunctionalI.lower(List("KitteN", "ChocolaTE")) should equal(List("kitten", "chocolate"))
   }
 
+  """Given a list of strings, method "noX"""" should """return a list where each string has all its "x" removed.""" in {
+    FunctionalI.noX(List("ax", "bb", "cx")) should equal(List("a", "bb", "c"))
+    FunctionalI.noX(List("xxax", "xbxbx", "xxcx")) should equal(List("a", "bb", "c"))
+    FunctionalI.noX(List("x")) should equal(List(""))
+  }
+
 }

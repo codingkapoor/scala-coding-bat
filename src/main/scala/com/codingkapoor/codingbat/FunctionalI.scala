@@ -34,4 +34,8 @@ object FunctionalI {
     strings.map(_.toLowerCase)
   }
 
+  def noX(strings: List[String]): List[String] = {
+    strings.map(_.replaceAll("x", ""))
+  }
+
 }
