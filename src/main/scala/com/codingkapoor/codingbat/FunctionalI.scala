@@ -18,4 +18,8 @@ object FunctionalI {
     strings.map(x => x * 3)
   }
 
+  def moreY(strings: List[String]): List[String] = {
+    strings.map(x => "y" + x + "y")
+  }
+
 }

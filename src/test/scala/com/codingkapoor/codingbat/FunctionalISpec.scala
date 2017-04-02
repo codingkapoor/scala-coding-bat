@@ -28,4 +28,10 @@ class FunctionalISpec extends FlatSpec with Matchers {
     FunctionalI.copies3(List("hello", "there")) should equal(List("hellohellohello", "theretherethere"))
   }
 
+  """Given a list of strings, method "moreY"""" should """return a list where each string has "y" added at its start and end.""" in {
+    FunctionalI.moreY(List("a", "b", "c")) should equal(List("yay", "yby", "ycy"))
+    FunctionalI.moreY(List("hello", "there")) should equal(List("yhelloy", "ytherey"))
+    FunctionalI.moreY(List("yay")) should equal(List("yyayy"))
+  }
+
 }
