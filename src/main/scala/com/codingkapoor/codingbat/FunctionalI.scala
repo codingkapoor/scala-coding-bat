@@ -10,4 +10,8 @@ object FunctionalI {
     nums.map(x => x * x)
   }
 
+  def addStar(strings: List[String]): List[String] = {
+    strings.map(x => x + "*")
+  }
+
 }

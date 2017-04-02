@@ -16,4 +16,10 @@ class FunctionalISpec extends FlatSpec with Matchers {
     FunctionalI.square(List()) should equal(List())
   }
 
+  """Given a list of strings, method "addStar"""" should """return a list where each string has "*" added at its end.""" in {
+    FunctionalI.addStar(List("a", "bb", "ccc")) should equal(List("a*", "bb*", "ccc*"))
+    FunctionalI.addStar(List("hello", "there")) should equal(List("hello*", "there*"))
+    FunctionalI.addStar(List("*")) should equal(List("**"))
+  }
+
 }
