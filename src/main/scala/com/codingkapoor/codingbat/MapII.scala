@@ -1,5 +1,7 @@
 package com.codingkapoor.codingbat
 
+import scala.annotation.tailrec
+
 object MapII {
 
   def word0(ls: List[String]): Map[String, Int] = {
@@ -37,6 +39,18 @@ object MapII {
 
   def wordMultiple(strings: List[String]): Map[String, Boolean] = {
     strings.groupBy(x => x).mapValues(x => x.length).mapValues(x => if (x >= 2) true else false)
+  }
+
+  def allSwap(strings: List[String]) = {
+
+    @tailrec
+    def swap(res: List[(String, Int)], ls: List[(String, Int)]): List[(String, Int)] = ls match {
+      case Nil => res
+      case x :: Nil => swap(res :+ x, Nil)
+      case x :: xs => swap(res :+ (x._1, xs.head._2) :+ (xs.head._1, x._2), xs.tail)
+    }
+
+    strings.zipWithIndex.groupBy(x => x._1.head).values.toList.flatMap(x => swap(Nil, x)).sortBy(_._2).map(_._1)
   }
 
 }

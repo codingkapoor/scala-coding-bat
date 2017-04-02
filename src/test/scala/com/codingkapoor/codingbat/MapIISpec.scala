@@ -55,4 +55,10 @@ class MapIISpec extends FlatSpec with Matchers {
     MapII.wordMultiple(List("c", "c", "c", "c")) should equal(Map("c" -> true))
   }
 
+  """We'll say that 2 strings "match" if they are non-empty and their first chars are the same. Method "allSwap"""" should """loop over and then return the given array of non-empty strings as follows: if a string matches an earlier string in the array, swap the 2 strings in the array. When a position in the array has been swapped, it no longer matches anything.""" in {
+    MapII.allSwap(List("ab", "ac")) should equal(List("ac", "ab"))
+    MapII.allSwap(List("ax", "bx", "cx", "cy", "by", "ay", "aaa", "azz")) should equal(List("ay", "by", "cy", "cx", "bx", "ax", "azz", "aaa"))
+    MapII.allSwap(List("ax", "bx", "ay", "by", "ai", "aj", "bx", "by")) should equal(List("ay", "by", "ax", "bx", "aj", "ai", "by", "bx"))
+  }
+
 }
