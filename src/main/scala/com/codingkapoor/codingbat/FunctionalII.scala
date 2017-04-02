@@ -26,4 +26,8 @@ object FunctionalII {
     strings.filterNot(x => x.length == 3 || x.length == 4)
   }
 
+  def noYY(strings: List[String]): List[String] = {
+    strings.map(_ + "y").filterNot(_.contains("yy"))
+  }
+
 }

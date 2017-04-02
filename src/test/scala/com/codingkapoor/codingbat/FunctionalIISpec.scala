@@ -40,4 +40,10 @@ class FunctionalIISpec extends FlatSpec with Matchers {
     FunctionalII.no34(List("ccc", "dddd", "apple")) should equal(List("apple"))
   }
 
+  """Given a list of strings, method "noYY"""" should """return a list where each string has "y" added at its end, omitting any resulting strings that contain "yy" as a substring anywhere.""" in {
+    FunctionalII.noYY(List("a", "b", "c")) should equal(List("ay", "by", "cy"))
+    FunctionalII.noYY(List("a", "b", "cy")) should equal(List("ay", "by"))
+    FunctionalII.noYY(List("xx", "ya", "zz")) should equal(List("xxy", "yay", "zzy"))
+  }
+
 }
