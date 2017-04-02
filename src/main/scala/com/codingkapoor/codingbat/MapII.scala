@@ -30,4 +30,9 @@ object MapII {
     strings.groupBy(_.head).mapValues(x => x.foldLeft("")((acc, s) => acc + s))
   }
 
+  // Interesting problem and solution
+  def wordAppend(strings: List[String]) = {
+    strings.groupBy(x => x).mapValues(x => x.length).filter(x => x._2 % 2 == 0).map(x => x._1 * (x._2 / 2)).foldLeft("")((acc, s) => acc + s)
+  }
+
 }

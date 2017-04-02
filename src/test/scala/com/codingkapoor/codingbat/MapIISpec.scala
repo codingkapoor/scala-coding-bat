@@ -42,4 +42,11 @@ class MapIISpec extends FlatSpec with Matchers {
     MapII.firstChar(List()) → Map()
   }
 
+  """Method "wordAppend"""" should """loop over the given array of strings to build a result string like this: when a string appears the 2nd, 4th, 6th, etc. time in the array, append the string to the result. Return the empty string if no string appears a 2nd time.""" in {
+    MapII.wordAppend(List("a", "b", "a")) should equal("a")
+    MapII.wordAppend(List("a", "b", "a", "c", "a", "d", "a")) should equal("aa")
+    MapII.wordAppend(List("a", "b", "a", "c", "a", "d", "a", "b")) should equal("baa")
+    MapII.wordAppend(List("a", "", "a")) should equal("a")
+  }
+
 }
