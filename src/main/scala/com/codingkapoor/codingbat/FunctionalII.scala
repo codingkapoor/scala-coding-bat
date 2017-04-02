@@ -10,4 +10,8 @@ object FunctionalII {
     nums.filterNot(x => x % 10 == 9)
   }
 
+  def noTeen(nums: List[Int]): List[Int] = {
+    nums.filterNot(x => x >= 13 && x <= 19)
+  }
+
 }

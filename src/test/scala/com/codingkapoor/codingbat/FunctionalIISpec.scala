@@ -16,4 +16,10 @@ class FunctionalIISpec extends FlatSpec with Matchers {
     FunctionalII.no9(List(1, 2, 3)) should equal(List(1, 2, 3))
   }
 
+  """Given a list of integers, method "noTeen"""" should """return a list of those numbers, omitting any that are between 13 and 19 inclusive.""" in {
+    FunctionalII.noTeen(List(12, 13, 19, 20)) should equal(List(12, 20))
+    FunctionalII.noTeen(List(1, 14, 1)) should equal(List(1, 1))
+    FunctionalII.noTeen(List(15)) should equal(List())
+  }
+
 }
