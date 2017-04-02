@@ -22,4 +22,10 @@ class FunctionalIISpec extends FlatSpec with Matchers {
     FunctionalII.noTeen(List(15)) should equal(List())
   }
 
+  """Given a list of strings, method "noLong"""" should """return a list of the strings, omitting any string length 4 or more.""" in {
+    FunctionalII.noLong(List("this", "not", "too", "long")) should equal(List("not", "too"))
+    FunctionalII.noLong(List("a", "bbb", "cccc")) should equal(List("a", "bbb"))
+    FunctionalII.noLong(List("cccc", "cccc", "cccc")) should equal(List())
+  }
+
 }

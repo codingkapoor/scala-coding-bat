@@ -14,4 +14,8 @@ object FunctionalII {
     nums.filterNot(x => x >= 13 && x <= 19)
   }
 
+  def noLong(strings: List[String]): List[String] = {
+    strings.filterNot(_.length >= 4)
+  }
+
 }
