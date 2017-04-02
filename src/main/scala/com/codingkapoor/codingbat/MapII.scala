@@ -26,4 +26,8 @@ object MapII {
     strings.map { x => x -> strings.count(_ == x) }.toMap
   }
 
+  def firstChar(strings: List[String]): Map[Char, String] = {
+    strings.groupBy(_.head).mapValues(x => x.foldLeft("")((acc, s) => acc + s))
+  }
+
 }

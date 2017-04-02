@@ -36,4 +36,10 @@ class MapIISpec extends FlatSpec with Matchers {
     MapII.wordCount(List("c", "c", "c", "c")) should equal(Map("c" -> 4))
   }
 
+  """Given an array of non-empty strings, method "firstChar"""" should """return a Map<String, String> with a key for every different first character seen, with the value of all the strings starting with that character appended together in the order they appear in the array.""" in {
+    MapII.firstChar(List("salt", "tea", "soda", "toast")) should equal(Map('s' -> "saltsoda", 't' -> "teatoast"))
+    MapII.firstChar(List("aa", "bb", "cc", "aAA", "cCC", "d")) should equal(Map('a' -> "aaaAA", 'b' -> "bb", 'c' -> "cccCC", 'd' -> "d"))
+    MapII.firstChar(List()) → Map()
+  }
+
 }
