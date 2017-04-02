@@ -32,4 +32,14 @@ object MapI {
     map
   }
 
+  def topping2(map: scala.collection.mutable.Map[String, String]) = {
+    if (map.contains("ice cream"))
+      map += ("yogurt" -> map("ice cream"))
+
+    if (map.contains("spinach"))
+      map += ("spinach" -> "nuts")
+
+    map
+  }
+
 }
