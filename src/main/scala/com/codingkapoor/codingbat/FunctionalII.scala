@@ -22,4 +22,8 @@ object FunctionalII {
     strings.filterNot(_.contains('z'))
   }
 
+  def no34(strings: List[String]): List[String] = {
+    strings.filterNot(x => x.length == 3 || x.length == 4)
+  }
+
 }
