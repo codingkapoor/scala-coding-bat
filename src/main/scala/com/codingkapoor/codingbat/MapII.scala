@@ -41,6 +41,7 @@ object MapII {
     strings.groupBy(x => x).mapValues(x => x.length).mapValues(x => if (x >= 2) true else false)
   }
 
+  // Interesting problem and solution
   def allSwap(strings: List[String]) = {
 
     @tailrec
@@ -48,6 +49,18 @@ object MapII {
       case Nil => res
       case x :: Nil => swap(res :+ x, Nil)
       case x :: xs => swap(res :+ (x._1, xs.head._2) :+ (xs.head._1, x._2), xs.tail)
+    }
+
+    strings.zipWithIndex.groupBy(x => x._1.head).values.toList.flatMap(x => swap(Nil, x)).sortBy(_._2).map(_._1)
+  }
+
+  def firstSwap(strings: List[String]) = {
+
+    @tailrec
+    def swap(res: List[(String, Int)], ls: List[(String, Int)]): List[(String, Int)] = ls match {
+      case Nil => res
+      case x :: Nil => swap(x :: res, Nil)
+      case x :: xs => swap((x._1, xs.head._2) :: (xs.head._1, x._2) :: xs.tail, Nil)
     }
 
     strings.zipWithIndex.groupBy(x => x._1.head).values.toList.flatMap(x => swap(Nil, x)).sortBy(_._2).map(_._1)
