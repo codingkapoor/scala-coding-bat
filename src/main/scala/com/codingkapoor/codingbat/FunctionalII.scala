@@ -18,4 +18,8 @@ object FunctionalII {
     strings.filterNot(_.length >= 4)
   }
 
+  def noZ(strings: List[String]): List[String] = {
+    strings.filterNot(_.contains('z'))
+  }
+
 }

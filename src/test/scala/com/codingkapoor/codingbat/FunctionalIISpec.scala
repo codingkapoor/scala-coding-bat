@@ -28,4 +28,10 @@ class FunctionalIISpec extends FlatSpec with Matchers {
     FunctionalII.noLong(List("cccc", "cccc", "cccc")) should equal(List())
   }
 
+  """Given a list of strings, method "noZ"""" should """return a list of the strings, omitting any string that contains a "z".""" in {
+    FunctionalII.noZ(List("aaa", "bbb", "aza")) should equal(List("aaa", "bbb"))
+    FunctionalII.noZ(List("hziz", "hzello", "hi")) should equal(List("hi"))
+    FunctionalII.noZ(List("hello", "howz", "are", "youz")) should equal(List("hello", "are"))
+  }
+
 }
