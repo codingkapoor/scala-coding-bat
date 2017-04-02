@@ -26,4 +26,8 @@ object FunctionalI {
     nums.map(x => (x + 1) * 10)
   }
 
+  def rightDigit(nums: List[Int]): List[Int] = {
+    nums.map(_ % 10)
+  }
+
 }

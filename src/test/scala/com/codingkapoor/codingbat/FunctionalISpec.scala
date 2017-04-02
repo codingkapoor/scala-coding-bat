@@ -40,4 +40,10 @@ class FunctionalISpec extends FlatSpec with Matchers {
     FunctionalI.math1(List(10)) should equal(List(110))
   }
 
+  """Given a list of non-negative integers, method "rightDigit"""" should """return an integer list of the rightmost digits""" in {
+    FunctionalI.rightDigit(List(1, 22, 93)) should equal(List(1, 2, 3))
+    FunctionalI.rightDigit(List(16, 8, 886, 8, 1)) should equal(List(6, 8, 6, 8, 1))
+    FunctionalI.rightDigit(List(10, 0)) should equal(List(0, 0))
+  }
+
 }
