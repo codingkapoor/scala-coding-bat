@@ -11,4 +11,9 @@ object MapI {
     map
   }
 
+  def mapShare(map: scala.collection.mutable.Map[String, String]) = {
+    if (map.contains("a")) map += ("b" -> map("a"))
+    map -= "c"
+  }
+
 }
