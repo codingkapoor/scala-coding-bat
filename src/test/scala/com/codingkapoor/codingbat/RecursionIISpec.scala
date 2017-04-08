@@ -25,4 +25,10 @@ class RecursionIISpec extends FlatSpec with Matchers {
     RecursionII.groupNoAdj(0, List(2, 5, 10, 4), 7) should equal(false)
   }
 
+  """Given an array of ints, method "groupSum5"""" should """evaluate if it is possible to choose a group of some of the ints, such that the group sums to the given target with these additional constraints: all multiples of 5 in the array must be included in the group. If the value immediately following a multiple of 5 is 1, it must not be chosen.""" in {
+    RecursionII.groupSum5(0, List(2, 5, 10, 4), 19) should equal(true)
+    RecursionII.groupSum5(0, List(2, 5, 10, 4), 17) should equal(true)
+    RecursionII.groupSum5(0, List(2, 5, 10, 4), 12) should equal(false)
+  }
+
 }
