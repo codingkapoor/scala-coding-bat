@@ -97,4 +97,13 @@ object RecursionII {
     })
   }
 
+  def split53(ls: List[Int]) = {
+    (1 to Math.ceil(ls.size / 2).toInt).exists(y => ls.combinations(y).exists {
+      x =>
+        (x.sum == (ls diff x).sum) &&
+          (x.count(_ % 3 == 0) == 0 && (ls diff x).count(_ % 5 == 0) == 0 ||
+            (ls diff x).count(_ % 3 == 0) == 0 && x.count(_ % 5 == 0) == 0)
+    })
+  }
+
 }
