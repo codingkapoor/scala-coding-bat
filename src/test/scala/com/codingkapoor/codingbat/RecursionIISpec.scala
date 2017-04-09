@@ -44,4 +44,10 @@ class RecursionIISpec extends FlatSpec with Matchers {
     RecursionII.splitArray(List(2, 3, 5)) should equal(true)
   }
 
+  """Given an array of ints, method "splitOdd"""" should """evaluate if it is possible to divide the ints into two groups, so that the sum of one group is a multiple of 10, and the sum of the other group is odd. Every int must be in one group or the other.""" in {
+    RecursionII.splitOdd10(List(5, 5, 5)) should equal(true)
+    RecursionII.splitOdd10(List(5, 5, 6)) should equal(false)
+    RecursionII.splitOdd10(List(5, 5, 6, 1)) should equal(true)
+  }
+
 }

@@ -91,4 +91,10 @@ object RecursionII {
     (1 to Math.ceil(ls.size / 2).toInt).exists(y => ls.combinations(y).exists(x => (ls diff x).sum == x.sum))
   }
 
+  def splitOdd10(ls: List[Int]) = {
+    (1 to Math.ceil(ls.size / 2).toInt).exists(y => ls.combinations(y).exists {
+      x => ((ls diff x).sum % 10 == 0 && x.sum % 2 != 0) || ((ls diff x).sum % 2 != 0 && x.sum % 10 == 0)
+    })
+  }
+
 }
