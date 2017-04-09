@@ -95,7 +95,13 @@ object API {
   }
 
   // TODO
-  def userCompare() = {}
+  def userCompare(aName: String, aId: Int, bName: String, bId: Int) = {
+    if (aName < bName) -1
+    else if (aName > bName) 1
+    else if (aName == bName) {
+      if (aId < bId) -1 else if (aId > bId) 1 else 0
+    }
+  }
 
   def mergeTwo(arr1: Array[String], arr2: Array[String], n: Int) = {
     arr1.zipAll(arr2, "", "").flatMap {

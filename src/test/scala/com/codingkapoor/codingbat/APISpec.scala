@@ -112,6 +112,12 @@ class APISpec extends FlatSpec with Matchers {
     API.bigHeights(Array(5, 3, 6, 7, 2), 0, 4) should equal(1)
   }
 
+  """We have data for two users, A and B, each with a String name and an int id. The goal is to order the users such as for sorting. Method "userCompare"""" should """return -1 if A comes before B, 1 if A comes after B, and 0 if they are the same. Order first by the string names, and then by the id numbers if the names are the same.""" in {
+    API.userCompare("bb", 1, "zz", 2) should equal(-1)
+    API.userCompare("bb", 1, "aa", 2) should equal(1)
+    API.userCompare("bb", 1, "bb", 1) should equal(0)
+  }
+
   """Start with two arrays of strings, A and B, each with its elements in alphabetical order and without duplicates. Method "mergeTwo"""" should """return a new array containing the first N elements from the two arrays. The result array should be in alphabetical order and without duplicates.""" in {
     API.mergeTwo(Array("a", "c", "z"), Array("b", "f", "z"), 3) should equal(Array("a", "b", "c"))
     API.mergeTwo(Array("a", "c", "z"), Array("c", "f", "z"), 3) should equal(Array("a", "c", "f"))
