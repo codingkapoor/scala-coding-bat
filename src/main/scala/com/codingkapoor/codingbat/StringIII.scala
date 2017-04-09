@@ -69,7 +69,7 @@ object StringIII {
     pattern.findAllIn(str).toList.map(_.toInt).sum
   }
 
-  // Yet to device an appropriate regex for this problem.
+  // TODO Yet to device an appropriate regex for this problem.
   def notReplace(str: String) = {}
 
 }

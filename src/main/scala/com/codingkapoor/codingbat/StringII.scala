@@ -108,8 +108,7 @@ object StringII {
     if (str.endsWith(word)) res + word else res
   }
 
-  // Yet to device an appropriate regex for this problem.
-  // The closest I could reach is defined below.
+  // TODO Yet to device an appropriate regex for this problem. The closest I could reach is defined below.
   def wordEnds(str: String, word: String) = {
     val str = "abcXY123XYijk"
     val pattern = s"(?=([a-z|A-Z|0-9]?(XY)+[a-z|A-Z|0-9]?))".r
