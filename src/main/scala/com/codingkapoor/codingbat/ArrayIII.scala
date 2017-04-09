@@ -78,8 +78,11 @@ object ArrayIII {
     seriesUpR(Nil, n).toArray
   }
 
-  // TODO
-  def maxMirror(nums: List[Int]) = ???
+  def maxMirror(ls: Array[Int]) = {
+    (1 to ls.length).flatMap {
+      y => ls.sliding(y).filter(ks => ls.mkString.contains(ks.mkString.reverse))
+    }.map(_.length).max
+  }
 
   def countClumps(nums: Array[Int]) = {
     def split[T](list: List[T]): List[List[T]] = list match {

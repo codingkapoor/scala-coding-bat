@@ -45,6 +45,12 @@ class ArrayIIISpec extends FlatSpec with Matchers {
     ArrayIII.seriesUp(2) should equal(Array(1, 1, 2))
   }
 
+  """We'll say that a "mirror" section in an array is a group of contiguous elements such that somewhere in the array, the same group appears in reverse order. Method "maxMirror"""" should """return the size of the largest mirror section found in the given array.""" in {
+    ArrayIII.maxMirror(Array(1, 2, 3, 8, 9, 3, 2, 1)) should equal(3)
+    ArrayIII.maxMirror(Array(1, 2, 1, 4)) should equal(3)
+    ArrayIII.maxMirror(Array(7, 1, 2, 9, 7, 2, 1)) should equal(2)
+  }
+
   """Say that a "clump" in an array is a series of 2 or more adjacent elements of the same value. Method "countClumps"""" should """return the number of clumps in the given array.""" in {
     ArrayIII.countClumps(Array(1, 2, 2, 3, 4, 4)) should equal(2)
     ArrayIII.countClumps(Array(1, 1, 2, 1, 1)) should equal(2)

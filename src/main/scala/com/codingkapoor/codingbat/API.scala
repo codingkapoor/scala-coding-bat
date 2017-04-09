@@ -94,7 +94,6 @@ object API {
     }.sum
   }
 
-  // TODO
   def userCompare(aName: String, aId: Int, bName: String, bId: Int) = {
     if (aName < bName) -1
     else if (aName > bName) 1
