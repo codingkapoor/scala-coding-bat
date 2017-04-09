@@ -1,5 +1,5 @@
 # Scala CodingBat
-Solutions to CodingBat problems in Scala
+Solutions to CodingBat problems in Scala. http://codingbat.com
 
 ## Index
 
