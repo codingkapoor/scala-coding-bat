@@ -31,4 +31,11 @@ class RecursionIISpec extends FlatSpec with Matchers {
     RecursionII.groupSum5(0, List(2, 5, 10, 4), 12) should equal(false)
   }
 
+  """Given an array of ints, method "groupSumClump"""" should """evaluate if it is possible to choose a group of some of the ints, such that the group sums to the given target, with this additional constraint: if there are numbers in the array that are adjacent and the identical value, they must either all be chosen, or none of them chosen.""" in {
+    RecursionII.groupSumClump(0, List(1, 2, 3, 4, 4, 4, 6, 6, 7, 6, 4, 1), 14) should equal(true)
+    RecursionII.groupSumClump(0, List(2, 4, 8), 10) should equal(true)
+    RecursionII.groupSumClump(0, List(1, 2, 4, 8, 1), 14) should equal(true)
+    RecursionII.groupSumClump(0, List(2, 4, 4, 8), 14) should equal(false)
+  }
+
 }
