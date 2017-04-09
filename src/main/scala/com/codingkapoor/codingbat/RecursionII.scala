@@ -87,4 +87,8 @@ object RecursionII {
 
   }
 
+  def splitArray(ls: List[Int]) = {
+    (1 to Math.ceil(ls.size / 2).toInt).exists(y => ls.combinations(y).exists(x => (ls diff x).sum == x.sum))
+  }
+
 }

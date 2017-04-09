@@ -38,4 +38,10 @@ class RecursionIISpec extends FlatSpec with Matchers {
     RecursionII.groupSumClump(0, List(2, 4, 4, 8), 14) should equal(false)
   }
 
+  """Given an array of ints, method "splitArray"""" should """evaluate if it is possible to divide the ints into two groups, so that the sums of the two groups are the same.""" in {
+    RecursionII.splitArray(List(2, 2)) should equal(true)
+    RecursionII.splitArray(List(2, 3)) should equal(false)
+    RecursionII.splitArray(List(2, 3, 5)) should equal(true)
+  }
+
 }
